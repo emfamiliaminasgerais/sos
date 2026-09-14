@@ -10570,5 +10570,17 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 882,
+        "timestamp": "2026-09-14 15:45:58",
+        "sender_number": "557184342361",
+        "sender_name": "Junior",
+        "text": "E quem tem me dado força pra lutar sem ele nada posso fazer",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
