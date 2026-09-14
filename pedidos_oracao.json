@@ -310,5 +310,17 @@
         "sub_tag": "Podcast Vencendo o Divórcio",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 27,
+        "timestamp": "2026-09-14 13:40:50",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "✔️ *CIDADE : Ibirité\n\nENDEREÇO: Hospital de Ibirité\n \n📌 *Nome completo:* Altair Lopes de Moura\n\n📌 *ENFERMIDADE*: Diabetes\n\n📌 *SOLICITANTE*: Alexandre Dutra de Moura (irmão)\n\n📌 *NOME E CONTATO DO FAMILIAR*: 997749657\n\nDia de visita: Ele gostaria hoje, o mais rápido possível pois os médicos pediu pra reunir a família. Está em fase terminal.\n\n🚨🚨🚨",
+        "names_found": "Alexandre Dutra, Moura, Altair Lopes",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
