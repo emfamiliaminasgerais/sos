@@ -7714,5 +7714,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 644,
+        "timestamp": "2026-09-14 14:08:03",
+        "sender_number": "553198991781",
+        "sender_name": "Soraia",
+        "text": "Passei esse contato para ele, pedir ajuda e orientação, mas não teve forças nem para isso",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
