@@ -181,7 +181,8 @@ INVALID_WORDS = {
     'moura', 'leopoldina', 'ibirité', 'ibiritê', 'confins', 'bocaiúva', 'bocaiuva', 'oliveira', 'santa clara',
     'belo horizonte', 'uberlândia', 'uberlandia', 'juiz de fora', 'contagem', 'betim', 'montes claros',
     'ipatinga', 'governador valadares', 'sete lagoas', 'deus', 'senhor', 'jesus', 'cristo', 'bispo', 'pastor',
-    'dr', 'doutor', 'prof', 'professor', 'professora', 'deputado', 'prefeito', 'vereador', 'bolsonaro', 'caiado', 'chagas'
+    'dr', 'doutor', 'prof', 'professor', 'professora', 'deputado', 'prefeito', 'vereador', 'bolsonaro', 'caiado', 'chagas',
+    'contato', 'whatsapp', 'peço', 'peco'
 }
 
 def is_valid_person_name(name_str):

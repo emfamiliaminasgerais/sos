@@ -131,9 +131,20 @@ def fetch_all_historical_messages(max_pages=500):
                         else:
                             clean_names = sanitize_str(names)
 
+                        raw_ts = msg.get("messageTimestamp")
+                        if raw_ts:
+                            try:
+                                if raw_ts > 1e11:
+                                    raw_ts = raw_ts / 1000
+                                msg_dt = datetime.fromtimestamp(raw_ts).strftime("%Y-%m-%d %H:%M:%S")
+                            except Exception:
+                                msg_dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        else:
+                            msg_dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
                         record = {
                             "id": len(db) + 1,
-                            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            "timestamp": msg_dt,
                             "sender_number": sanitize_str(sender_phone),
                             "sender_name": sanitize_str(sender_name) or "Contato WhatsApp",
                             "text": clean_txt,
