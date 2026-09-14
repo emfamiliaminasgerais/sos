@@ -598,9 +598,96 @@ def webhook():
 
     return jsonify({"status": "success"}), 200
 
+def auto_sync_loop(interval_seconds=20):
+    """Roda a cada 20s para verificar se chegaram novas mensagens no WhatsApp e sincronizar no GitHub Pages"""
+    import subprocess
+    while True:
+        try:
+            time.sleep(interval_seconds)
+            url_msgs = f"{EVOLUTION_API_URL}/chat/findMessages/{INSTANCE_NAME}"
+            res = requests.post(url_msgs, json={"limit": 50, "page": 1}, headers=HEADERS, timeout=10)
+            if res.status_code == 200:
+                data = res.json()
+                if isinstance(data, dict):
+                    msgs = data.get("messages", {}).get("records", [])
+                    contact_map = load_contact_map()
+                    db = load_db()
+                    existing_texts = {item["text"].strip() for item in db if "text" in item}
+                    new_added = False
+
+                    for msg in msgs:
+                        key = msg.get("key", {})
+                        if not key.get("fromMe", False):
+                            remote_jid = key.get("remoteJid", "")
+                            push_name = msg.get("pushName") or ""
+                            sender_name, sender_phone = clean_sender_info(remote_jid, push_name, contact_map)
+                            
+                            message_content = msg.get("message")
+                            if not isinstance(message_content, dict):
+                                continue
+                            
+                            text_content = (
+                                message_content.get("conversation") or
+                                message_content.get("extendedTextMessage", {}).get("text") or
+                                ""
+                            ).strip()
+                            clean_txt = sanitize_str(text_content)
+
+                            if clean_txt and clean_txt not in existing_texts:
+                                if is_valid_request(clean_txt):
+                                    cat = classify_category(clean_txt)
+                                    nms = extract_names(clean_txt, sender_name)
+                                    raw_ts = msg.get("messageTimestamp")
+                                    sub_tag = "Podcast Vencendo o Divórcio" if cat == "Podcast Divórcio" else cat
+                                    
+                                    clean_names = ", ".join([sanitize_str(n) for n in nms if sanitize_str(n)]) if isinstance(nms, list) else sanitize_str(nms)
+                                    
+                                    msg_dt = None
+                                    if raw_ts:
+                                        try:
+                                            ts_val = float(raw_ts)
+                                            if ts_val > 1e11: ts_val = ts_val / 1000.0
+                                            msg_dt = datetime.fromtimestamp(ts_val).strftime("%Y-%m-%d %H:%M:%S")
+                                        except Exception:
+                                            msg_dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                    if not msg_dt:
+                                        msg_dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                                    rec = {
+                                        "id": len(db) + 1,
+                                        "timestamp": msg_dt,
+                                        "sender_number": sanitize_str(sender_phone),
+                                        "sender_name": sanitize_str(sender_name) or "Contato WhatsApp",
+                                        "text": clean_txt,
+                                        "names_found": clean_names if clean_names else "Nenhum nome extraído",
+                                        "category": cat,
+                                        "sub_tag": sub_tag,
+                                        "summary": "",
+                                        "status": "Em Atendimento"
+                                    }
+                                    db.append(rec)
+                                    existing_texts.add(clean_txt)
+                                    new_added = True
+
+                    if new_added:
+                        db.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
+                        for i, item in enumerate(db, 1): item['id'] = i
+                        save_db(db)
+                        update_dashboard_data(db)
+                        print(f"🔄 [AUTO-SYNC 20s] Novos nomes capturados! Atualizando GitHub Pages...")
+                        subprocess.run(["git", "add", "data.json", "dashboard/data.json", "pedidos_oracao.json"], cwd="C:/Projetos/Whatsapp", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                        subprocess.run(["git", "commit", "-m", "Auto-sync 20s: novos pedidos de oracao"], cwd="C:/Projetos/Whatsapp", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                        subprocess.run(["git", "push", "origin", "main"], cwd="C:/Projetos/Whatsapp", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                        print(f"✅ [AUTO-SYNC 20s] GitHub Pages atualizado no ar!")
+        except Exception as e:
+            print(f"⚠️ [AUTO-SYNC ERR]: {e}")
+
 if __name__ == "__main__":
     update_dashboard_data(load_db())
 
+    # Inicia rotina de sincronização automática de 20s em background
+    threading.Thread(target=auto_sync_loop, args=(20,), daemon=True).start()
+
     port = int(os.getenv("PORT", 5000))
-    print(f"[START] Hub da Central de Atendimento MG (100% Via Dashboard Web) rodando na porta {port}...")
+    print(f"[START] Hub da Central de Atendimento MG (Auto-sync 20s Ativo) rodando na porta {port}...")
     app.run(host="0.0.0.0", port=port, debug=False)
