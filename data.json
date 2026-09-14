@@ -48934,5 +48934,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4079,
+        "timestamp": "2026-09-14 20:25:58",
+        "sender_number": "553384102870",
+        "sender_name": "representante da velmora",
+        "text": "Oi Boa noite estou com uma amiga está passando por uns processos muito difícil está muito de precisando de oração 😭",
+        "names_found": "Oi Boa",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
