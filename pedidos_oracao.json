@@ -8566,5 +8566,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 715,
+        "timestamp": "2026-09-14 14:45:57",
+        "sender_number": "553186857564",
+        "sender_name": "Elinete 💚",
+        "text": "Acho que vou começar essa corrente na catedral de BH mesmo",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
