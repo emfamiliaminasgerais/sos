@@ -8230,5 +8230,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 687,
+        "timestamp": "2026-09-14 14:34:56",
+        "sender_number": "553195413541",
+        "sender_name": "Priscila",
+        "text": "Eu era da universal mais aí eu afastei",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
