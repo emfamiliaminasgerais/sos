@@ -8950,5 +8950,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 747,
+        "timestamp": "2026-09-14 15:12:27",
+        "sender_number": "553488376448",
+        "sender_name": "Roberto Eduardo",
+        "text": "Muito obrigado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
