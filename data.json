@@ -8770,5 +8770,17 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 732,
+        "timestamp": "2026-09-14 14:51:49",
+        "sender_number": "5521975468063",
+        "sender_name": "Nilzete Rodrigues 🦋🦋",
+        "text": "Muito obrigada pela atenção!",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
