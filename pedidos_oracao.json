@@ -7630,5 +7630,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 637,
+        "timestamp": "2026-09-14 13:59:35",
+        "sender_number": "553591056757",
+        "sender_name": "Patrícia",
+        "text": "Asim  desculpa",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
