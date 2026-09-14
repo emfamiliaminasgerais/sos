@@ -8758,5 +8758,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 731,
+        "timestamp": "2026-09-14 14:51:30",
+        "sender_number": "553299141596",
+        "sender_name": "fedrumond3485",
+        "text": "Eu queria tanto assistir assembleias com bispo hoje ou algo a mais que vai ter mas infelizmente a única coisa que eu não tô podendo assistir é algo a mais que é passado que passa no YouTube mas ele é explosivo né só pode quem está na igreja na reunião porque a única coisa que eu não que eu não participo é da reunião do força jovem e da reunião do algo a mais",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
