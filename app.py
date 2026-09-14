@@ -602,5 +602,5 @@ if __name__ == "__main__":
     update_dashboard_data(load_db())
 
     port = int(os.getenv("PORT", 5000))
-    print(f"🚀 Hub da Central de Atendimento MG (100% Via Dashboard Web) rodando na porta {port}...")
+    print(f"[START] Hub da Central de Atendimento MG (100% Via Dashboard Web) rodando na porta {port}...")
     app.run(host="0.0.0.0", port=port, debug=False)
