@@ -754,5 +754,77 @@
         "sub_tag": "Podcast Vencendo o Divórcio",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 64,
+        "timestamp": "2026-09-14 13:22:46",
+        "sender_number": "161615374721089",
+        "sender_name": "161615374721089",
+        "text": "Qual o dia da semana que e culto de cura e libertação",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 65,
+        "timestamp": "2026-09-14 13:22:46",
+        "sender_number": "162062705643715",
+        "sender_name": "162062705643715",
+        "text": "Nao quero ir p hospital",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 66,
+        "timestamp": "2026-09-14 13:22:46",
+        "sender_number": "162062705643715",
+        "sender_name": "162062705643715",
+        "text": "Vontade de chorar",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 67,
+        "timestamp": "2026-09-14 13:22:46",
+        "sender_number": "116974239670294",
+        "sender_name": "116974239670294",
+        "text": "Mas estou procurando obedecer",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 68,
+        "timestamp": "2026-09-14 13:22:46",
+        "sender_number": "116974239670294",
+        "sender_name": "116974239670294",
+        "text": "Quere meu casamento sim",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 69,
+        "timestamp": "2026-09-14 13:22:46",
+        "sender_number": "20380425158707",
+        "sender_name": "20380425158707",
+        "text": "Queria pedir uma  oração pra minha esposa.  Ela está com um tumor  no peito e passou para o pulmão  eu pesso a VCS se podia fazer uma oração pra ela",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
