@@ -48802,5 +48802,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4068,
+        "timestamp": "2026-09-14 16:42:12",
+        "sender_number": "553198991781",
+        "sender_name": "Soraia",
+        "text": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
