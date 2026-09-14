@@ -48826,5 +48826,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4070,
+        "timestamp": "2026-09-14 17:33:09",
+        "sender_number": "553191843923",
+        "sender_name": "🙏",
+        "text": "Olá",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
