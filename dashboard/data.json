@@ -286,5 +286,29 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 25,
+        "timestamp": "2026-09-14 13:18:25",
+        "sender_number": "101726870888631",
+        "sender_name": "101726870888631",
+        "text": "Passou pela cirurgia graças a Deus e com ajuda dos irmãos em oração ocorreu tudo bem 🙏🏻",
+        "names_found": "cirurgia graças",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 26,
+        "timestamp": "2026-09-14 13:18:25",
+        "sender_number": "129944621453420",
+        "sender_name": "129944621453420",
+        "text": "Ondem.    Tem  fala. Com meu esposa do pastor.         Tratara. Mal.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
