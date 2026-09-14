@@ -150,60 +150,127 @@ def classify_category(text):
         return "Agradecimento"
     return "Pedidos de Oração"
 
+CONVERSATIONAL_VERBS_WORDS = {
+    'sou', 'moro', 'mora', 'moramos', 'moram', 'vivo', 'viva', 'viver', 'estou', 'esta', 'está', 'estamos', 'estao', 'estão',
+    'estava', 'estavam', 'entendo', 'sabe', 'sabia', 'acho', 'achar', 'quero', 'queria', 'posso', 'pode', 'podemos',
+    'gosto', 'gostaria', 'acompanho', 'assisto', 'assisti', 'ouço', 'ouvi', 'podcast', 'atenção', 'atencao', 'orientação',
+    'orientacao', 'história', 'historia', 'vida', 'sempre', 'hoje', 'ontem', 'amanhã', 'amanha', 'mesmo', 'mesma',
+    'então', 'entao', 'tabom', 'ta', 'tá', 'bom', 'boa', 'obrigado', 'obrigada', 'amém', 'amen', 'deus', 'jesus',
+    'senhor', 'paz', 'oração', 'oracao', 'orar', 'orem', 'peço', 'peco', 'pedir', 'ajuda', 'favor', 'por', 'favor',
+    'gostaria', 'preciso', 'precisamos', 'passando', 'problema', 'problemas', 'casamento', 'divórcio', 'divorcio',
+    'esposa', 'marido', 'filho', 'filha', 'mãe', 'mae', 'pai', 'irmão', 'irmao', 'irmã', 'irma', 'família', 'familia',
+    'casa', 'trabalho', 'emprego', 'saúde', 'saude', 'dor', 'doença', 'doenca', 'hospital', 'hospitais', 'igreja', 'pastor',
+    'pastora', 'bispo', 'padre', 'cidade', 'estado', 'interior', 'bairro', 'rua', 'avenida', 'brasil', 'minas',
+    'gerais', 'rio', 'janeiro', 'paulo', 'bh', 'contagem', 'araguari', 'uberlândia', 'uberlandia', 'juiz', 'fora',
+    'gonçalo', 'goncalo', 'salvador', 'recife', 'fortaleza', 'brasília', 'brasilia', 'curitiba', 'manaus', 'belém', 'belem',
+    'aqui', 'ali', 'lá', 'la', 'este', 'esta', 'isto', 'aquilo', 'tudo', 'nada', 'algo', 'alguém', 'alguem', 'ninguém',
+    'ninguem', 'cada', 'outro', 'outra', 'outros', 'outras', 'muito', 'muita', 'muitos', 'muitas', 'pouco', 'pouca',
+    'mais', 'menos', 'assim', 'tbm', 'também', 'tambem', 'terminal', 'prefeitura', 'supermercado', 'mercado', 'clínica',
+    'clinica', 'serviço', 'servico', 'posto', 'loja', 'secretaria', 'ministério', 'ministerio', 'centro', 'instituto',
+    'farmácia', 'farmacia', 'açougue', 'acougue', 'padaria', 'quitanda', 'armazém', 'armazem', 'brt', 'ônibus', 'onibus',
+    'linha', 'escola', 'faculdade', 'universidade', 'governo', 'câmara', 'camara', 'banco', 'médico', 'medico',
+    'ambulatório', 'ambulatorio', 'uti', 'leito'
+}
+
+NON_NAME_WORDS = {
+    'http', 'https', 'www', 'com', 'br', 'status', 'foto', 'vídeo', 'video', 'áudio', 'audio', 'link', 'site',
+    'ok', 'ola', 'olá', 'sim', 'não', 'nao', 'salmos', 'provérbios', 'capítulo', 'versículo', 'biblia', 'bíblia',
+    'salmo', 'romanos', 'mateus', 'marcos', 'lucas', 'joão', 'joao', 'atos', 'coríntios', 'galatas', 'efésios',
+    'filipenses', 'colossenses', 'tessalonicenses', 'timóteo', 'tito', 'filemom', 'hebreus', 'tiago', 'pedro',
+    'judas', 'apocalipse', 'gênesis', 'êxodo', 'levítico', 'números', 'deuteronômio', 'josué', 'juízes', 'rute',
+    'samuel', 'reis', 'crônicas', 'esdras', 'neemias', 'ester', 'jó', 'cantares', 'isaías', 'jeremias',
+    'ezequiel', 'daniel', 'oséias', 'joel', 'amós', 'obadias', 'jonas', 'miquéias', 'naum', 'habacuc', 'sofofnias',
+    'ageu', 'zacarias', 'malaquias', 'ntlh', 'nvi', 'aa', 'arc', 'tv', 'sp', 'rj', 'mg', 'df', 'pf', 'fé', 'fe',
+    'oi', 'upp', 'bope', 'core', 'pmerj', 'pcrj'
+}
+
+def clean_name_string(s):
+    if not s:
+        return ""
+    s = s.strip()
+    # Strip list item prefixes like '1.', '1)', '1 -', 'a)'
+    s = re.sub(r'^\s*\d+[\.\)\-]?\s*', '', s)
+    # Remove emojis, symbols, dashes, bullets, keeping letters, numbers and spaces
+    s = re.sub(r'[^\w\s]', ' ', s)
+    # Collapse multiple spaces
+    s = re.sub(r'\s+', ' ', s)
+    return s.strip()
+
 def is_valid_person_name(name_str):
-    cleaned = name_str.strip()
-    # Strip list item prefixes like '108.', 'S2.'
-    cleaned = re.sub(r'^\s*\d+[\.\)]?\s*', '', cleaned)
-    cleaned = re.sub(r'^\s*[A-Za-z]\d+[\.\)]?\s*', '', cleaned)
-    words = [w.lower().strip('.,!?:;"\'()[]{}') for w in cleaned.split()]
-    if not words or len(cleaned) < 2:
+    if not name_str:
         return False
+        
+    cleaned = clean_name_string(name_str)
     
-    # Reject only URLs, numbers, or explicit conversational greetings/prayer words
-    ignore_words = {'http', 'https', 'amém', 'amen', 'obrigado', 'obrigada', 'oração', 'oracao', 'deus', 'jesus'}
+    # Must be at least 2 chars and contain letters
+    if len(cleaned) < 2 or not re.search(r'[A-Za-zÀ-ÿ]', cleaned):
+        return False
+        
+    # Reject URLs, emails, numbers
+    if 'http' in cleaned.lower() or 'www.' in cleaned.lower() or '.com' in cleaned.lower() or '@' in cleaned:
+        return False
+        
+    # Reject strings with digits
+    if re.search(r'\d', cleaned):
+        return False
+
+    words = [w.lower().strip() for w in cleaned.split()]
+    if not words:
+        return False
+        
+    # Reject if too many words (> 4 words is likely a sentence, not a name)
+    if len(words) > 4:
+        return False
+
+    # Check if any word matches conversational verbs, stop words or non-name words
     for w in words:
-        if w in ignore_words or w.isdigit():
+        if w in CONVERSATIONAL_VERBS_WORDS or w in NON_NAME_WORDS:
             return False
             
+    # Check if all words are single letters (e.g. "a b c")
+    if all(len(w) == 1 for w in words):
+        return False
+
     return True
 
 def extract_names(text, push_name=''):
     names = set()
     
-    # Pre-process lines to strip list prefixes (e.g., '108. Sandra Gonçalves', '20. Altair Lopes')
     clean_lines = []
     for line in text.splitlines():
-        sub_line = re.sub(r'^\s*\d+[\.\)]?\s*', '', line).strip()
-        sub_line = re.sub(r'^\s*[A-Za-z]\d+[\.\)]?\s*', '', sub_line).strip()
-        if sub_line:
+        sub_line = clean_name_string(line)
+        if sub_line and len(sub_line) >= 2:
             clean_lines.append(sub_line)
     
     clean_text = "\n".join(clean_lines)
 
-    # 1. Meu nome é / e [Nome]
-    m_name = re.search(r'\bmeu\s+nome\s+[eé:]?\s*([A-Za-zÀ-ÿ]+(?:\s+[A-Za-zÀ-ÿ]+)*)', clean_text, re.IGNORECASE)
+    # 1. Meu nome é / e [Nome] / me chamo [Nome]
+    m_name = re.search(r'\b(?:meu\s+nome\s+[eé:]?|me\s+chamo|sou\s+a|sou\s+o)\s+([A-Za-zÀ-ÿ]+(?:\s+[A-Za-zÀ-ÿ]+)*)', clean_text, re.IGNORECASE)
     if m_name:
-        cand = m_name.group(1).strip()
+        cand = clean_name_string(m_name.group(1))
         if is_valid_person_name(cand):
             names.add(cand)
 
-    # 2. Preposições de indicação de nome
-    matches = re.findall(r'(?:por|pelo|pela|para|p/|de|irmã|irmão|nome[s]?[:]?)\s+([A-Za-zÀ-ÿ]+(?:\s+[A-Za-zÀ-ÿ]+)*)', clean_text, re.IGNORECASE)
+    # 2. Preposições de indicação de nome (por, pelo, pela, para, p/, de, nome:)
+    matches = re.findall(r'(?:por|pelo|pela|para|p/|nome[s]?[:]?)\s+([A-Za-zÀ-ÿ]+(?:\s+[A-Za-zÀ-ÿ]+)*)', clean_text, re.IGNORECASE)
     for m in matches:
-        cand = m.strip()
+        cand = clean_name_string(m)
+        if is_valid_person_name(cand) and len(cand.split()) <= 3:
+            names.add(cand)
+
+    # 3. Listas de nomes (somente se a mensagem tem múltiplas linhas)
+    if len(clean_lines) > 1:
+        for line in clean_lines:
+            cand = clean_name_string(line)
+            # If line is short (1 to 3 words) and is a valid person name
+            if 1 <= len(cand.split()) <= 3 and is_valid_person_name(cand):
+                names.add(cand)
+
+    # 4. Fallback: se nenhum nome foi encontrado na mensagem, usa o nome do remetente
+    if not names and push_name and push_name != "Contato" and not push_name.isdigit():
+        cand = clean_name_string(push_name)
         if is_valid_person_name(cand):
             names.add(cand)
-
-    # 3. Nomes em linhas individuais (ex: em listas de oração ou envio de nome puro)
-    for line in clean_lines:
-        cand = line.strip()
-        if len(cand.split()) <= 6 and is_valid_person_name(cand):
-            names.add(cand)
-
-    # 4. Fallback: se a mensagem é um pedido pessoal e push_name for um nome real
-    if not names and push_name and push_name != "Contato" and not push_name.isdigit():
-        if is_valid_person_name(push_name):
-            names.add(push_name.strip())
 
     return list(names)
 
