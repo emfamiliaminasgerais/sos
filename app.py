@@ -254,7 +254,8 @@ INVALID_WORDS = {
     'dra', 'dora', 'ubs', 'upa', 'clínica', 'clinica', 'araruama', 'itaboraí', 'itaborai', 'manilha',
     'rj', 'mg', 'sp', 'chamo', 'nome', 'endocrinologia', 'posto',
     'gostaria', 'pedido', 'pedir', 'horário', 'horario', 'igreja', 'disponível', 'disponivel', 'cura', 'saúde', 'saude',
-    'diarréia', 'diarreia', 'pneumonia', 'colonoscopia', 'calafrios', 'dor', 'idoso', 'diabética', 'diabetica', 'garganta', 'corpo', 'inflamada'
+    'diarréia', 'diarreia', 'pneumonia', 'colonoscopia', 'calafrios', 'dor', 'idoso', 'diabética', 'diabetica', 'garganta', 'corpo', 'inflamada',
+    'ruy barbosa', 'césar maia', 'cesar maia', 'almino afonso', 'jorge canella'
 }
 
 def is_valid_person_name(name_str):
