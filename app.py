@@ -268,20 +268,13 @@ def is_valid_person_name(name_str):
     if not words or len(cleaned) < 2:
         return False
     
+    # Reject only if any word is an explicit invalid non-person word (locations, titles, medical terms) or digits
     for w in words:
         if w in INVALID_WORDS or w.isdigit():
             return False
             
-    first = words[0]
-    if first in FIRST_NAMES:
-        return True
-
-    if len(words) >= 2 and len(first) >= 3:
-        first_orig = cleaned.split()[0].strip('.,!?:;"\'()[]{}')
-        if first_orig and (first_orig[0].isupper() or first_orig.isupper()):
-            return True
-
-    return False
+    # Accepts ALL valid names (English names, names with K/W/Y, lowercase, uppercase, compound names)
+    return True
 
 def extract_names(text, push_name=''):
     names = set()
