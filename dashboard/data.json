@@ -214,5 +214,41 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 19,
+        "timestamp": "2026-09-14 13:09:59",
+        "sender_number": "82511388496079",
+        "sender_name": "82511388496079",
+        "text": "Gostaria de jr no culto.\nFui na igreja e me informaram do horario amanha de manha",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 20,
+        "timestamp": "2026-09-14 13:09:59",
+        "sender_number": "211273904083115",
+        "sender_name": "211273904083115",
+        "text": "No mundo a maior felicidade é estar com Deus amor piedade misericórdia",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 21,
+        "timestamp": "2026-09-14 13:09:59",
+        "sender_number": "147566519918695",
+        "sender_name": "147566519918695",
+        "text": "Romanos 10:9-13 NTLH\r\n[9] Se você disser com a sua boca: “Jesus é Senhor” e no seu coração crer que Deus ressuscitou Jesus, você será salvo. [10] Porque nós cremos com o coração e somos aceitos por Deus; falamos com a boca e assim somos salvos. [11] Porque as Escrituras Sagradas dizem: “Quem crer nele não ficará desiludido.” [12] Isso vale para todos, pois não existe nenhuma diferença entre judeus e não judeus. Deus é o mesmo Senhor de todos e abençoa generosamente todos os que pedem a sua ajuda. [13] Como dizem as Escrituras Sagradas: “Todos os que pedirem a ajuda do Senhor serão salvos.”\n\nhttps://bible.com/bible/211/rom.10.9-13.NTLH",
+        "names_found": "Escrituras Sagradas, Deus",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
