@@ -7978,5 +7978,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 666,
+        "timestamp": "2026-09-14 14:26:03",
+        "sender_number": "553171290451",
+        "sender_name": "💟✝️🛐",
+        "text": "Boa tarde",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
