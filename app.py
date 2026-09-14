@@ -12,6 +12,9 @@ import schedule
 from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 
+# Google Gemini AI para Classificação Passiva de Pano de Fundo
+import google.generativeai as genai
+
 # ReportLab para geração de PDF
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
@@ -26,7 +29,6 @@ app = Flask(__name__)
 EVOLUTION_API_URL = os.getenv("EVOLUTION_API_URL", "http://localhost:8080")
 EVOLUTION_API_KEY = os.getenv("EVOLUTION_API_KEY", "my_super_secret_key_123")
 INSTANCE_NAME = os.getenv("INSTANCE_NAME", "minha_instancia")
-ADMIN_NUMBER = os.getenv("ADMIN_NUMBER", "5531992536994")  # Número de destino
 DB_FILE = "pedidos_oracao.json"
 
 HEADERS = {
@@ -34,105 +36,79 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-# --- CLASSIFICAÇÃO INTELIGENTE DE CATEGORIAS ---
+# --- CONFIGURAÇÃO DA IA GEMINI (PASSIVA DE PANO DE FUNDO) ---
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+    gemini_model = genai.GenerativeModel('gemini-2.5-flash')
+else:
+    gemini_model = None
+
+def ai_background_classifier(sender_name, text_content):
+    """
+    IA PASSIVA DE PANO DE FUNDO:
+    - Jamais envia respostas ou notificações no WhatsApp (100% via Dashboard Web).
+    - Analisa a mensagem recebida para classificar com precisão semântica.
+    """
+    if not gemini_model:
+        return None
+
+    prompt = f"""
+    Você é um classificador PASSIVO em segundo plano do Hub da Central de Atendimento MG.
+    Sua ÚNICA função é analisar a mensagem recebida e retornar a classificação em formato JSON.
+    VOCÊ NUNCA DEVE GERAR RESPOSTA PARA O USUÁRIO DO WHATSAPP OU ENVIAR NOTIFICAÇÃO. APENAS CLASSIFIQUE.
+
+    Mensagem Recebida de {sender_name}:
+    "{text_content}"
+
+    Regras de Classificação:
+    1. eh_relevante: true se for pedido de oração, relato de problema no casamento, menção ao podcast, problema de saúde, financeiro, espiritual ou agradecimento. false se for apenas saudações soltas ou spam.
+    2. categoria: Escolha EXATAMENTE uma:
+       - "Podcast Divórcio" (se mencionou 'Podcast Vencendo o Divórcio', vídeos ou problemas no casamento)
+       - "Pedidos de Oração" (pedidos gerais de oração ou auxílio)
+       - "Saúde" (pedidos de cura, exames, cirurgias, internamentos)
+       - "Financeiro" (emprego, dívidas, provisão)
+       - "Espiritual" (libertação, ansiedade, depressão, fé)
+       - "Agradecimento" (testemunhos, agradecimentos, vitórias)
+    3. nomes_para_oracao: Array com os nomes das pessoas mencionadas no texto para a lista de oração.
+    4. resumo: Resumo curto de 1 frase da situação.
+
+    Retorne APENAS o JSON no formato:
+    {{
+        "eh_relevante": true,
+        "categoria": "Podcast Divórcio",
+        "nomes_para_oracao": ["Maria Silva", "Roberto Silva"],
+        "resumo": "Assistiu o podcast e pediu oração para o casamento com problemas."
+    }}
+    """
+
+    try:
+        response = gemini_model.generate_content(prompt)
+        text_resp = response.text.strip()
+        if text_resp.startswith("```"):
+            text_resp = re.sub(r"^```[a-z]*\n?", "", text_resp)
+            text_resp = re.sub(r"\n?```$", "", text_resp)
+        
+        parsed = json.loads(text_resp)
+        return parsed
+    except Exception as e:
+        print(f"⚠️ Erro ao consultar IA Gemini em background: {e}")
+        return None
+
+# --- REGRAS DE HEURÍSTICA (FALLBACK) ---
 def classify_category(text):
     text_lower = text.lower()
-    
-    # 1. Subitem: Podcast Vencendo o Divórcio
     if any(w in text_lower for w in ["podcast", "vencendo o divórcio", "vencendo o divorcio"]):
         return "Podcast Divórcio"
-
-    # 2. Saúde & Cura
     if any(w in text_lower for w in ["saúde", "saude", "doença", "doenca", "hospital", "cirurgia", "cura", "médico", "medico", "câncer", "cancer", "dor", "exame", "remédio", "internado", "leito"]):
         return "Saúde"
-        
-    # 3. Financeiro & Trabalho
     if any(w in text_lower for w in ["emprego", "trabalho", "financeiro", "dívida", "divida", "contas", "porta", "dinheiro", "empresa", "sustento", "salário", "desempregado"]):
         return "Financeiro"
-        
-    # 4. Espiritual & Conforto
     if any(w in text_lower for w in ["ansiedade", "depressão", "depressao", "paz", "libertação", "libertacao", "vício", "vicio", "fé", "fe", "proteção", "protecao", "salvação", "angústia"]):
         return "Espiritual"
-        
-    # 5. Agradecimento & Testemunho
     if any(w in text_lower for w in ["agradeço", "agradeco", "obrigado", "obrigada", "vitória", "vitoria", "testemunho", "alcançamos", "alcançado", "graças", "bênção", "bencao"]):
         return "Agradecimento"
-        
     return "Pedidos de Oração"
-
-# --- GESTÃO DO BANCO DE DADOS LOCAL E DASHBOARD ---
-def load_db():
-    if os.path.exists(DB_FILE):
-        try:
-            with open(DB_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            return []
-    return []
-
-def save_db(data):
-    with open(DB_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
-    update_dashboard_data(data)
-
-def update_dashboard_data(db):
-    dashboard_dir = os.path.join(os.path.dirname(__file__), "dashboard")
-    os.makedirs(dashboard_dir, exist_ok=True)
-    json_path = os.path.join(dashboard_dir, "data.json")
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(db, f, ensure_ascii=False, indent=4)
-    
-    git_auto_push()
-
-def git_auto_push():
-    """Realiza auto-commit e push para o GitHub Pages em background se for um repo git"""
-    def push_thread():
-        try:
-            if os.path.exists(".git"):
-                subprocess.run(["git", "add", "dashboard/data.json", "pedidos_oracao.json"], check=False)
-                subprocess.run(["git", "commit", "-m", "Auto-update Hub da Central de Atendimento MG"], check=False)
-                subprocess.run(["git", "push"], check=False)
-        except Exception as e:
-            pass
-    threading.Thread(target=push_thread, daemon=True).start()
-
-def add_record(sender_number, sender_name, text, names_found):
-    db = load_db()
-    category = classify_category(text)
-    sub_tag = "Podcast Vencendo o Divórcio" if category == "Podcast Divórcio" else category
-
-    record = {
-        "id": len(db) + 1,
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "sender_number": sender_number,
-        "sender_name": sender_name or "Desconhecido",
-        "text": text,
-        "names_found": ", ".join(names_found) if names_found else "Nenhum nome extraído",
-        "category": category,
-        "sub_tag": sub_tag,
-        "status": "Em Atendimento"
-    }
-    db.append(record)
-    save_db(db)
-    return record
-
-# --- REGEX E FILTRAGEM DE PEDIDOS DE ORAÇÃO ---
-ORACAO_KEYWORDS = [
-    r"\boraç[ãa]o\b", r"\borar\b", r"\bora\b", r"\borando\b",
-    r"\bintercess[ãa]o\b", r"\binterceder\b", r"\binterceda\b",
-    r"\bclamor\b", r"\bpedid[oo]\b", r"\borar por\b", r"\bora por\b",
-    r"\bpodcast\b", r"\bdiv[óo]rcio\b", r"\bcasamento\b"
-]
-
-def check_prayer_request(text):
-    text_lower = text.lower()
-    is_prayer = any(re.search(kw, text_lower) for kw in ORACAO_KEYWORDS)
-    names = extract_names(text)
-    
-    if is_prayer or len(names) > 0:
-        return True, names
-    
-    return False, []
 
 def extract_names(text):
     names = set()
@@ -151,50 +127,69 @@ def extract_names(text):
 
     return list(names)
 
-# --- EVOLUTION API MESSAGING UTILS ---
-def clean_number(num):
-    cleaned = re.sub(r"\D", "", num)
-    if not cleaned.endswith("@s.whatsapp.net"):
-        return f"{cleaned}@s.whatsapp.net"
-    return cleaned
+# --- GESTÃO DO BANCO DE DADOS LOCAL E DASHBOARD WEB ---
+def load_db():
+    if os.path.exists(DB_FILE):
+        try:
+            with open(DB_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return []
+    return []
 
-def send_text(to_number, text):
-    jid = clean_number(to_number)
-    url = f"{EVOLUTION_API_URL}/message/sendText/{INSTANCE_NAME}"
-    payload = {
-        "number": jid,
-        "text": text
-    }
-    try:
-        res = requests.post(url, json=payload, headers=HEADERS, timeout=10)
-        return res.json()
-    except Exception as e:
-        print(f"Erro ao enviar texto: {e}")
-        return None
+def save_db(data):
+    with open(DB_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+    update_dashboard_data(data)
 
-def send_media(to_number, file_path, mediatype, mimetype, filename, caption=""):
-    jid = clean_number(to_number)
-    url = f"{EVOLUTION_API_URL}/message/sendMedia/{INSTANCE_NAME}"
+def update_dashboard_data(db):
+    dashboard_dir = os.path.join(os.path.dirname(__file__), "dashboard")
+    os.makedirs(dashboard_dir, exist_ok=True)
     
-    with open(file_path, "rb") as f:
-        encoded_string = base64.b64encode(f.read()).decode("utf-8")
+    # Atualiza em dashboard/data.json e na raiz /data.json para GitHub Pages
+    json_path = os.path.join(dashboard_dir, "data.json")
+    root_json_path = os.path.join(os.path.dirname(__file__), "data.json")
     
-    payload = {
-        "number": jid,
-        "mediatype": mediatype,
-        "mimetype": mimetype,
-        "media": f"data:{mimetype};base64,{encoded_string}",
-        "fileName": filename,
-        "caption": caption
-    }
-    try:
-        res = requests.post(url, json=payload, headers=HEADERS, timeout=30)
-        return res.json()
-    except Exception as e:
-        print(f"Erro ao enviar mídia ({filename}): {e}")
-        return None
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(db, f, ensure_ascii=False, indent=4)
+    with open(root_json_path, "w", encoding="utf-8") as f:
+        json.dump(db, f, ensure_ascii=False, indent=4)
+    
+    git_auto_push()
 
-# --- GERADORES DE RELATÓRIO (EXCEL E PDF) ---
+def git_auto_push():
+    """Realiza auto-commit e push para o GitHub Pages em background"""
+    def push_thread():
+        try:
+            if os.path.exists(".git"):
+                subprocess.run(["git", "add", "dashboard/data.json", "data.json", "pedidos_oracao.json"], check=False)
+                subprocess.run(["git", "commit", "-m", "Auto-update Hub da Central de Atendimento MG"], check=False)
+                subprocess.run(["git", "push"], check=False)
+        except Exception as e:
+            pass
+    threading.Thread(target=push_thread, daemon=True).start()
+
+def add_record(sender_number, sender_name, text, category, names_found, summary=""):
+    db = load_db()
+    sub_tag = "Podcast Vencendo o Divórcio" if category == "Podcast Divórcio" else category
+
+    record = {
+        "id": len(db) + 1,
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "sender_number": sender_number,
+        "sender_name": sender_name or "Desconhecido",
+        "text": text,
+        "names_found": ", ".join(names_found) if names_found else "Nenhum nome extraído",
+        "category": category,
+        "sub_tag": sub_tag,
+        "summary": summary,
+        "status": "Em Atendimento"
+    }
+    db.append(record)
+    save_db(db)
+    return record
+
+# --- GERADORES DE RELATÓRIO (EXCEL E PDF DISPONÍVEIS VIA DASHBOARD) ---
 def generate_excel(records, filename):
     data_for_df = []
     for r in records:
@@ -206,6 +201,7 @@ def generate_excel(records, filename):
             "Categoria": r.get("category", "Pedidos de Oração"),
             "Tag / Origem": r.get("sub_tag", ""),
             "Nomes Identificados": r["names_found"],
+            "Resumo IA": r.get("summary", ""),
             "Mensagem Completa": r["text"]
         })
     df = pd.DataFrame(data_for_df)
@@ -271,29 +267,7 @@ def generate_pdf(records, filename):
 
     doc.build(story)
 
-# --- ROTINA DE ENVIO DE RELATÓRIO ---
-def trigger_report_delivery(target_number=ADMIN_NUMBER):
-    records = load_db()
-    today_str = datetime.now().strftime("%Y-%m-%d")
-    
-    excel_file = f"relatorio_atendimentos_{today_str}.xlsx"
-    pdf_file = f"relatorio_atendimentos_{today_str}.pdf"
-
-    generate_excel(records, excel_file)
-    generate_pdf(records, pdf_file)
-
-    send_text(
-        target_number,
-        f"🛡️ *HUB DA CENTRAL DE ATENDIMENTO MG*\n\n"
-        f"📅 *Data:* {datetime.now().strftime('%d/%m/%Y')}\n"
-        f"🔢 *Total de Atendimentos:* {len(records)}\n\n"
-        f"Segue em anexo o relatório oficial em formatos PDF e Excel."
-    )
-
-    send_media(target_number, pdf_file, "document", "application/pdf", pdf_file, "📄 Relatório em PDF")
-    send_media(target_number, excel_file, "document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excel_file, "📊 Relatório em Excel")
-
-# --- WEBHOOK PRINCIPAL ---
+# --- WEBHOOK PRINCIPAL (100% VIA DASHBOARD WEB - SEM NOTIFICAÇÕES WHATSAPP) ---
 @app.route("/webhook", methods=["POST"])
 def webhook():
     data = request.json
@@ -306,6 +280,7 @@ def webhook():
         key = msg_data.get("key", {})
         from_me = key.get("fromMe", False)
 
+        # O BOT NUNCA RESPONDE AO USUÁRIO NEM ENVIA MENSAGENS DE NOTIFICAÇÃO (TUDO 100% VIA DASHBOARD WEB)
         if not from_me:
             remote_jid = key.get("remoteJid", "")
             sender_number = remote_jid.split("@")[0]
@@ -320,47 +295,36 @@ def webhook():
 
             print(f"📩 [Mensagem Recebida] De: {push_name} ({sender_number}) | Texto: {text_content}")
 
-            # Comando para gerar relatório sob demanda (/relatorio)
-            if text_content.lower() in ["/relatorio", "!relatorio", "relatorio"]:
-                print(f"⚡ Solicitado relatório por {sender_number}")
-                threading.Thread(target=trigger_report_delivery, args=(sender_number,)).start()
-                return jsonify({"status": "success", "action": "report_triggered"}), 200
+            # --- PROCESSAMENTO PASSIVO EM BACKGROUND VIA IA ---
+            def process_incoming_message():
+                ai_result = ai_background_classifier(push_name, text_content)
 
-            # Filtragem de Pedidos de Oração / Nomes
-            is_prayer, names_found = check_prayer_request(text_content)
+                if ai_result:
+                    if not ai_result.get("eh_relevante", True):
+                        print(f"⏭️ Mensagem considerada irrelevante/spam pela IA: {text_content}")
+                        return
+                    
+                    category = ai_result.get("categoria", classify_category(text_content))
+                    names = ai_result.get("nomes_para_oracao", extract_names(text_content))
+                    summary = ai_result.get("resumo", "")
+                else:
+                    category = classify_category(text_content)
+                    names = extract_names(text_content)
+                    summary = ""
 
-            if is_prayer:
-                print(f"🙏 [ATENDIMENTO FILTRADO] Nomes: {names_found}")
-                
-                # 1. Salva no banco de dados local & atualiza dashboard
-                record = add_record(sender_number, push_name, text_content, names_found)
+                print(f"🧠 [IA PASSIVA] Categoria: {category} | Nomes: {names} | Resumo: {summary}")
 
-                # 2. Encaminha notificação para o número de administração (5531992536994)
-                podcast_badge = " 🎙️ *[PODCAST VENCENDO O DIVÓRCIO]*" if record['category'] == "Podcast Divórcio" else ""
-                notification_text = (
-                    f"🛡️ *HUB DA CENTRAL DE ATENDIMENTO MG*{podcast_badge}\n\n"
-                    f"👤 *Remetente:* {push_name} ({sender_number})\n"
-                    f"🏷️ *Nomes Detectados:* {record['names_found']}\n"
-                    f"📁 *Categoria:* {record['category']}\n\n"
-                    f"💬 *Mensagem Original:*\n\"{text_content}\""
-                )
-                send_text(ADMIN_NUMBER, notification_text)
+                # Salva no banco de dados local & atualiza dashboard web no ar
+                add_record(sender_number, push_name, text_content, category, names, summary)
+
+            # Roda em background para não travar a resposta da API
+            threading.Thread(target=process_incoming_message, daemon=True).start()
 
     return jsonify({"status": "success"}), 200
-
-# --- SCHEDULER DE TAREFAS ÀS 15:00 ---
-def run_scheduler():
-    schedule.every().day.at("15:00").do(trigger_report_delivery)
-    while True:
-        schedule.run_pending()
-        time.sleep(30)
 
 if __name__ == "__main__":
     update_dashboard_data(load_db())
 
-    scheduler_thread = threading.Thread(target=run_scheduler, daemon=True)
-    scheduler_thread.start()
-
     port = int(os.getenv("PORT", 5000))
-    print(f"🚀 Hub da Central de Atendimento MG rodando na porta {port}...")
+    print(f"🚀 Hub da Central de Atendimento MG (100% Via Dashboard Web) rodando na porta {port}...")
     app.run(host="0.0.0.0", port=port, debug=False)
