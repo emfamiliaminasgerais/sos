@@ -263,3 +263,40 @@
         "summary": "",
         "status": "Em Atendimento"
     },
+    {
+        "id": 23,
+        "timestamp": "2026-09-14 13:17:12",
+        "sender_number": "101726870888631",
+        "sender_name": "101726870888631",
+        "text": "Olha no momento por agora acredito que ele não consegui, por conta da cirurgia",
+        "names_found": "agora acredito que ele não consegui, conta da cirurgia",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 24,
+        "timestamp": "2026-09-14 13:17:12",
+        "sender_number": "129944621453420",
+        "sender_name": "129944621453420",
+        "text": "Tenho que ter essa consciência eu tenho notado muito para mim vencer a dúvida vencer o medo vencer os pensamentos tenho orado pedindo o Espírito santo para me dar força para me ajudar a vencer a ansiedade ansiedade de receber o Espírito santo ansiedade de querer estar mais próximo dele também",
+        "names_found": "me dar força para me ajudar, mim vencer",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 25,
+        "timestamp": "2026-09-14 13:17:12",
+        "sender_number": "101726870888631",
+        "sender_name": "101726870888631",
+        "text": "Passou pela cirurgia graças a Deus e com ajuda dos irmãos em oração ocorreu tudo bem 🙏🏻",
+        "names_found": "cirurgia graças",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    }
+]
