@@ -276,6 +276,11 @@ def is_valid_person_name(name_str):
     if first in FIRST_NAMES:
         return True
 
+    if len(words) >= 2 and len(first) >= 3:
+        first_orig = cleaned.split()[0].strip('.,!?:;"\'()[]{}')
+        if first_orig and (first_orig[0].isupper() or first_orig.isupper()):
+            return True
+
     return False
 
 def extract_names(text, push_name=''):
