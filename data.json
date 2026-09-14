@@ -8494,5 +8494,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 709,
+        "timestamp": "2026-09-14 14:42:05",
+        "sender_number": "553186857564",
+        "sender_name": "Elinete 💚",
+        "text": "Boa tarde",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
