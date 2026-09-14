@@ -48874,5 +48874,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4074,
+        "timestamp": "2026-09-14 18:55:30",
+        "sender_number": "553598980386",
+        "sender_name": "Gustavo@damasceno",
+        "text": "O contato da universal de santa Rita do Sapucaí mudou?",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
