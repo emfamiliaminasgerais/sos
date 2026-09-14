@@ -809,12 +809,13 @@
         }
 
         function generateNamesList() {
-            const period = document.getElementById('modal-period').value;
+            const periodSelect = document.getElementById('modal-period');
+            const period = periodSelect.value;
             const category = document.getElementById('modal-category').value;
             const now = new Date();
             const todayStr = formatDateLocal(now);
 
-            const namesList = [];
+            const namesMap = new Map();
 
             allData.forEach(item => {
                 let matchesDate = true;
@@ -867,8 +868,8 @@
                 if (matchesDate && matchesCategory && item.names_found && item.names_found !== "Nenhum nome extraído") {
                     item.names_found.split(",").forEach(n => {
                         const cleanName = n.trim();
-                        if (cleanName && !namesList.includes(cleanName)) {
-                            namesList.push(cleanName);
+                        if (cleanName && !namesMap.has(cleanName)) {
+                            namesMap.set(cleanName, item.timestamp || '');
                         }
                     });
                 }
@@ -877,16 +878,31 @@
             const contentDiv = document.getElementById('modal-names-content');
             const countText = document.getElementById('modal-count-text');
 
-            if (namesList.length === 0) {
+            if (namesMap.size === 0) {
                 contentDiv.innerText = "Nenhum nome específico encontrado para o período/categoria selecionado.";
                 countText.innerText = "0 nomes encontrados";
             } else {
-                let formattedText = `LISTA DE NOMES PARA ORAÇÃO (${period.toUpperCase()})\n----------------------------------------\n\n`;
-                namesList.forEach((name, idx) => {
-                    formattedText += `${idx + 1}. ${name}\n`;
+                const rawOptionText = periodSelect.options[periodSelect.selectedIndex].text;
+                const periodLabel = rawOptionText.replace(/^[^\wÀ-ÿ]+/g, '').trim();
+                let formattedText = `LISTA DE NOMES PARA ORAÇÃO (${periodLabel.toUpperCase()})\n--------------------------------------------------\n\n`;
+                
+                let idx = 1;
+                namesMap.forEach((ts, name) => {
+                    let tsFormatted = "";
+                    if (ts) {
+                        const parts = ts.split(" ");
+                        if (parts[0] && parts[0].includes("-")) {
+                            const dp = parts[0].split("-");
+                            const dStr = `${dp[2]}/${dp[1]}/${dp[0]}`;
+                            const tStr = parts[1] ? parts[1].substring(0, 5) : "";
+                            tsFormatted = ` (${dStr}${tStr ? ' às ' + tStr : ''})`;
+                        }
+                    }
+                    formattedText += `${idx}. ${name}${tsFormatted}\n`;
+                    idx++;
                 });
                 contentDiv.innerText = formattedText;
-                countText.innerText = `${namesList.length} nomes identificados`;
+                countText.innerText = `${namesMap.size} nomes identificados`;
             }
         }
 
