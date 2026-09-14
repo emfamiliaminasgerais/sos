@@ -48958,5 +48958,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4081,
+        "timestamp": "2026-09-14 20:48:46",
+        "sender_number": "553298389458",
+        "sender_name": "José Luiz",
+        "text": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
