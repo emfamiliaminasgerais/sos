@@ -8410,5 +8410,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 702,
+        "timestamp": "2026-09-14 14:38:56",
+        "sender_number": "553899526155",
+        "sender_name": "~viviane melo",
+        "text": "Não na minha cidade Não tem ela",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
