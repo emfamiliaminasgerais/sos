@@ -48754,5 +48754,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4064,
+        "timestamp": "2026-09-14 16:29:14",
+        "sender_number": "553186703387",
+        "sender_name": "José Ferreira",
+        "text": "Foi errado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
