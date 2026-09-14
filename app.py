@@ -149,35 +149,59 @@ def classify_category(text):
         return "Agradecimento"
     return "Pedidos de Oração"
 
-COMMON_NON_NAMES = {
-    'deus', 'senhor', 'jesus', 'cristo', 'bispo', 'pastor', 'pastot', 'irmão', 'irmã', 'irmao', 'irma',
-    'salmos', 'bíblia', 'biblia', 'escrituras', 'sagradas', 'podcast', 'divórcio', 'divorcio', 'casamento',
-    'boa tarde', 'bom dia', 'boa noite', 'peço oração', 'por favor', 'obrigado', 'amém', 'amen', 'família',
-    'familia', 'saúde', 'saude', 'vida', 'financeiro', 'financeira', 'cirurgia', 'hospital', 'cura',
-    'libertação', 'libertacao', 'trabalho', 'vitoria', 'vitória', 'testemunho', 'graça', 'graca', 'casa',
-    'culto', 'igreja', 'adoração', 'adoracao', 'minha', 'meu', 'minhas', 'meus', 'nossa', 'nosso', 'todos',
-    'tudo', 'conta', 'direção', 'direcao', 'força', 'forca', 'mim', 'você', 'voce', 'eles', 'elas', 'ela',
-    'ele', 'agora', 'contato', 'mensagens', 'mensagem', 'áudio', 'audio', 'imagem', 'vídeo', 'video',
-    'grupo', 'semana', 'hoje', 'ontem', 'amanhã', 'amanha', 'mesmo', 'mesma', 'também', 'tambem', 'ainda',
-    'mãe', 'mae', 'pai', 'filho', 'filha', 'marido', 'esposa', 'mulher', 'homem', 'pessoa', 'pessoas',
-    'resposta', 'dúvida', 'duvida', 'pergunta', 'ajuda', 'retorno', 'atendimento', 'contato', 'peço', 'peco',
-    'leopoldina', 'ibirité', 'ibiritê', 'confins', 'bocaiúva', 'bocaiuva', 'oliveira', 'santa clara',
-    'belo horizonte', 'uberlândia', 'uberlandia', 'juiz de fora', 'contagem', 'betim', 'montes claros',
-    'ipatinga', 'governador valadares', 'sabará', 'sabara', 'ribeirão das neves', 'neves', 'sete lagoas'
+FIRST_NAMES = {
+    'ana', 'maria', 'joão', 'joao', 'carlos', 'roberto', 'juliana', 'marilze', 'ivete', 'dafne',
+    'altair', 'alexandre', 'marcos', 'lucas', 'felipe', 'philipe', 'filipe', 'guilherme', 'gabriel',
+    'antônio', 'antonio', 'josé', 'jose', 'francisca', 'francisco', 'paulo', 'pedro', 'luiz', 'luis',
+    'manoel', 'manuel', 'raimundo', 'sebastião', 'sebastiao', 'adriana', 'sandra', 'márcia', 'marcia',
+    'luciana', 'patrícia', 'patricia', 'aline', 'camila', 'fernanda', 'vanessa', 'beatriz', 'jessica',
+    'jéssica', 'bruna', 'amanda', 'renata', 'larissa', 'débora', 'debora', 'priscila', 'sabrina',
+    'tatiana', 'viviane', 'natália', 'natalia', 'elaine', 'marilda', 'fatima', 'fátima', 'sara',
+    'sueli', 'creuza', 'joana', 'isabel', 'isabele', 'lazaro', 'lázaro', 'daniel', 'wesley', 'simone',
+    'rosimere', 'gutemberg', 'vanderlei', 'janaina', 'lourdes', 'nicolas', 'walter', 'alice', 'marcio',
+    'márcio', 'janice', 'thereza', 'zaira', 'jessé', 'jesse', 'haroldo', 'deivisson', 'ivonete', 'paôla',
+    'paola', 'rosângela', 'rosangela', 'cláudio', 'claudio', 'moraes', 'joaquim', 'eliana', 'waldemir',
+    'silva', 'ferreira', 'gutemberg', 'barbosa', 'roberto', 'creuza', 'dyvaneia', 'leandro', 'alberta',
+    'ricardo', 'eduardo', 'rodrigo', 'gustavo', 'bruno', 'tiago', 'thiago', 'diego', 'rafael', 'vitor',
+    'víctor', 'matheus', 'mateus', 'leonardo', 'marcelo', 'andré', 'andre', 'fábio', 'fabio', 'caio'
 }
 
-def is_real_name(word_str):
-    cleaned = word_str.strip()
-    words = cleaned.split()
+INVALID_WORDS = {
+    'bahia', 'minas', 'goiás', 'goias', 'paraná', 'parana', 'amazonas', 'piauí', 'piaui', 'pernambuco',
+    'mato', 'sergipe', 'roraima', 'distrito', 'região', 'regiao', 'norte', 'sul', 'leste', 'oeste',
+    'rondônia', 'rondonia', 'tocantins', 'amapá', 'amapa', 'alagoas', 'espírito', 'espirito', 'santo',
+    'santa', 'são', 'sao', 'rio', 'mercado', 'mercadinho', 'quitanda', 'hortifruti', 'limpeza', 'unidade',
+    'prefeitura', 'governo', 'hospital', 'vila', 'bairro', 'rua', 'avenida', 'praça', 'praca', 'cidade',
+    'cigarro', 'oração', 'oracao', 'fogo', 'sobre', 'you', 'what', 'horas', 'janeiro', 'fevereiro',
+    'março', 'marco', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro',
+    'dezembro', 'pedra', 'princesa', 'boa', 'santana', 'bom', 'bernardino', 'campo', 'bonsucesso',
+    'verdelandia', 'mogi', 'juiz', 'teófilo', 'teofilo', 'sou', 'país', 'pais', 'brasil', 'argentina',
+    'áfrica', 'africa', 'mercearia', 'enfermagem', 'unidade', 'penha', 'centro', 'sudeste', 'nordeste',
+    'federal', 'macaé', 'macae', 'matias', 'taquaraçu', 'taquaracu', 'sabará', 'sabara', 'neves', 'lagoas',
+    'moura', 'leopoldina', 'ibirité', 'ibiritê', 'confins', 'bocaiúva', 'bocaiuva', 'oliveira', 'santa clara',
+    'belo horizonte', 'uberlândia', 'uberlandia', 'juiz de fora', 'contagem', 'betim', 'montes claros',
+    'ipatinga', 'governador valadares', 'sete lagoas', 'deus', 'senhor', 'jesus', 'cristo', 'bispo', 'pastor'
+}
+
+def is_valid_person_name(name_str):
+    cleaned = name_str.strip()
+    words = [w.lower().strip('.,!?:;"\'()[]{}') for w in cleaned.split()]
     if not words or len(cleaned) < 3:
         return False
+    
     for w in words:
-        w_clean = w.lower().strip('.,!?:;"\'()[]{}')
-        if w_clean in COMMON_NON_NAMES or len(w_clean) < 2 or w_clean.isdigit():
+        if w in INVALID_WORDS or w.isdigit():
             return False
-        if not w[0].isupper():
-            return False
-    return True
+            
+    first = words[0]
+    if first in FIRST_NAMES:
+        return True
+        
+    if len(words) >= 2:
+        if first[0].isupper() or first.isupper():
+            return True
+
+    return False
 
 def extract_names(text, push_name=''):
     names = set()
@@ -186,25 +210,25 @@ def extract_names(text, push_name=''):
     m_name = re.search(r'\bmeu\s+nome\s+[eé:]?\s*([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', text, re.IGNORECASE)
     if m_name:
         cand = m_name.group(1).strip()
-        if is_real_name(cand):
+        if is_valid_person_name(cand):
             names.add(cand)
 
     # 2. Preposições de indicação de nome
     matches = re.findall(r'(?:por|pelo|pela|para|p/|de|irmã|irmão|nome[s]?[:]?)\s+([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', text)
     for m in matches:
         cand = m.strip()
-        if is_real_name(cand):
+        if is_valid_person_name(cand):
             names.add(cand)
 
     # 3. Nomes próprios compostos no texto
     cap_sequences = re.findall(r'\b([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)\b', text)
     for seq in cap_sequences:
         cand = seq.strip()
-        if is_real_name(cand):
+        if is_valid_person_name(cand):
             names.add(cand)
 
     # 4. Fallback: se a mensagem é um pedido pessoal e push_name for um nome real válido
-    if not names and push_name and is_real_name(push_name):
+    if not names and push_name and is_valid_person_name(push_name):
         if any(w in text.lower() for w in ['mim', 'minha', 'meu', 'peço', 'peco', 'oracao', 'oração']):
             names.add(push_name)
 
