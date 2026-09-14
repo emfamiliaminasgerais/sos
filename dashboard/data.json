@@ -442,5 +442,29 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 38,
+        "timestamp": "2026-09-14 13:10:01",
+        "sender_number": "129944621453420",
+        "sender_name": "129944621453420",
+        "text": "E onde que a gente voltar a conversar eu não tava conseguindo fazer praticamente nada das coisas de Deus depois que ele voltou a conversar comigo eu tô conseguindo fazer algumas coisas como não tava conseguindo abrir jejum não tô conseguindo abrir jejum com muita dificuldade",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 39,
+        "timestamp": "2026-09-14 13:10:01",
+        "sender_number": "129944621453420",
+        "sender_name": "129944621453420",
+        "text": "Eu quero. Fazer abra de Deus.  Ele. Também.  Sejo. Obra no altar junto",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
