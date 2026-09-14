@@ -8878,5 +8878,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 741,
+        "timestamp": "2026-09-14 15:07:19",
+        "sender_number": "553488376448",
+        "sender_name": "Roberto Eduardo",
+        "text": "Boa tarde sou dê Araguari MG",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
