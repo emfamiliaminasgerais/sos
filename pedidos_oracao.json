@@ -7906,5 +7906,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 660,
+        "timestamp": "2026-09-14 14:24:04",
+        "sender_number": "555399620805",
+        "sender_name": ".",
+        "text": "Sao joao del rei",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
