@@ -586,5 +586,65 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 50,
+        "timestamp": "2026-09-14 13:40:52",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Peço oração pelo trabalho e na vida sentimental",
+        "names_found": "Nenhum nome extraído",
+        "category": "Financeiro",
+        "sub_tag": "Financeiro",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 51,
+        "timestamp": "2026-09-14 13:40:53",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "A minha esposa pediu divórcio eu não quero divórcio mas tive que assinar os papel ela não deu entrada ainda já tem umas vendas quatro meses separado ela foi pra casa da mãe e eu estou aqui só estou lutando e não aceito perder meu casamento o motivo foi ciúme possessivo",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 52,
+        "timestamp": "2026-09-14 13:40:53",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Boa noite estou aqui assistindo o podcast Vencendo O Divórcio esse programa é muito bom tem assistido",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 53,
+        "timestamp": "2026-09-14 13:40:53",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Justamente o que eu falei na msg 🥺viúva de marido vivo",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 54,
+        "timestamp": "2026-09-14 13:40:53",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "E tenho uma filha de 13 anos, porem meu esposo  nao gosta dela  e maltrata  ela ,",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
