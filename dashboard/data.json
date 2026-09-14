@@ -10522,5 +10522,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 878,
+        "timestamp": "2026-09-14 15:34:01",
+        "sender_number": "553195413541",
+        "sender_name": "Priscila",
+        "text": "Carro eu moro na área rural",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
