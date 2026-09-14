@@ -10534,5 +10534,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 879,
+        "timestamp": "2026-09-14 15:37:15",
+        "sender_number": "553192539138",
+        "sender_name": "Sâmella Santos - MG",
+        "text": "Jessika gomes rocha nunes",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
