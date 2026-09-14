@@ -8590,5 +8590,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 717,
+        "timestamp": "2026-09-14 14:46:08",
+        "sender_number": "553186857564",
+        "sender_name": "Elinete 💚",
+        "text": "Quais os horários na terça feira?",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
