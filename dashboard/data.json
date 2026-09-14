@@ -8398,5 +8398,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 701,
+        "timestamp": "2026-09-14 14:38:47",
+        "sender_number": "553191728873",
+        "sender_name": "max",
+        "text": "Muito obrigado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
