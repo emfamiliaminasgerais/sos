@@ -1,738 +1,139 @@
-LISTA DE NOMES PARA ORAÇÃO (ALL)
-----------------------------------------
+LISTA DE NOMES PARA ORAÇÃO (DESDE SEXTA-FEIRA ATÉ HOJE (RECOMENDADO))
+--------------------------------------------------
 
-1. Marilze Teixeira
-2. Juliana Januaria
-3. Moura
-4. Alexandre Dutra
-5. Altair Lopes
-6. Dafne Alves
-7. Santa Clara
-8. Quero
-9. Horas 
-Prefeitura
-10. Janeiro
-11. Governo Federal
-12. Macaé
-13. Matias Cardoso
-14. Thereza Cristina
-15. São Paulo
-16. Zaira Francisca
-17. Marcos Paulo
-18. Maria Barbosa
-19. Cláudio
-20. Belo Horizonte
-21. Souza Lima
-22. Jessé Daniel
-23. Haroldo José
-24. África 
-Pedido
-25. Moraes
-26. Guilhermina
-27. What Is
-28. Minas
-29. Brasília
-30. Filipe Lopes
-31. Santa Barbara
-32. Taquaraçu
-33. Elaine
-34. Avenida Santos
-35. Deivisson Aparecido
-36. Bruna Vieira
-37. Enfermagem
-38. Francisco Fernandes
-39. Souza Linhares
-40. Carlos Henrique
-41. Leandro Gabriel
-42. Ivonete Soares
-43. Mello
-44. Marilda Lessa
-45. Dias Pereira
-46. Ana Patrícia
-47. Paiva
-48. Fátima Aparecida
-49. María Soares
-50. Damásio Domingues
-51. Sara Cristina
-52. Gomes Barbosa
-53. Lima
-54. Graças Lima
-55. Santos Nascimento
-56. Luiz Antonio
-57. Souza
-58. Luiz Antônio
-59. Unidade Penha
-60. Penha
-61. Rio Prefeitura
-62. Paôla
-63. Luiz Carlos
-64. Saber
-65. Mogi Das
-66. Juiz De
-67. Vila Cintra
-68. Juiz De Fora
-69. Alice Pires
-70. Márcio Cunha
-71. Janice Duarte
-72. Brasil
-73. Teófilo Otoni
-74. Sou Juliana
-75. Teófilo Otoni 
-Sou
-76. Cigarro
-77. Oração
-78. Fogo
-79. Pedra Branca
-80. Pedra Lavrada
-81. Pedro Regis
-82. José
-83. Princesa Isabel
-84. Mamanguape
-85. Caldas Brandão
-86. Boa Ventura
-87. Boa Vista
-88. Santana
-89. Bom Sucesso
-90. Santa Fé
-91. São Miguel
-92. Santa Rosa
-93. Bernardino Batista
-94. Região Norte
-95. Região Sul
-96. Rondônia Porto
-97. Tocantins Palmas
-98. Sul Campo
-99. Janeiro  Río
-100. Bahia Salvador
-101. Sul Porto
-102. Maranhão São
-103. Pará Belém
-104. Norte Natal
-105. Acre Rio
-106. Amapá Macapá
-107. Alagoas Maceió
-108. Minas Gerais
-109. Goiás Goiânia
-110. Paraná Curitiba
-111. Santa Catarina
-112. Amazonas  Manaus
-113. Espírito Santo
-114. Piauí Teresina
-115. Região Nordeste
-116. Pernambuco Recife
-117. Mato Grosso
-118. Região Centro
-119. Região Sudeste
-120. Rio Grande
-121. Paraíba João
-122. Sergipe Aracajú
-123. Roraima Boa
-124. Distrito Federal
-125. Joaquim Esteves
-126. Eliana Lage
-127. Waldemir Soares
-128. Silva Junior
-129. Itabira
-130. Elence Lage
-131. Ferreira Cabral
-132. Simone Passos
-133. Rosimere Passos
-134. Gutemberg Moreira
-135. Vanderlei José
-136. Santos Barbosa
-137. Santos 
-Pedro
-138. Larissa Emanuelly
-139. Barbosa Gonçalves
-140. Janaina Fernanda
-141. Andrade
-142. Roberto Alves
-143. Lourdes Reis
-144. Lourdes Reis Soares
-145. Silva Jardim
-146. Creuza Maria
-147. Campo Grande
-148. Sueli Rosa
-149. Bonsucesso
-150. Thaís Ribeiro
-151. Nicolas Moraes
-152. Lima Souza
-153. Sobre
-154. Dyvaneia
-155. Verdelandia
-156. Dna Joana
-157. Horas 
-Bangu
-158. María Tereza
-159. Castro Ferreira
-160. Limpeza Hospitalar
-161. Isabel Coutinho
-162. Souza Mendes
-163. Leandro Alves
-164. Almeida
-165. Ana Alice
-166. Walter Lopes
-167. Isabele Barreto
-168. Fraga 
-Gentil
-169. Ana Caroline
-170. Lázaro
-171. Daniel
-172. Wesley Martins
-173. Alvarenga
-174. Argentina
-175. Libertaçâo
-176. You
-177. Ipanema
-178. Clementino Fraga
-179. Souza Aguiar
-180. Mogi Das Cruzes
-181. Mogi
-182. Lucas Gonçalves
-183. Freitas
-184. Mercado Israel
-185. Mercado Barato
-186. Nova Mercearia
-187. Quitanda Paraíso
-188. Mercadinho Praça
-189. Mercado Carmense
-190. Hortifruti Cidade
-191. Mercado Domingues
-192. Supermercado Atacarejo
-193. Pela Fé
-194. Armazém Mário
-195. Mercado Jaqueira
-196. Mercado Bairro
-197. Mercado Paraíso
-198. Padaria Vila
-199. Supermercado Bahamas
-200. Mercado Marreta
-201. Armazém Rural
-202. Bahamas Mix
-203. Espanha
-204. Mercado Álamo
-205. Mercado Tend
-206. Além Paraíba
-207. Mercado Panela
-208. Armazém Boca
-209. Supermercado Triângulo
-210. Menos
-211. Mercado Jabel
-212. Supermercado Santa
-213. Santo Antônio
-214. Mercado Angustura
-215. Mercado Goiabal
-216. Mercado Novo
-217. Quitanda Vila
-218. Mercado Naturalém
-219. Alta
-220. Câmara Municipal
-221. Supermercados Atacadão
-222. Supermercados Fluminense
-223. Supermercados Três
-224. Supermercado Paduano
-225. Miracema Prefeitura
-226. Itaocara Prefeitura
-227. Pirapetinga Mg
-228. Supermercados Bom
-229. Goytacazes Prefeitura
-230. Itaperuna Prefeitura
-231. Pádua
-232. Aperibé Prefeitura
-233. Supermercados Granja
-234. Supermercados Economizando
-235. Padaria Dois
-236. Dias Confeitaria
-237. Padaria Fornalha
-238. Padaria Doce
-239. Produtos Alimentícios
-240. Padaria Pão
-241. Real Pan
-242. Lanchonete Ki
-243. Mel
-244. Confeitaria Bom
-245. Confeitaria Bela
-246. Padaria Sabor
-247. Padaria Recanto
-248. Padaria Pop
-249. Tempera Padaria
-250. Pádua Distribuidora
-251. Confeitaria Farol
-252. Rio Das
-253. Hospitais Municipais
-254. Piquet Carneiro
-255. Barata Ribeiro
-256. Centro Municipal
-257. Cardoso Fontes
-258. Policlínica Universitária
-259. Lourenço Jorge
-260. Centro Carioca
-261. Miguel Couto
-262. Placi Botafogo
-263. Rocha Maia
-264. Albert Sabin
-265. Especialidades
-266. Urologista
-267. Otorrinolaringologia
-268. Neurocirurgia
-269. Cardiologista
-Serviço
-270. Ambulatório Pé
-271. Farmácia Hospitalar
-272. Cisne Branco
-273. Secretaria Geral
-274. Neurologista
-275. Pneumologista
-276. Serviço Voluntárias
-277. Hemoterapia
-278. Fisioterapia
-279. Administração
-280. Marinha 
-Ministério
-281. Ouro Fino
-282. São Lourenço
-283. Águas Prata
-284. Pureza Vital
-285. Terminal Fiocruz
-286. Terminal Cardoso
-287. Terminal Santa
-288. Terminal Gentileza
-289. Terminal Ibiapina
-290. Terminal Penha
-291. Terminal Vasco
-292. Terminal Olaria
-293. Terminal Baixa
-294. Instituto Médico
-295. Boa Noite
-296. Poços
-297. Caldas
-298. Sim
-Eu
-299. Dinalva Soares
-300. Soares Santos
-301. José Wilian
-302. Depressão Tem
-303. Ola
-Boa
-304. Dele
-305. Sair
-306. Recursos Humanos
-307. Serviço Social
-308. Risco Cirúrgico
-309. Arquivo Médico
-310. Sangue
-311. Rede Varejão
-312. Varejão Hortifruti
-313. Hortifruti Rede
-314. Tarso
-315. Daniella 
-Gostaria
-316. Vanessa Mansur
-317. Daiana
-318. Leide Daiana
-319. Alma Dela
-320. Sem Problema
-321. Dia Que
-322. Que Tinha
-323. Uma Oficial
-324. Me Preocupo
-325. Jovens Na
-326. Ser Em Minas Gerais
-327. Me Orientou
-328. Pois Estou
-329. Em Florianópolis
-330. Que Eu
-331. Imaginei Pelo
-332. Me Pediu
-333. Por Isso
-334. Ser Em
-335. Estiver Na
-336. Não Está
-337. Já Eu
-338. Bem Está
-339. Estou Curado
-340. Não Sabia
-341. Consigo Conversar
-342. Cidade Onde
-343. Problema Está
-344. Estou No
-345. Pq Quer
-346. Qualquer Custo
-347. Mas Eu
-348. Joice Pereira
-349. Vitor José
-350. Silva Lopes
-351. Borges Guimarães
-352. Costa Santiago
-353. Comlurb Educação
-354. No Dia
-355. Uma Aconteceu
-356. Estávamos Bem
-357. Acredito Que
-358. Pode Ficar
-359. Cirurgias Em
-360. Maracajá
-361. Aniversário Dela
-362. Março
-363. Salvação Dela
-364. Ocorrido Comigo
-365. Ficar Assim
-366. Que Isso
-367. Quando Saí
-368. Foi No
-369. Fevereiro Deste Ano
-370. Fevereiro Deste
-371. Magoada Comigo
-372. Maravilhosa Como
-373. Em Choque
-374. Eu Mudou
-375. No Seu
-376. Quando Estive
-377. Não Sou
-378. Que Tentaram
-379. Encontra Maracajá
-380. Homicídio Na
-381. Quero Sempre
-382. Sem Perceber
-383. Hj Não
-384. Fui Ameaçado
-385. Está Cuidando
-386. Fez Por
-387. Não Interage
-388. Ali Percebi
-389. Até Hj
-390. Mas Não
-391. Na Obra
-392. Teve Em
-393. Eu Fiquei
-394. Vigília Que
-395. Era Policial
-396. Que Participei
-397. Anos Que
-398. Hj Vejo
-399. Quando Estive Na Obra
-400. Tanto Que
-401. Hj Moro
-402. Quando Interagiu
-403. Me Amava
-404. Tentei Resumir
-405. No Altar
-406. Estavam Traficando
-407. Ou Fôssemos
-408. Eu Depois
-409. Para Cá
-410. Jeito Que
-411. Vigília Que Teve Em Florianópolis
-412. Dois Jovens
-413. Ficou As
-414. Pedi Que
-415. Pois Os
-416. Tão Sem
-417. Sofri Uma
-418. Conceição
-419. Sou Keila
-420. Geovana Pereira
-421. Auto Viação
-422. São Vicente
-423. São Fernando
-424. Piranhas
-425. Campo Redondo
-426. Coronel João
-427. Pedras
-428. Velhos
-429. Rodolfo Fernandes
-430. Serra Negra
-431. Tenente Laurentino
-432. Rafael Godeiro
-433. Ruy Barbosa
-434. Serra Caiada
-435. Baía Formosa
-436. São João
-437. Angicos
-438. Santa Maria
-439. Nova Cruz
-440. Pedro Avelino
-441. Santa Cruz
-442. Sítio Novo
-443. Coronel Ezequiel
-444. São José
-445. Severiano Melo
-446. Lagoa Nova
-447. Monte Alegre
-448. Tenente Ananias
-449. Ouro Branco
-450. Almino Afonso
-451. Pedro Velho
-452. Frutuoso Gomes
-453. Água Nova
-454. Nisia Floresta
-455. Marcelino Vieira
-456. São Rafael
-457. Afonso Bezerra
-458. Areia Branca
-459. Doutor Severiano
-460. Messias Targino
-461. São Gonçalo
-462. Bento Fernandes
-463. Lajes Pintadas
-464. São Tomé
-465. Triunfo Potiguar
-466. Currais Novos
-467. Senador Georgino
-468. João Camará
-469. Macaúbas Major
-470. Vera Cruz
-471. Fernando Pedrosa
-472. Antonio Martins
-473. Pedra Grande
-474. Senador Eloi
-475. Governador Dix
-476. São Bento
-477. João Dias
-478. Felipe Guerra
-479. Luiz Gomes
-480. Poço Branco
-481. São Pedro
-482. Vela Flor
-483. Pedra Preta
-484. Lagoa Salgada
-485. Lelmo Marinho
-486. Taboleiro Grande
-487. Francisco Dantas
-488. São Francisco
-489. Diego Vaz
-490. Jorge Canella
-491. Vera Lins
-492. Luiz Ramos
-493. Carlos Caiado
-494. Márcio Ribeiro
-495. Mônica Benício
-496. Rosa Fernandes
-497. Helena Vieira
-498. Wellington Dias
-499. Vitor Hugo
-500. Márcio Santos
-501. Carlos Bolsonaro
-502. Leniel Borel
-503. William Siri
-504. Rick Azevedo
-505. Felipe Boró
-506. Felipe Michel
-507. Talita Galhardo
-508. Átila Nunes
-509. Joyce Trindade
-510. Rafael Aloísio
-511. Paula
-512. Inaldo Silva
-513. Marcelo Diniz
-514. Tânia Bastos
-515. César Maia
-516. Amigo Binho
-517. Júlio Piu
-518. Marquinho Dentista
-519. Armandinho Penelis
-520. Sandro Lélis
-521. Alex Freitas
-522. Marquinho Gandra
-523. Vereadores Eleitos
-524. André Feijão
-525. Dudu Canella
-526. Júnior Ulos
-527. Valdecy Nunes
-528. Marcelo Irineu
-529. Vitinho Grandão
-530. Michele Tavares
-531. Henrique Farofa
-532. Beto Gabriel
-533. Belford Roxo
-534. Rodrigo Gomes
-535. Eduardo Moreira
-536. Leandro Guimarães
-537. Fernanda Costa
-538. Giorgio Monteiro
-539. Claudio Thomaz
-540. Junior Reis
-541. Tuninho Medeiros
-542. Caxias
-543. Duque
-544. Sidney Canella
-545. Nova Viçosa
-546. Viação Rio
-547. Itapemirim
-548. Espera Feliz
-549. Governador Valadares
-550. Universitária
-551. Cidade Universitária
-552. Miguel Pedro
-553. Roberto Chabo
-554. Álvaro Ramos
-555. Neurologia
-556. Maria Bacelar
-557. Assis
-558. Carlos Chagas
-559. Marcílio Dias
-560. Cérebro Paulo
-561. Felippe Pinel
-562. Búzios
-563. Hospitai Municipal
-564. Instituto Municipal
-565. Ronaldo Gazolla
-566. Alberto Torres
-567. Diabetes
-568. Pediatra Martagão
-569. Rodolpho Perisse
-570. João Batista
-571. Pedro Ernesto
-572. Estaduais Federais
-573. Paulo
-574. Nova Iguaçu
-575. Instituto Estadual
-576. Polícia Militar
-577. Niterói
-578. Paula Souza
-579. Neurologia Deolindo Couto
-580. Clínica Neurológica
-581. Instituto Fernandes
-582. Neurologia Deolindo
-583. Juscelino Kubitschek
-584. Infantil Padre
-585. Endocrinologia Luiz
-586. Albert Schweitzer
-587. Portugal
-588. Antonio Pedro
-589. Puericultura
-590. Rio Preto
-591. Água Doce
-592. Presidente Kennedy
-593. Baixo Guandu
-594. João Neiva
-595. Vila Valério
-596. Boa Esperança
-597. Jetibá
-598. Município
-599. Pedro Canário
-600. São Gabriel
-601. Ponto Belo
-602. Nova Venicia
-603. Vila Velha
-604. Rio Bananal
-605. São Roque
-606. São Matheus
-607. Domingos Martins
-608. Águia Branca
-609. Fundão 
-
-Letra
-610. Alfredo Chaves
-611. Jerônimo Monteiro
-612. Afonso Cláudio
-613. Santa Teresa
-614. Muniz Freire
-615. Governador Lindembergue
-616. Alto Rio
-617. Vila Pavão
-618. Marechal Floriano
-619. São Domingos
-620. Rio Novo
-621. Atílio Vivacqua
-622. Vargem Alta
-623. Daisy Fontoura
-624. Silva Borges
-625. Deise Lucia
-626. Alexandre Lopes
-627. Silva Rosa
-628. Maria Augusta
-629. Luzia Mara
-630. Santos Silva
-631. Carmo Bernardo
-632. Souza Melo
-633. Pablo Marques
-634. Maria Ferreira
-635. Matheus Felipe
-636. Josefa Lucena
-637. Medeiros Abreu
-638. Fátima Martins
-639. Santos Alves
-640. Araújo
-641. Patrícia Cardoso
-642. Fernando Cordeiro
-643. Rabelo
-644. Gael Azevedo
-645. Andrade Rabelo
-646. Luciano Davi
-647. Elizabete Maria
-648. Comercial Agrícola
-649. Wallace Yan
-650. Leila Maria
-651. Michele Cordeiro
-652. Rayane Lorena
-653. Sophia Franco
-654. Fátima Martins Cordeiro
-655. Eduardo Gonçalves
-656. Raimundo Mendes
-657. Barros
-658. Wendell Jeferson
-659. José Roberto
-660. Medicação
-661. Farias
-662. Rosângela Mathias
-663. Guilherme Veiga
-664. Ana Alves
-665. Wanderley Alves
-666. Souza Andrade
-667. Livine Angelote
-668. Nicolly Carvalho
-669. Sandra Cassiano
-670. Luiza Vetorassi
-671. Silva Santos
-672. Sandra Gonçalves
-673. Freitas Santiago
-674. Lory Peixoto
-675. Natália Costa
-676. Siqueira Pereira
-677. José Laércio
-678. Miguel Lopes
-679. Azevedo
-680. Sérgio Carvalho
-681. Sônia Maria
-682. Wenderson Silva
-683. Moreira Santos
-684. Consultório Pediátrico
-685. Ilza Lima
-686. Joana Darc
-687. Avelino
-688. Pedro Henrique
-689. Silva Braga
-690. Carvalho
-691. Costa Cortês
-692. Maria Sônia
-693. Nascimento Delgado
-694. Jorge Silva
-695. Yago Santos
-696. Rocha Barros
-697. Silva Rodrigues
-698. Carlos André
-699. Heitor Gomes
-700. Severino Ferreira
-701. Davi Lucas
-702. Pedro Marcos
-703. Misericórdia
-704. Álvaro Rodrigues
-705. Oftalmologia
-706. Olhos Dr
-707. Olhos Vila
-708. Centro Cirúrgico
-709. Nova América
-710. Júlio Candido
-711. Centro Médico
-712. Centro Oftalmológico
-713. Rio Visão
-714. Instituto Provisão
-715. Brito
-716. Meriti
-717. Catarata Madureira
-718. Olhos
-719. Instituto Brasileiro
-720. Oftalmologistas Barra
-721. Luiz Raksa
-722. Minas Mg
+1. Alexandre (14/09/2026 às 14:35)
+2. Iago Diniz (14/09/2026 às 14:26)
+3. Priscila (14/09/2026 às 14:05)
+4. Haroldo Jose Barbosa (14/09/2026 às 13:55)
+5. Luiz Raksa (14/09/2026 às 13:53)
+6. Lucas Gonçalves (14/09/2026 às 13:53)
+7. Conceição (14/09/2026 às 13:53)
+8. Lucas viana (14/09/2026 às 13:53)
+9. Geovana Pereira (14/09/2026 às 13:53)
+10. Ruy Barbosa (14/09/2026 às 13:53)
+11. Bento Fernandes (14/09/2026 às 13:53)
+12. Pedro Avelino (14/09/2026 às 13:53)
+13. Pedro Velho (14/09/2026 às 13:53)
+14. Francisco Dantas (14/09/2026 às 13:53)
+15. João Dias (14/09/2026 às 13:53)
+16. Afonso Bezerra (14/09/2026 às 13:53)
+17. Luiz Gomes (14/09/2026 às 13:53)
+18. Fernando Pedrosa (14/09/2026 às 13:53)
+19. Antonio Martins (14/09/2026 às 13:53)
+20. Rafael Godeiro (14/09/2026 às 13:53)
+21. Felipe Guerra (14/09/2026 às 13:53)
+22. João Camará (14/09/2026 às 13:53)
+23. Rodolfo Fernandes (14/09/2026 às 13:53)
+24. Luiz Ramos Filho (14/09/2026 às 13:53)
+25. William Siri (14/09/2026 às 13:53)
+26. César Maia (14/09/2026 às 13:53)
+27. Rafael Aloísio Freitas (14/09/2026 às 13:53)
+28. Diego Vaz (14/09/2026 às 13:53)
+29. Helena Vieira (14/09/2026 às 13:53)
+30. Mônica Benício (14/09/2026 às 13:53)
+31. Márcio Santos (14/09/2026 às 13:53)
+32. Tânia Bastos (14/09/2026 às 13:53)
+33. Wellington Dias (14/09/2026 às 13:53)
+34. Márcio Ribeiro (14/09/2026 às 13:53)
+35. Jorge Canella (14/09/2026 às 13:53)
+36. Marcelo Diniz (14/09/2026 às 13:53)
+37. Felipe Boró (14/09/2026 às 13:53)
+38. Felipe Michel (14/09/2026 às 13:53)
+39. Paula (14/09/2026 às 13:53)
+40. Talita Galhardo (14/09/2026 às 13:53)
+41. Vitor Hugo (14/09/2026 às 13:53)
+42. Claudio Thomaz (14/09/2026 às 13:53)
+43. Michele Tavares (14/09/2026 às 13:53)
+44. André Feijão (14/09/2026 às 13:53)
+45. Fernanda Costa (14/09/2026 às 13:53)
+46. Rodrigo Gomes (14/09/2026 às 13:53)
+47. Junior Reis (14/09/2026 às 13:53)
+48. Alex Freitas (14/09/2026 às 13:53)
+49. Júnior Ulos (14/09/2026 às 13:53)
+50. Marcelo Irineu (14/09/2026 às 13:53)
+51. Eduardo Moreira (14/09/2026 às 13:53)
+52. Júlio Piu (14/09/2026 às 13:53)
+53. Henrique Farofa (14/09/2026 às 13:53)
+54. Leandro Guimarães (14/09/2026 às 13:53)
+55. Afonso Cláudio (14/09/2026 às 13:53)
+56. Pedro Canário (14/09/2026 às 13:53)
+57. Alfredo Chaves (14/09/2026 às 13:53)
+58. João Neiva (14/09/2026 às 13:53)
+59. Paulo (14/09/2026 às 13:53)
+60. Paula Souza (14/09/2026 às 13:53)
+61. José Laércio (14/09/2026 às 13:53)
+62. Luiza Vetorassi Paiva (14/09/2026 às 13:53)
+63. José Roberto (14/09/2026 às 13:53)
+64. Maria Augusta (14/09/2026 às 13:53)
+65. Miguel Lopes Roque (14/09/2026 às 13:53)
+66. Pedro Marcos Moreira Santos (14/09/2026 às 13:53)
+67. Maria Sônia Moreira dos Santos de Azevedo (14/09/2026 às 13:53)
+68. Matheus Felipe Camello (14/09/2026 às 13:53)
+69. Michele Cordeiro (14/09/2026 às 13:53)
+70. Davi Lucas Alves (14/09/2026 às 13:53)
+71. Wanderley Alves Barbosa (14/09/2026 às 13:53)
+72. Patrícia Cardoso (14/09/2026 às 13:53)
+73. Pedro Henrique Frasson (14/09/2026 às 13:53)
+74. Pablo Marques Peixoto (14/09/2026 às 13:53)
+75. Cláudio de Souza Melo (14/09/2026 às 13:53)
+76. Fátima Martins Cordeiro (14/09/2026 às 13:53)
+77. Heitor Gomes (14/09/2026 às 13:53)
+78. Severino Ferreira de Lima (14/09/2026 às 13:53)
+79. Nicolly Carvalho (14/09/2026 às 13:53)
+80. Joana Darc (14/09/2026 às 13:53)
+81. Maria Augusta de Medeiros Abreu (14/09/2026 às 13:53)
+82. Luzia Mara Martins (14/09/2026 às 13:53)
+83. Guilherme Veiga (14/09/2026 às 13:53)
+84. Maria de Fátima Martins Cordeiro (14/09/2026 às 13:53)
+85. Natália Costa (14/09/2026 às 13:53)
+86. Maria Ferreira (14/09/2026 às 13:53)
+87. José Roberto de Araújo (14/09/2026 às 13:53)
+88. Ana Alves Vilela (14/09/2026 às 13:53)
+89. Deise Lucia Siqueira Pereira (14/09/2026 às 13:53)
+90. Sônia Maria Matosinhos (14/09/2026 às 13:53)
+91. Rosângela Mathias da Conceição (14/09/2026 às 13:53)
+92. Sérgio Carvalho (14/09/2026 às 13:53)
+93. Alexandre Lopes (14/09/2026 às 13:53)
+94. Leila Maria Brás (14/09/2026 às 13:53)
+95. Yago Santos (14/09/2026 às 13:53)
+96. Heitor Gomes de Freitas (14/09/2026 às 13:53)
+97. Raimundo Mendes (14/09/2026 às 13:53)
+98. Carlos André da Rocha Barros (14/09/2026 às 13:53)
+99. Sérgio Carvalho de Souza (14/09/2026 às 13:53)
+100. Severino Ferreira (14/09/2026 às 13:53)
+101. Luciano Davi Souza Andrade (14/09/2026 às 13:53)
+102. Ana Vitória (14/09/2026 às 13:53)
+103. Leila Maria Brás de Lima (14/09/2026 às 13:53)
+104. Maria Ferreira do Vale (14/09/2026 às 13:53)
+105. Carlos André (14/09/2026 às 13:53)
+106. Yasmin Vitória dos Santos (14/09/2026 às 13:53)
+107. Sandra Cassiano (14/09/2026 às 13:53)
+108. Joana Darc da Costa Cortês (14/09/2026 às 13:53)
+109. Nicolly Carvalho de Barros (14/09/2026 às 13:53)
+110. Luiz Antonio Vieira (14/09/2026 às 13:53)
+111. Maria do Carmo Bernardo dos Santos (14/09/2026 às 13:53)
+112. Eduardo Gonçalves (14/09/2026 às 13:53)
+113. Yasmin Vitória (14/09/2026 às 13:53)
+114. Pedro Henrique Frasson da Fonseca (14/09/2026 às 13:53)
+115. Maria Sônia Moreira (14/09/2026 às 13:53)
+116. Gabriela dos Santos de Almeida (14/09/2026 às 13:53)
+117. Rosângela Mathias (14/09/2026 às 13:53)
+118. Fernando Cordeiro da Costa (14/09/2026 às 13:53)
+119. Natália Costa de Farias (14/09/2026 às 13:53)
+120. Yago Santos do Nascimento Delgado (14/09/2026 às 13:53)
+121. Fernando Cordeiro (14/09/2026 às 13:53)
+122. Júlio Candido (14/09/2026 às 13:53)
+123. Álvaro Rodrigues (14/09/2026 às 13:53)
+124. Marcos Paulo (14/09/2026 às 13:53)
+125. Vitória Pela (14/09/2026 às 13:53)
+126. Vitor José Borges Guimarães (14/09/2026 às 13:53)
+127. Samuel da Costa Santiago (14/09/2026 às 13:53)
+128. Vanessa Mansur (14/09/2026 às 13:53)
+129. Daiana (14/09/2026 às 13:53)
+130. Ivete soares (13/09/2026 às 01:36)
+131. Marilze Teixeira Carvalho (12/09/2026 às 20:55)
+132. Juliana Januaria (11/09/2026 às 19:50)
+133. Alexandre Dutra (11/09/2026 às 15:09)
+134. Altair Lopes (11/09/2026 às 15:09)
+135. Dafne Alves (11/09/2026 às 12:35)
+136. Renato Cardoso (14/09/2026 às 14:47)
