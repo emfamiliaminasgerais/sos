@@ -814,5 +814,17 @@
         "sub_tag": "Podcast Vencendo o Divórcio",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 69,
+        "timestamp": "2026-09-14 13:40:56",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Queria pedir uma  oração pra minha esposa.  Ela está com um tumor  no peito e passou para o pulmão  eu pesso a VCS se podia fazer uma oração pra ela",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
