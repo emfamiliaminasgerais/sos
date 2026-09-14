@@ -8938,5 +8938,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 746,
+        "timestamp": "2026-09-14 15:12:12",
+        "sender_number": "553186703387",
+        "sender_name": "José Ferreira",
+        "text": "Ok obrigado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
