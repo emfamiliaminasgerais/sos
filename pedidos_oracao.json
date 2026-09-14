@@ -8974,5 +8974,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 749,
+        "timestamp": "2026-09-14 15:13:13",
+        "sender_number": "553899526155",
+        "sender_name": "~viviane melo",
+        "text": "Não perto de Francisco Sá ou. Montes claros",
+        "names_found": "Francisco Sá",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
