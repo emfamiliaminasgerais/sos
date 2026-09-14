@@ -8998,5 +8998,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 751,
+        "timestamp": "2026-09-14 15:19:35",
+        "sender_number": "553198991781",
+        "sender_name": "Soraia",
+        "text": "Ele e tende que precisa de ajuda, mas não está conseguindo sozinho",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
