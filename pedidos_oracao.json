@@ -310,5 +310,29 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 27,
+        "timestamp": "2026-09-14 13:10:00",
+        "sender_number": "101558897373210",
+        "sender_name": "101558897373210",
+        "text": "Pastor muito obrigado pela atenção,que o senhor Jesus te abençoe e multiplique cada vez mais o seu ministério , que jesus abençoe pela visita",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 28,
+        "timestamp": "2026-09-14 13:10:00",
+        "sender_number": "148794914148506",
+        "sender_name": "148794914148506",
+        "text": "Não, estava viajando cheguei essa semana na próxima semana estou pensando seriamente em começar a frequentar essa reunião. Minha saúde está ficando debilitada. Preciso fazer alguma coisa.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
