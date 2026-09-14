@@ -346,5 +346,17 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 30,
+        "timestamp": "2026-09-14 13:40:51",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "1 Coríntios 15:57 Mas graças a Deus que nos dá a vitória por nosso Senhor Jesus Cristo. 58 Portanto, meus amados irmãos, sede firmes e constantes, sempre abundantes na obra do Senhor, sabendo que o vosso trabalho não é vão no Senhor.\n\n https://bibliajfa.app/app/acf/46N/15/57",
+        "names_found": "Nenhum nome extraído",
+        "category": "Financeiro",
+        "sub_tag": "Financeiro",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
