@@ -442,5 +442,65 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 38,
+        "timestamp": "2026-09-14 13:40:51",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Precisamos de muita oração para o meu irmão",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 39,
+        "timestamp": "2026-09-14 13:40:51",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Pedido de oração \nPaciente internado nao esta bem por acidente de trânsito \nisaac de sa Esteves de Oliveira",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 40,
+        "timestamp": "2026-09-14 13:40:51",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Por esse motivo que eu entrei em contato com vocês pra me dar uma orientação a respeito disso e estou bem peço oração aí por nós pra Deus quebrar esse orgulho dela que até hoje ela nunca me pediu perdão como se eu fosse totalmente o errado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 41,
+        "timestamp": "2026-09-14 13:40:51",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Como ela não deu entrada no divórcio ainda eu estou lutando não perdi a esperança não",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 42,
+        "timestamp": "2026-09-14 13:40:51",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Estou  esperando seu retorno  que horas vai vir no salão e aqui em casa fazer oração",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
