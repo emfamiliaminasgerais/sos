@@ -82,5 +82,77 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 8,
+        "timestamp": "2026-09-14 13:40:49",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Falar para o pastor parar liberta a Marilze Teixeira Carvalho dessa doença aplasia a medula não produz glóbulos vermelhos, hemácias leucócitos,e glóbulos brancos e a plaquetas \nA condição que você descreveu — em que a medula óssea deixa de fabricar glóbulos vermelhos, glóbulos brancos e plaquetas — é clinicamente conhecida como anemia aplásica ou aplasia medular.",
+        "names_found": "Marilze Teixeira",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 9,
+        "timestamp": "2026-09-14 13:40:49",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Entrei em contato com vocês para me dar uma direção e peço oração pelo meu casamento",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 10,
+        "timestamp": "2026-09-14 13:40:49",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Poderia me encaminhar o contato do pastot de Leopoldina para de pedir oracao",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 11,
+        "timestamp": "2026-09-14 13:40:49",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Gostaria de jr no culto.\nFui na igreja e me informaram do horario amanha de manha",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 12,
+        "timestamp": "2026-09-14 13:40:49",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Romanos 10:9-13 NTLH\n[9] Se você disser com a sua boca: “Jesus é Senhor” e no seu coração crer que Deus ressuscitou Jesus, você será salvo. [10] Porque nós cremos com o coração e somos aceitos por Deus; falamos com a boca e assim somos salvos. [11] Porque as Escrituras Sagradas dizem: “Quem crer nele não ficará desiludido.” [12] Isso vale para todos, pois não existe nenhuma diferença entre judeus e não judeus. Deus é o mesmo Senhor de todos e abençoa generosamente todos os que pedem a sua ajuda. [13] Como dizem as Escrituras Sagradas: “Todos os que pedirem a ajuda do Senhor serão salvos.”\n\nhttps://bible.com/bible/211/rom.10.9-13.NTLH",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 13,
+        "timestamp": "2026-09-14 13:40:49",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "A iurd é casa de oração e acolhimento ao povo para adoração,  peço suas orações",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
