@@ -8434,5 +8434,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 704,
+        "timestamp": "2026-09-14 14:40:02",
+        "sender_number": "553491645218",
+        "sender_name": "Viviane♡",
+        "text": "Se puder orar nela e no meu padrasto, eu agradeço",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
