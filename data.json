@@ -24982,5 +24982,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 2083,
+        "timestamp": "2026-09-14 15:52:25",
+        "sender_number": "556281556597",
+        "sender_name": "Marcelo BarbosaAlves",
+        "text": "Sou solteiro.Mais parei de usar droga.04/12/2017.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
