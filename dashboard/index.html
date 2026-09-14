@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub da Central de Atendimento MG</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #090d16; }
+        .glass-dark { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); border: 1px solid rgba(30, 41, 59, 0.8); }
+        .universal-header { background: linear-gradient(90deg, #0b132b 0%, #1c2541 60%, #0f172a 100%); border-bottom: 3px solid #dc2626; }
+    </style>
+</head>
+<body class="min-h-screen text-slate-100 flex flex-col antialiased relative">
+
+    <!-- TELA DE LOGIN / BLOQUEIO POR SENHA (POPUP EM TELA CHEIA) -->
+    <div id="login-screen" class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl z-[100] flex items-center justify-center p-4">
+        <div class="glass-dark w-full max-w-md rounded-3xl border border-slate-800 shadow-2xl p-8 space-y-6 text-center">
+            <div class="p-4 bg-red-600/20 border border-red-500/40 rounded-3xl w-20 h-20 mx-auto flex items-center justify-center shadow-lg">
+                <i data-lucide="shield-lock" class="w-10 h-10 text-red-500"></i>
+            </div>
+            
+            <div>
+                <h2 class="font-extrabold text-2xl text-white">Hub da Central MG</h2>
+                <p class="text-xs text-red-400 font-semibold mt-1">Plataforma de Triagem • Acesso Restrito</p>
+                <p class="text-xs text-slate-400 mt-3">Digite a senha de acesso para visualizar os relatórios e listas de oração.</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Senha de Acesso:</label>
+                    <div class="relative">
+                        <i data-lucide="key-round" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                        <input type="password" id="login-password" required placeholder="Digite a senha..." class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </div>
+                </div>
+
+                <div id="login-error" class="hidden text-xs font-semibold text-red-400 bg-red-950/60 p-3 rounded-xl border border-red-900/60 flex items-center gap-2">
+                    <i data-lucide="alert-circle" class="w-4 h-4 shrink-0"></i>
+                    <span>Senha incorreta. Verifique e tente novamente.</span>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white rounded-xl font-bold text-sm transition shadow-lg shadow-red-950/50 flex items-center justify-center gap-2">
+                    <i data-lucide="lock-keyhole-open" class="w-4 h-4"></i> Entrar no Painel
+                </button>
+            </form>
+            
+            <p class="text-[11px] text-slate-600">Sua sessão permanecerá ativa até você clicar em Sair.</p>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTENT (OCULTO ATÉ AUTENTICAR) -->
+    <div id="app-content" class="hidden min-h-screen flex flex-col">
+
+        <!-- Top Navigation Bar -->
+        <header class="universal-header shadow-2xl sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="p-2.5 bg-red-600/20 border border-red-500/40 rounded-2xl shadow-lg flex items-center justify-center">
+                        <i data-lucide="shield" class="w-7 h-7 text-red-500 fill-red-500/30"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-extrabold text-xl sm:text-2xl text-white tracking-tight flex items-center gap-2">
+                            Hub da Central de Atendimento MG
+                        </h1>
+                        <p class="text-xs text-red-400 font-medium">Plataforma de Triagem</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="openNamesModal()" class="px-3.5 py-2 bg-gradient-to-r from-amber-600 to-red-600 hover:from-amber-500 hover:to-red-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-red-950/40 border border-amber-500/30">
+                        <i data-lucide="list-checks" class="w-4 h-4"></i> 📋 Gerar Lista de Nomes
+                    </button>
+                    <button onclick="refreshData()" class="px-3.5 py-2 bg-red-700 hover:bg-red-600 text-white rounded-xl text-xs font-semibold transition flex items-center gap-2 shadow-md shadow-red-900/30">
+                        <i data-lucide="rotate-cw" class="w-4 h-4"></i> Sincronizar
+                    </button>
+                    <button onclick="handleLogout()" title="Sair da Conta" class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-red-400 rounded-xl border border-slate-800 transition">
+                        <i data-lucide="log-out" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Container -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-6">
+
+            <!-- Section Header: Estimativa de Atendimento por Assunto -->
+            <div class="flex items-center justify-between">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                    <i data-lucide="bar-chart-3" class="w-4 h-4 text-red-500"></i> Estimativa de Atendimento por Assunto:
+                </h2>
+                <span class="text-[11px] text-slate-500 font-medium italic">Classificação aproximada por palavras-chave</span>
+            </div>
+
+            <!-- Stats Overview Grid (5 Cards com Tooltip de Informação) -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <!-- Card 1: Total -->
+                <div class="glass-dark p-4 rounded-2xl shadow-lg border border-slate-800 flex items-center justify-between group relative">
+                    <div>
+                        <div class="flex items-center gap-1">
+                            <p class="text-xs font-medium text-slate-400">Total de Atendimentos</p>
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-slate-500 cursor-pointer"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mt-1" id="stat-total">0</h3>
+                    </div>
+                    <div class="p-3 bg-slate-800/80 text-blue-400 rounded-xl border border-slate-700">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 p-2.5 bg-slate-900 text-slate-200 text-[11px] rounded-xl border border-slate-700 shadow-2xl z-50 pointer-events-none text-center">
+                        Contagem total de mensagens filtradas e recebidas pelo bot no período.
+                    </div>
+                </div>
+
+                <!-- Card 2: Podcast Divórcio -->
+                <div class="glass-dark p-4 rounded-2xl shadow-lg border border-red-900/40 bg-red-950/20 flex items-center justify-between group relative">
+                    <div>
+                        <div class="flex items-center gap-1">
+                            <p class="text-xs font-medium text-red-400">🎙️ Podcast Divórcio</p>
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-red-400/60 cursor-pointer"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-red-400 mt-1" id="stat-podcast">0</h3>
+                    </div>
+                    <div class="p-3 bg-red-900/40 text-red-400 rounded-xl border border-red-800/60">
+                        <i data-lucide="mic" class="w-5 h-5"></i>
+                    </div>
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 p-2.5 bg-slate-900 text-slate-200 text-[11px] rounded-xl border border-red-800 shadow-2xl z-50 pointer-events-none text-center">
+                        Atendimentos de pessoas que mencionaram o 'Podcast Vencendo o Divórcio' ou problemas no casamento.
+                    </div>
+                </div>
+
+                <!-- Card 3: Pedidos de Oração -->
+                <div class="glass-dark p-4 rounded-2xl shadow-lg border border-emerald-900/40 bg-emerald-950/20 flex items-center justify-between group relative">
+                    <div>
+                        <div class="flex items-center gap-1">
+                            <p class="text-xs font-medium text-emerald-400">🙏 Pedidos de Oração</p>
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-emerald-400/60 cursor-pointer"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-emerald-400 mt-1" id="stat-oracao">0</h3>
+                    </div>
+                    <div class="p-3 bg-emerald-900/40 text-emerald-400 rounded-xl border border-emerald-800/60">
+                        <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                    </div>
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 p-2.5 bg-slate-900 text-slate-200 text-[11px] rounded-xl border border-emerald-800 shadow-2xl z-50 pointer-events-none text-center">
+                        Pedidos gerais de oração e bênçãos registrados no sistema.
+                    </div>
+                </div>
+
+                <!-- Card 4: Saúde & Cura -->
+                <div class="glass-dark p-4 rounded-2xl shadow-lg border border-rose-900/40 bg-rose-950/20 flex items-center justify-between group relative">
+                    <div>
+                        <div class="flex items-center gap-1">
+                            <p class="text-xs font-medium text-rose-400">🏥 Saúde & Cura</p>
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-rose-400/60 cursor-pointer"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-rose-400 mt-1" id="stat-saude">0</h3>
+                    </div>
+                    <div class="p-3 bg-rose-900/40 text-rose-400 rounded-xl border border-rose-800/60">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </div>
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 p-2.5 bg-slate-900 text-slate-200 text-[11px] rounded-xl border border-rose-800 shadow-2xl z-50 pointer-events-none text-center">
+                        Mensagens com pedidos de cura, exames, cirurgias, internamentos e problemas de saúde.
+                    </div>
+                </div>
+
+                <!-- Card 5: Todos os Nomes -->
+                <div class="glass-dark p-4 rounded-2xl shadow-lg border border-amber-900/40 bg-amber-950/20 flex items-center justify-between group relative">
+                    <div>
+                        <div class="flex items-center gap-1">
+                            <p class="text-xs font-medium text-amber-400">👥 Todos os Nomes</p>
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-amber-400/60 cursor-pointer"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-amber-400 mt-1" id="stat-all-names">0</h3>
+                    </div>
+                    <div class="p-3 bg-amber-950/50 text-amber-400 rounded-xl border border-amber-900/50">
+                        <i data-lucide="user-check" class="w-5 h-5"></i>
+                    </div>
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 p-2.5 bg-slate-900 text-slate-200 text-[11px] rounded-xl border border-amber-800 shadow-2xl z-50 pointer-events-none text-center">
+                        Contagem total de nomes de pessoas físicas identificados no texto para a lista de oração.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter & Search Controls Bar -->
+            <div class="glass-dark p-4 rounded-2xl shadow-lg space-y-4 border border-slate-800">
+                <!-- Category Pills (Linha 1) -->
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
+                    <div class="flex flex-wrap gap-2" id="category-filters">
+                        <button onclick="setFilter('todos', this)" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-red-700 text-white shadow-md shadow-red-900/30 transition">Todos os Pedidos</button>
+                        <button onclick="setFilter('Podcast Divórcio', this)" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-red-950/60 text-red-300 hover:bg-red-900/80 border border-red-800/80 transition">🎙️ Podcast Vencendo o Divórcio</button>
+                        <button onclick="setFilter('Pedidos de Oração', this)" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-950/60 text-emerald-300 hover:bg-emerald-900/80 border border-emerald-800/80 transition">🙏 Pedidos de Oração</button>
+                        <button onclick="setFilter('Saúde', this)" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-rose-950/60 text-rose-300 hover:bg-rose-900/80 border border-rose-800/80 transition">🏥 Saúde & Cura</button>
+                        <button onclick="setFilter('Financeiro', this)" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:bg-slate-700 transition border border-slate-700">💼 Financeiro</button>
+                        <button onclick="setFilter('Espiritual', this)" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:bg-slate-700 transition border border-slate-700">🕊️ Espiritual</button>
+                        <button onclick="setFilter('Agradecimento', this)" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/90 text-slate-300 hover:bg-slate-700 transition border border-slate-700">✨ Agradecimento</button>
+                    </div>
+                    <!-- Mode View Switcher (Cards vs Lista) -->
+                    <div class="flex items-center bg-slate-950/80 p-1 rounded-xl border border-slate-800 text-xs">
+                        <button onclick="setViewMode('cards')" id="btn-view-cards" class="px-3 py-1 rounded-lg font-bold bg-red-700 text-white flex items-center gap-1.5 transition">
+                            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> Cards
+                        </button>
+                        <button onclick="setViewMode('list')" id="btn-view-list" class="px-3 py-1 rounded-lg font-bold text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+                            <i data-lucide="list" class="w-3.5 h-3.5"></i> Lista por Dia
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Date Filter & Search Bar (Linha 2 - TOTALMENTE FLEXÍVEL) -->
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                    <!-- Seletores de Período Flexíveis -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs w-full lg:w-auto">
+                        <span class="text-slate-400 font-medium flex items-center gap-1 mr-1">
+                            <i data-lucide="calendar-range" class="w-4 h-4 text-red-500"></i> Filtrar Período:
+                        </span>
+                        
+                        <select id="quick-period-select" onchange="onQuickPeriodChange(this.value)" class="bg-slate-950/90 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-semibold focus:outline-none focus:ring-1 focus:ring-red-600">
+                            <option value="all" selected>📅 Todas as Datas</option>
+                            <option value="today">📅 Hoje</option>
+                            <option value="yesterday">📅 Ontem</option>
+                            <option value="7days">🗓️ Últimos 7 Dias</option>
+                            <option value="30days">🗓️ Últimos 30 Dias</option>
+                            <option value="this_month">🗓️ Este Mês</option>
+                            <option value="last_month">🗓️ Mês Anterior</option>
+                            <option value="custom">⚙️ Intervalo Personalizado (De / Até)</option>
+                        </select>
+
+                        <div class="flex items-center gap-1.5 bg-slate-950/80 px-3 py-1.5 rounded-xl border border-slate-700" id="custom-date-container">
+                            <span class="text-[11px] text-slate-400 font-medium">De:</span>
+                            <input type="date" id="date-from" onchange="onCustomDateChange()" class="bg-slate-900 text-white text-xs border border-slate-700 rounded-lg px-2 py-1 focus:outline-none focus:border-red-500">
+                            <span class="text-[11px] text-slate-400 font-medium ml-1">Até:</span>
+                            <input type="date" id="date-to" onchange="onCustomDateChange()" class="bg-slate-900 text-white text-xs border border-slate-700 rounded-lg px-2 py-1 focus:outline-none focus:border-red-500">
+                            <button onclick="clearCustomDates()" title="Limpar Filtro de Data" class="text-slate-400 hover:text-red-400 ml-1">
+                                <i data-lucide="x-circle" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo de Pesquisa por Texto -->
+                    <div class="relative w-full lg:w-80">
+                        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="search-input" onkeyup="renderContent()" placeholder="Buscar por nome, telefone, mensagem..." class="w-full pl-10 pr-4 py-2 bg-slate-950/80 border border-slate-700 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requests Cards Grid (Visão em Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="requests-container">
+                <!-- Dynamic cards rendered via JS -->
+            </div>
+
+            <!-- Requests List Table (Visão em Lista / Tabela por Dia) -->
+            <div id="requests-list-container" class="hidden space-y-6">
+                <!-- Dynamic list grouped by day rendered via JS -->
+            </div>
+
+            <!-- Empty State Message -->
+            <div id="empty-state" class="hidden text-center py-20 glass-dark rounded-2xl border border-slate-800">
+                <div class="w-16 h-16 bg-slate-800 text-slate-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i data-lucide="search-x" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-base font-bold text-slate-200">Nenhum atendimento localizado para o período selecionado</h4>
+                <p class="text-xs text-slate-400 mt-1">Tente ajustar o intervalo de datas (De / Até) ou mudar a categoria.</p>
+            </div>
+
+        </main>
+
+        <!-- MODAL DE GERAR LISTA DE NOMES -->
+        <div id="names-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+            <div class="glass-dark w-full max-w-2xl rounded-3xl border border-slate-800 shadow-2xl p-6 space-y-5 flex flex-col max-h-[90vh]">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 bg-amber-500/20 text-amber-400 rounded-xl border border-amber-500/30">
+                            <i data-lucide="list-checks" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-lg text-white">Gerar Lista de Nomes para Oração</h3>
+                            <p class="text-xs text-slate-400">Escolha qualquer período ou intervalo de datas para extração</p>
+                        </div>
+                    </div>
+                    <button onclick="closeNamesModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800">
+                    <div class="space-y-2">
+                        <label class="block text-slate-400 font-semibold">Período Desejado:</label>
+                        <select id="modal-period" onchange="generateNamesList()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-semibold focus:outline-none focus:ring-1 focus:ring-red-500">
+                            <option value="all" selected>📅 Todas as Datas (Histórico Completo)</option>
+                            <option value="today">📅 Hoje</option>
+                            <option value="yesterday">📅 Ontem</option>
+                            <option value="7days">🗓️ Últimos 7 Dias</option>
+                            <option value="30days">🗓️ Últimos 30 Dias</option>
+                            <option value="this_month">🗓️ Este Mês</option>
+                            <option value="last_month">🗓️ Mês Anterior</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-slate-400 font-semibold">Categoria:</label>
+                        <select id="modal-category" onchange="generateNamesList()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-semibold focus:outline-none focus:ring-1 focus:ring-red-500">
+                            <option value="all" selected>Todas as Categorias</option>
+                            <option value="Podcast Divórcio">Apenas Podcast Vencendo o Divórcio</option>
+                            <option value="Pedidos de Oração">Apenas Pedidos de Oração</option>
+                            <option value="Saúde">Apenas Saúde & Cura</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Text Area / Display of Extracted Names -->
+                <div class="flex-1 overflow-y-auto bg-slate-950 p-4 rounded-2xl border border-slate-800/80 font-mono text-xs text-amber-200 leading-relaxed whitespace-pre-wrap select-all" id="modal-names-content">
+                    Carregando lista de nomes...
+                </div>
+
+                <!-- Modal Actions -->
+                <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+                    <span class="text-xs text-slate-400 font-medium" id="modal-count-text">0 nomes encontrados</span>
+                    <div class="flex gap-2">
+                        <button onclick="downloadNamesTxt()" class="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 transition">
+                            <i data-lucide="download" class="w-4 h-4"></i> Baixar (.txt)
+                        </button>
+                        <button onclick="copyNamesList()" class="px-4 py-2 bg-red-700 hover:bg-red-600 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 transition shadow-lg shadow-red-950/40">
+                            <i data-lucide="copy" class="w-4 h-4"></i> Copiar Todos os Nomes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-slate-950 border-t border-slate-900 py-6 text-center text-xs text-slate-400">
+            Hub da Central de Atendimento MG • Sincronização Automática via WhatsApp & GitHub Pages
+        </footer>
+    </div>
+
+    <script>
+        // SENHA PADRÃO DE ACESSO (PODE ALTERAR AQUI)
+        const MASTER_PASSWORD = "centralmg2026";
+        
+        let allData = [];
+        let currentFilter = 'todos';
+        let currentDateFilter = 'all';
+        let customFromDate = '';
+        let customToDate = '';
+        let viewMode = 'cards';
+
+        // --- SISTEMA DE AUTENTICAÇÃO POR SENHA ---
+        function checkAuth() {
+            const isAuth = sessionStorage.getItem("hub_authenticated");
+            if (isAuth === "true") {
+                document.getElementById("login-screen").classList.add("hidden");
+                document.getElementById("app-content").classList.remove("hidden");
+                refreshData();
+            } else {
+                document.getElementById("login-screen").classList.remove("hidden");
+                document.getElementById("app-content").classList.add("hidden");
+            }
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const passInput = document.getElementById("login-password").value;
+            const errDiv = document.getElementById("login-error");
+
+            if (passInput === MASTER_PASSWORD) {
+                sessionStorage.setItem("hub_authenticated", "true");
+                errDiv.classList.add("hidden");
+                document.getElementById("login-screen").classList.add("hidden");
+                document.getElementById("app-content").classList.remove("hidden");
+                refreshData();
+            } else {
+                errDiv.classList.remove("hidden");
+            }
+        }
+
+        function handleLogout() {
+            sessionStorage.removeItem("hub_authenticated");
+            checkAuth();
+        }
+
+        async function refreshData() {
+            try {
+                const res = await fetch('data.json?cache=' + new Date().getTime());
+                if (res.ok) {
+                    allData = await res.json();
+                } else {
+                    allData = getDemoData();
+                }
+            } catch (e) {
+                allData = getDemoData();
+            }
+            updateStats();
+            renderContent();
+        }
+
+        function getDemoData() {
+            return [
+                {
+                    id: 1,
+                    timestamp: "2026-09-14 10:15:00",
+                    sender_name: "Ana Silva",
+                    sender_number: "5531988887777",
+                    names_found: "Ana Silva e Roberto Silva",
+                    category: "Podcast Divórcio",
+                    sub_tag: "Podcast Vencendo o Divórcio",
+                    text: "Assisti ao Podcast Vencendo o Divórcio e gostaria muito de pedir oração pelo meu casamento. Estamos passando por um momento difícil com problemas no meu casamento.",
+                    status: "Em Atendimento"
+                },
+                {
+                    id: 2,
+                    timestamp: "2026-09-14 11:30:00",
+                    sender_name: "Carlos Eduardo",
+                    sender_number: "5531999992222",
+                    names_found: "Carlos Eduardo e Família Eduardo",
+                    category: "Pedidos de Oração",
+                    sub_tag: "Pedidos de Oração",
+                    text: "Por favor orem por mim pois estou enfrentando problemas no meu casamento e preciso de ajuda para o meu lar.",
+                    status: "Em Atendimento"
+                },
+                {
+                    id: 3,
+                    timestamp: "2026-09-13 18:05:00",
+                    sender_name: "Juliana Mendes",
+                    sender_number: "5531977773333",
+                    names_found: "Juliana e Marcos",
+                    category: "Saúde",
+                    sub_tag: "Saúde & Cura",
+                    text: "Peço oração por saúde e cura para meu irmão Marcos que está fazendo tratamento de exames.",
+                    status: "Em Atendimento"
+                }
+            ];
+        }
+
+        function updateStats() {
+            document.getElementById('stat-total').innerText = allData.length;
+            document.getElementById('stat-podcast').innerText = allData.filter(d => d.category === 'Podcast Divórcio' || (d.sub_tag && d.sub_tag.includes('Podcast'))).length;
+            document.getElementById('stat-oracao').innerText = allData.filter(d => d.category === 'Pedidos de Oração' || d.category === 'Casamento' || d.category === 'Geral').length;
+            document.getElementById('stat-saude').innerText = allData.filter(d => d.category === 'Saúde').length;
+
+            const allNames = [];
+            allData.forEach(d => {
+                if (d.names_found && d.names_found !== "Nenhum nome extraído") {
+                    d.names_found.split(",").forEach(n => allNames.push(n.trim()));
+                }
+            });
+            document.getElementById('stat-all-names').innerText = allNames.length;
+        }
+
+        function setFilter(cat, btnElement) {
+            currentFilter = cat;
+            document.querySelectorAll('#category-filters button').forEach(btn => {
+                btn.classList.remove('bg-red-700', 'text-white', 'shadow-md');
+                btn.classList.add('bg-slate-800/90', 'text-slate-300');
+            });
+            if (btnElement) {
+                btnElement.classList.remove('bg-slate-800/90', 'text-slate-300', 'bg-red-950/60', 'bg-emerald-950/60', 'bg-rose-950/60');
+                btnElement.classList.add('bg-red-700', 'text-white', 'shadow-md');
+            }
+            renderContent();
+        }
+
+        function onQuickPeriodChange(value) {
+            currentDateFilter = value;
+            if (value !== 'custom') {
+                document.getElementById('date-from').value = '';
+                document.getElementById('date-to').value = '';
+                customFromDate = '';
+                customToDate = '';
+            }
+            renderContent();
+        }
+
+        function onCustomDateChange() {
+            customFromDate = document.getElementById('date-from').value;
+            customToDate = document.getElementById('date-to').value;
+            if (customFromDate || customToDate) {
+                currentDateFilter = 'custom';
+                document.getElementById('quick-period-select').value = 'custom';
+            }
+            renderContent();
+        }
+
+        function clearCustomDates() {
+            document.getElementById('date-from').value = '';
+            document.getElementById('date-to').value = '';
+            customFromDate = '';
+            customToDate = '';
+            currentDateFilter = 'all';
+            document.getElementById('quick-period-select').value = 'all';
+            renderContent();
+        }
+
+        function setViewMode(mode) {
+            viewMode = mode;
+            const btnCards = document.getElementById('btn-view-cards');
+            const btnList = document.getElementById('btn-view-list');
+            
+            if (mode === 'cards') {
+                btnCards.className = "px-3 py-1 rounded-lg font-bold bg-red-700 text-white flex items-center gap-1.5 transition";
+                btnList.className = "px-3 py-1 rounded-lg font-bold text-slate-400 hover:text-white flex items-center gap-1.5 transition";
+                document.getElementById('requests-container').classList.remove('hidden');
+                document.getElementById('requests-list-container').classList.add('hidden');
+            } else {
+                btnList.className = "px-3 py-1 rounded-lg font-bold bg-red-700 text-white flex items-center gap-1.5 transition";
+                btnCards.className = "px-3 py-1 rounded-lg font-bold text-slate-400 hover:text-white flex items-center gap-1.5 transition";
+                document.getElementById('requests-container').classList.add('hidden');
+                document.getElementById('requests-list-container').classList.remove('hidden');
+            }
+            renderContent();
+        }
+
+        function getFilteredData() {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            const now = new Date();
+            const todayStr = now.toISOString().split("T")[0];
+
+            return allData.filter(item => {
+                let matchesCategory = false;
+                if (currentFilter === 'todos') {
+                    matchesCategory = true;
+                } else if (currentFilter === 'Podcast Divórcio') {
+                    matchesCategory = item.category === 'Podcast Divórcio' || (item.sub_tag && item.sub_tag.includes('Podcast')) || item.text.toLowerCase().includes('podcast') || item.text.toLowerCase().includes('divórcio');
+                } else if (currentFilter === 'Pedidos de Oração') {
+                    matchesCategory = item.category === 'Pedidos de Oração' || item.category === 'Casamento' || item.category === 'Geral';
+                } else {
+                    matchesCategory = item.category === currentFilter;
+                }
+
+                let matchesDate = true;
+                if (item.timestamp) {
+                    const itemDateStr = item.timestamp.split(" ")[0];
+                    const itemDate = new Date(itemDateStr);
+
+                    if (currentDateFilter === 'today') {
+                        matchesDate = itemDateStr === todayStr;
+                    } else if (currentDateFilter === 'yesterday') {
+                        const yest = new Date(now);
+                        yest.setDate(yest.getDate() - 1);
+                        matchesDate = itemDateStr === yest.toISOString().split("T")[0];
+                    } else if (currentDateFilter === '7days') {
+                        const past7 = new Date(now);
+                        past7.setDate(past7.getDate() - 7);
+                        matchesDate = itemDate >= past7 && itemDate <= now;
+                    } else if (currentDateFilter === '30days') {
+                        const past30 = new Date(now);
+                        past30.setDate(past30.getDate() - 30);
+                        matchesDate = itemDate >= past30 && itemDate <= now;
+                    } else if (currentDateFilter === 'this_month') {
+                        const currentMonthStr = todayStr.substring(0, 7);
+                        matchesDate = itemDateStr.startsWith(currentMonthStr);
+                    } else if (currentDateFilter === 'last_month') {
+                        const lm = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+                        const lmStr = lm.toISOString().split("T")[0].substring(0, 7);
+                        matchesDate = itemDateStr.startsWith(lmStr);
+                    } else if (currentDateFilter === 'custom') {
+                        if (customFromDate && itemDateStr < customFromDate) matchesDate = false;
+                        if (customToDate && itemDateStr > customToDate) matchesDate = false;
+                    }
+                }
+
+                const matchesSearch = item.sender_name.toLowerCase().includes(search) ||
+                                      item.sender_number.includes(search) ||
+                                      item.text.toLowerCase().includes(search) ||
+                                      item.names_found.toLowerCase().includes(search);
+
+                return matchesCategory && matchesDate && matchesSearch;
+            });
+        }
+
+        function getCategoryBadge(cat, subTag) {
+            if (cat === 'Podcast Divórcio' || (subTag && subTag.includes('Podcast'))) {
+                return 'bg-red-950/90 text-red-400 border-red-800/90';
+            }
+            if (cat === 'Saúde') {
+                return 'bg-rose-950/90 text-rose-400 border-rose-800/90';
+            }
+            if (cat === 'Pedidos de Oração' || cat === 'Casamento') {
+                return 'bg-emerald-950/90 text-emerald-400 border-emerald-800/90';
+            }
+            const colors = {
+                'Financeiro': 'bg-amber-950/90 text-amber-400 border-amber-800/90',
+                'Espiritual': 'bg-purple-950/90 text-purple-400 border-purple-800/90',
+                'Agradecimento': 'bg-teal-950/90 text-teal-400 border-teal-800/90'
+            };
+            return colors[cat] || 'bg-slate-800 text-slate-300 border-slate-700';
+        }
+
+        function renderContent() {
+            const filtered = getFilteredData();
+
+            if (filtered.length === 0) {
+                document.getElementById('empty-state').classList.remove('hidden');
+                document.getElementById('requests-container').innerHTML = '';
+                document.getElementById('requests-list-container').innerHTML = '';
+                return;
+            } else {
+                document.getElementById('empty-state').classList.add('hidden');
+            }
+
+            if (viewMode === 'cards') {
+                renderCardsView(filtered);
+            } else {
+                renderListView(filtered);
+            }
+        }
+
+        function renderCardsView(filtered) {
+            const container = document.getElementById('requests-container');
+            container.innerHTML = '';
+
+            filtered.forEach(item => {
+                const badgeClass = getCategoryBadge(item.category, item.sub_tag);
+                const isPodcast = item.category === 'Podcast Divórcio' || (item.sub_tag && item.sub_tag.includes('Podcast'));
+
+                const cardHtml = `
+                    <div class="glass-dark p-5 rounded-2xl shadow-xl border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold border flex items-center gap-1.5 ${badgeClass}">
+                                    ${isPodcast ? '🎙️ Podcast Vencendo o Divórcio' : (item.category === 'Saúde' ? '🏥 Saúde & Cura' : '🙏 Pedidos de Oração')}
+                                </span>
+                                <span class="text-xs text-slate-400 font-medium">${item.timestamp}</span>
+                            </div>
+                            <h4 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                                <i data-lucide="user" class="w-4 h-4 text-red-500"></i> ${item.sender_name}
+                                <span class="text-xs font-normal text-slate-400">(${item.sender_number})</span>
+                            </h4>
+                            ${item.names_found ? `
+                                <p class="text-xs font-semibold text-amber-400 mt-2 flex items-center gap-1.5">
+                                    <i data-lucide="tag" class="w-3.5 h-3.5 text-red-400"></i> Nomes: ${item.names_found}
+                                </p>
+                            ` : ''}
+                            <p class="text-xs text-slate-300 mt-3 bg-slate-950/80 p-3.5 rounded-xl border border-slate-800/80 leading-relaxed italic">
+                                "${item.text}"
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                            <span class="text-slate-400">Status: <strong class="text-red-400">${item.status || 'Em Atendimento'}</strong></span>
+                            <a href="https://wa.me/${item.sender_number}" target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold flex items-center gap-1.5 transition shadow-lg shadow-emerald-950/50">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+
+            lucide.createIcons();
+        }
+
+        function renderListView(filtered) {
+            const listContainer = document.getElementById('requests-list-container');
+            listContainer.innerHTML = '';
+
+            const grouped = {};
+            filtered.forEach(item => {
+                const dateKey = item.timestamp ? item.timestamp.split(" ")[0] : "Outras Datas";
+                if (!grouped[dateKey]) grouped[dateKey] = [];
+                grouped[dateKey].push(item);
+            });
+
+            Object.keys(grouped).sort().reverse().forEach(date => {
+                const items = grouped[date];
+                const formattedDate = date.includes("-") ? date.split("-").reverse().join("/") : date;
+
+                let tableRows = '';
+                items.forEach(item => {
+                    const badgeClass = getCategoryBadge(item.category, item.sub_tag);
+                    const isPodcast = item.category === 'Podcast Divórcio' || (item.sub_tag && item.sub_tag.includes('Podcast'));
+                    const timeOnly = item.timestamp ? item.timestamp.split(" ")[1] || '' : '';
+
+                    tableRows += `
+                        <tr class="border-b border-slate-800/60 hover:bg-slate-900/50 transition">
+                            <td class="px-4 py-3 text-xs text-slate-400 font-mono">${timeOnly}</td>
+                            <td class="px-4 py-3 text-xs font-bold text-white">
+                                ${item.sender_name}<br/>
+                                <span class="text-[10px] text-slate-400 font-normal">${item.sender_number}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold border ${badgeClass}">
+                                    ${isPodcast ? '🎙️ Podcast Divórcio' : (item.category === 'Saúde' ? '🏥 Saúde & Cura' : '🙏 Pedidos de Oração')}
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-xs font-semibold text-amber-400">${item.names_found}</td>
+                            <td class="px-4 py-3 text-xs text-slate-300 max-w-xs truncate" title="${item.text}">"${item.text}"</td>
+                            <td class="px-4 py-3 text-right">
+                                <a href="https://wa.me/${item.sender_number}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-[11px] font-bold transition">
+                                    <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                const groupHtml = `
+                    <div class="glass-dark rounded-2xl border border-slate-800 overflow-hidden shadow-lg">
+                        <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800 flex items-center justify-between">
+                            <h3 class="text-xs font-extrabold text-red-400 flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-red-500"></i> ${formattedDate}
+                            </h3>
+                            <span class="text-[11px] bg-slate-800 text-slate-300 px-2.5 py-0.5 rounded-full font-bold">
+                                ${items.length} ${items.length === 1 ? 'Atendimento' : 'Atendimentos'}
+                            </span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-950/60 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-800">
+                                        <th class="px-4 py-2 font-bold">Hora</th>
+                                        <th class="px-4 py-2 font-bold">Remetente</th>
+                                        <th class="px-4 py-2 font-bold">Categoria</th>
+                                        <th class="px-4 py-2 font-bold">Nomes Extraídos</th>
+                                        <th class="px-4 py-2 font-bold">Mensagem</th>
+                                        <th class="px-4 py-2 font-bold text-right">Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${tableRows}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+                listContainer.innerHTML += groupHtml;
+            });
+
+            lucide.createIcons();
+        }
+
+        // --- LÓGICA DO MODAL DE GERAR LISTA DE NOMES ---
+        function openNamesModal() {
+            document.getElementById('names-modal').classList.remove('hidden');
+            generateNamesList();
+        }
+
+        function closeNamesModal() {
+            document.getElementById('names-modal').classList.add('hidden');
+        }
+
+        function generateNamesList() {
+            const period = document.getElementById('modal-period').value;
+            const category = document.getElementById('modal-category').value;
+            const now = new Date();
+            const todayStr = now.toISOString().split("T")[0];
+
+            const namesList = [];
+
+            allData.forEach(item => {
+                let matchesDate = true;
+                if (item.timestamp) {
+                    const itemDateStr = item.timestamp.split(" ")[0];
+                    const itemDate = new Date(itemDateStr);
+
+                    if (period === 'today') {
+                        matchesDate = itemDateStr === todayStr;
+                    } else if (period === 'yesterday') {
+                        const yest = new Date(now);
+                        yest.setDate(yest.getDate() - 1);
+                        matchesDate = itemDateStr === yest.toISOString().split("T")[0];
+                    } else if (period === '7days') {
+                        const past7 = new Date(now);
+                        past7.setDate(past7.getDate() - 7);
+                        matchesDate = itemDate >= past7 && itemDate <= now;
+                    } else if (period === '30days') {
+                        const past30 = new Date(now);
+                        past30.setDate(past30.getDate() - 30);
+                        matchesDate = itemDate >= past30 && itemDate <= now;
+                    } else if (period === 'this_month') {
+                        const currentMonthStr = todayStr.substring(0, 7);
+                        matchesDate = itemDateStr.startsWith(currentMonthStr);
+                    } else if (period === 'last_month') {
+                        const lm = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+                        const lmStr = lm.toISOString().split("T")[0].substring(0, 7);
+                        matchesDate = itemDateStr.startsWith(lmStr);
+                    }
+                }
+
+                let matchesCategory = true;
+                if (category !== 'all') {
+                    if (category === 'Podcast Divórcio') {
+                        matchesCategory = item.category === 'Podcast Divórcio' || (item.sub_tag && item.sub_tag.includes('Podcast'));
+                    } else if (category === 'Pedidos de Oração') {
+                        matchesCategory = item.category === 'Pedidos de Oração' || item.category === 'Casamento' || item.category === 'Geral';
+                    } else if (category === 'Saúde') {
+                        matchesCategory = item.category === 'Saúde';
+                    }
+                }
+
+                if (matchesDate && matchesCategory && item.names_found && item.names_found !== "Nenhum nome extraído") {
+                    item.names_found.split(",").forEach(n => {
+                        const cleanName = n.trim();
+                        if (cleanName && !namesList.includes(cleanName)) {
+                            namesList.push(cleanName);
+                        }
+                    });
+                }
+            });
+
+            const contentDiv = document.getElementById('modal-names-content');
+            const countText = document.getElementById('modal-count-text');
+
+            if (namesList.length === 0) {
+                contentDiv.innerText = "Nenhum nome específico encontrado para o período/categoria selecionado.";
+                countText.innerText = "0 nomes encontrados";
+            } else {
+                let formattedText = `LISTA DE NOMES PARA ORAÇÃO (${period.toUpperCase()})\n----------------------------------------\n\n`;
+                namesList.forEach((name, idx) => {
+                    formattedText += `${idx + 1}. ${name}\n`;
+                });
+                contentDiv.innerText = formattedText;
+                countText.innerText = `${namesList.length} nomes identificados`;
+            }
+        }
+
+        function copyNamesList() {
+            const content = document.getElementById('modal-names-content').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                alert("📋 Lista de nomes copiada para a área de transferência com sucesso!");
+            });
+        }
+
+        function downloadNamesTxt() {
+            const content = document.getElementById('modal-names-content').innerText;
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `lista_nomes_oracao_${new Date().toISOString().split("T")[0]}.txt`;
+            link.click();
+        }
+
+        window.onload = () => {
+            lucide.createIcons();
+            checkAuth();
+        };
+    </script>
+</body>
+</html>
