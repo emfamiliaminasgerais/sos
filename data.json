@@ -8746,5 +8746,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 730,
+        "timestamp": "2026-09-14 14:51:16",
+        "sender_number": "557996053754",
+        "sender_name": "Pastor Eduardo Lima",
+        "text": "🆗",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
