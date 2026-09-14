@@ -7918,5 +7918,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 661,
+        "timestamp": "2026-09-14 14:24:20",
+        "sender_number": "553299654505",
+        "sender_name": "Joel Araujo",
+        "text": "Hospital metropolitano Dr Célio de castro",
+        "names_found": "Dr Célio",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
