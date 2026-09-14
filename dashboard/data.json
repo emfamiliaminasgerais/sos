@@ -8722,5 +8722,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 728,
+        "timestamp": "2026-09-14 14:50:40",
+        "sender_number": "5521975468063",
+        "sender_name": "Nilzete Rodrigues 🦋🦋",
+        "text": "Entendo perfeitamente!",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
