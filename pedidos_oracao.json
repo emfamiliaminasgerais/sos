@@ -8854,5 +8854,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 739,
+        "timestamp": "2026-09-14 15:04:09",
+        "sender_number": "553491645218",
+        "sender_name": "Viviane♡",
+        "text": "Muito obrigada",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
