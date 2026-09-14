@@ -8626,5 +8626,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 720,
+        "timestamp": "2026-09-14 14:46:45",
+        "sender_number": "553299141596",
+        "sender_name": "fedrumond3485",
+        "text": "Amém creio",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
