@@ -346,5 +346,41 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 30,
+        "timestamp": "2026-09-14 13:18:25",
+        "sender_number": "147566519918695",
+        "sender_name": "147566519918695",
+        "text": "1 Coríntios 15:57 Mas graças a Deus que nos dá a vitória por nosso Senhor Jesus Cristo. 58 Portanto, meus amados irmãos, sede firmes e constantes, sempre abundantes na obra do Senhor, sabendo que o vosso trabalho não é vão no Senhor.\n\n https://bibliajfa.app/app/acf/46N/15/57",
+        "names_found": "nosso Senhor Jesus Cristo",
+        "category": "Financeiro",
+        "sub_tag": "Financeiro",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 31,
+        "timestamp": "2026-09-14 13:18:26",
+        "sender_number": "211110544322747",
+        "sender_name": "211110544322747",
+        "text": "Eles nao permite visitas, so a esposa e a mae por enquanto😢",
+        "names_found": "enquanto",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 32,
+        "timestamp": "2026-09-14 13:18:26",
+        "sender_number": "240402321944743",
+        "sender_name": "240402321944743",
+        "text": "Hoje a noite tem culto de libertação na igreja da av padre Chico?",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
