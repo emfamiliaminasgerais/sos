@@ -958,5 +958,53 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 81,
+        "timestamp": "2026-09-14 13:40:58",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "E peço oração pra que dê tudo certo 🙏🏻",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 82,
+        "timestamp": "2026-09-14 13:40:58",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Sinto muita falta do meu marido",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 83,
+        "timestamp": "2026-09-14 13:40:58",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Vício em cachaça",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 84,
+        "timestamp": "2026-09-14 13:40:58",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Boa tarde 🙏🏻🙏🏻 graças a Deus passou ótimo a cirurgia",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
