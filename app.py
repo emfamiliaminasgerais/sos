@@ -417,7 +417,7 @@ def sanitize_str(s):
         return str(s) if s is not None else ""
     return s.replace("\x00", "").replace("\r", "").strip()
 
-def add_record(sender_number, sender_name, text, category, names_found, summary=""):
+def add_record(sender_number, sender_name, text, category, names_found, summary="", message_timestamp=None):
     db = load_db()
     sub_tag = "Podcast Vencendo o Divórcio" if category == "Podcast Divórcio" else category
 
@@ -431,9 +431,22 @@ def add_record(sender_number, sender_name, text, category, names_found, summary=
     else:
         clean_names = sanitize_str(names_found)
 
+    msg_dt = None
+    if message_timestamp:
+        try:
+            ts = float(message_timestamp)
+            if ts > 1e11:
+                ts = ts / 1000.0
+            msg_dt = datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M:%S")
+        except Exception:
+            msg_dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    if not msg_dt:
+        msg_dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     record = {
         "id": len(db) + 1,
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "timestamp": msg_dt,
         "sender_number": clean_sender_number,
         "sender_name": clean_sender_name,
         "text": clean_text,
@@ -543,6 +556,7 @@ def webhook():
             remote_jid = key.get("remoteJid", "")
             sender_number = remote_jid.split("@")[0]
             push_name = msg_data.get("pushName", "Contato")
+            raw_ts = msg_data.get("messageTimestamp")
             
             message = msg_data.get("message", {})
             text_content = (
@@ -554,7 +568,7 @@ def webhook():
             print(f"📩 [Mensagem Recebida] De: {push_name} ({sender_number}) | Texto: {text_content}")
 
             # --- PROCESSAMENTO PASSIVO EM BACKGROUND VIA IA ---
-            def process_incoming_message():
+            def process_incoming_message(msg_ts):
                 ai_result = ai_background_classifier(push_name, text_content)
 
                 if ai_result:
@@ -576,10 +590,10 @@ def webhook():
                 print(f"🧠 [IA PASSIVA] Categoria: {category} | Nomes: {names} | Resumo: {summary}")
 
                 # Salva no banco de dados local & atualiza dashboard web no ar
-                add_record(sender_number, push_name, text_content, category, names, summary)
+                add_record(sender_number, push_name, text_content, category, names, summary, message_timestamp=msg_ts)
 
             # Roda em background para não travar a resposta da API
-            threading.Thread(target=process_incoming_message, daemon=True).start()
+            threading.Thread(target=process_incoming_message, args=(raw_ts,), daemon=True).start()
 
     return jsonify({"status": "success"}), 200
 
