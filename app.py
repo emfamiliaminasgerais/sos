@@ -131,8 +131,9 @@ def is_valid_request(text):
     has_health = any(w in text_lower for w in ["hospital", "cirurgia", "câncer", "cancer", "internado", "internada", "doente", "doença", "doenca", "exame", "leito", "uti", "saúde", "saude", "cura", "médico", "medico"])
     has_spiritual = any(w in text_lower for w in ["depressão", "depressao", "ansiedade", "libertação", "libertacao", "suicídio", "suicidio", "vício", "vicio", "angústia", "angustia"])
     has_testimony = any(w in text_lower for w in ["testemunho", "vitória", "vitoria", "abençoou", "abencoou", "graça alcançada", "graca alcancada"])
+    has_name = is_valid_person_name(text)
 
-    return has_podcast or has_prayer or has_health or has_spiritual or has_testimony
+    return has_podcast or has_prayer or has_health or has_spiritual or has_testimony or has_name
 
 # --- REGRAS DE HEURÍSTICA (FALLBACK DE ALTA PRECISÃO) ---
 def classify_category(text):
