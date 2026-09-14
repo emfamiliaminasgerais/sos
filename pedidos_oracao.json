@@ -694,5 +694,29 @@
         "sub_tag": "Podcast Vencendo o Divórcio",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 59,
+        "timestamp": "2026-09-14 13:22:45",
+        "sender_number": "39647698808876",
+        "sender_name": "39647698808876",
+        "text": "El problema es que yo la sigo amando y esperando y echándome toda la culpa del divorcio.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 60,
+        "timestamp": "2026-09-14 13:22:45",
+        "sender_number": "216170636550337",
+        "sender_name": "216170636550337",
+        "text": "Coloca meu nome e da minha família em oração",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
