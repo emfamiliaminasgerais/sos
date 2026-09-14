@@ -8890,5 +8890,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 742,
+        "timestamp": "2026-09-14 15:09:14",
+        "sender_number": "553488376448",
+        "sender_name": "Roberto Eduardo",
+        "text": "Sou da igreja de Araguari Afonso Pena",
+        "names_found": "Araguari Afonso Pena",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
