@@ -550,5 +550,29 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 47,
+        "timestamp": "2026-09-14 13:40:52",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Eu peguei o telefone de vocês no podcast de casais",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 48,
+        "timestamp": "2026-09-14 13:40:52",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Ou é aki mesmo que resolve sobre questão de casamentos",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
