@@ -9046,5 +9046,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 755,
+        "timestamp": "2026-09-14 15:23:30",
+        "sender_number": "553192536994",
+        "sender_name": "Thiago Santos",
+        "text": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
