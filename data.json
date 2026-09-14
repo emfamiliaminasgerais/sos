@@ -8038,5 +8038,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 671,
+        "timestamp": "2026-09-14 14:26:16",
+        "sender_number": "553299654505",
+        "sender_name": "Joel Araujo",
+        "text": "Joel da Silva Araújo",
+        "names_found": "Silva Araújo",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
