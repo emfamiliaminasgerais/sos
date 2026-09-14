@@ -7702,5 +7702,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 643,
+        "timestamp": "2026-09-14 14:07:00",
+        "sender_number": "553198991781",
+        "sender_name": "Soraia",
+        "text": "Um casamento de mãos de 20 anos e quer separar da esposa e filhos",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
