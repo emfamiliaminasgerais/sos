@@ -322,5 +322,41 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 28,
+        "timestamp": "2026-09-14 13:22:41",
+        "sender_number": "101558897373210",
+        "sender_name": "101558897373210",
+        "text": "Só tem um hospital",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 29,
+        "timestamp": "2026-09-14 13:22:41",
+        "sender_number": "101558897373210",
+        "sender_name": "101558897373210",
+        "text": "Tá hospital de Ibirité",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 30,
+        "timestamp": "2026-09-14 13:22:42",
+        "sender_number": "147566519918695",
+        "sender_name": "147566519918695",
+        "text": "1 Coríntios 15:57 Mas graças a Deus que nos dá a vitória por nosso Senhor Jesus Cristo. 58 Portanto, meus amados irmãos, sede firmes e constantes, sempre abundantes na obra do Senhor, sabendo que o vosso trabalho não é vão no Senhor.\n\n https://bibliajfa.app/app/acf/46N/15/57",
+        "names_found": "Nenhum nome extraído",
+        "category": "Financeiro",
+        "sub_tag": "Financeiro",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
