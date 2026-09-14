@@ -613,18 +613,21 @@
                 const badgeClass = getCategoryBadge(item.category, item.sub_tag);
                 const isPodcast = item.category === 'Podcast Divórcio' || (item.sub_tag && item.sub_tag.includes('Podcast'));
 
+                const cleanPhone = (item.sender_number || "").replace(/\D/g, "");
+                const phoneDisplay = item.sender_number && item.sender_number !== item.sender_name && item.sender_number !== 'Contato WhatsApp' && !item.sender_number.includes('WhatsApp ID') ? item.sender_number : '';
+
                 const cardHtml = `
                     <div class="glass-dark p-5 rounded-2xl shadow-xl border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full text-xs font-extrabold border flex items-center gap-1.5 ${badgeClass}">
-                                    ${isPodcast ? '🎙️ Podcast Vencendo o Divórcio' : (item.category === 'Saúde' ? '🏥 Saúde & Cura' : '🙏 Pedidos de Oração')}
+                                    ${isPodcast ? '🎙️ Podcast Vencendo o Divórcio' : (item.category === 'Saúde' ? '🏥 Saúde & Cura' : (item.category === 'Espiritual' ? '🕊️ Espiritual' : (item.category === 'Financeiro' ? '💼 Financeiro' : (item.category === 'Agradecimento' ? '✨ Agradecimento' : '🙏 Pedidos de Oração'))))}
                                 </span>
                                 <span class="text-xs text-slate-400 font-medium">${item.timestamp}</span>
                             </div>
                             <h4 class="font-bold text-slate-100 text-sm flex items-center gap-2">
-                                <i data-lucide="user" class="w-4 h-4 text-red-500"></i> ${item.sender_name}
-                                <span class="text-xs font-normal text-slate-400">(${item.sender_number})</span>
+                                <i data-lucide="user" class="w-4 h-4 text-red-500"></i> ${item.sender_name || 'Contato WhatsApp'}
+                                ${phoneDisplay ? `<span class="text-xs font-normal text-slate-400">(${phoneDisplay})</span>` : ''}
                             </h4>
                             ${item.names_found ? `
                                 <p class="text-xs font-semibold text-amber-400 mt-2 flex items-center gap-1.5">
@@ -638,9 +641,11 @@
 
                         <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
                             <span class="text-slate-400">Status: <strong class="text-red-400">${item.status || 'Em Atendimento'}</strong></span>
-                            <a href="https://wa.me/${item.sender_number}" target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold flex items-center gap-1.5 transition shadow-lg shadow-emerald-950/50">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
-                            </a>
+                            ${cleanPhone ? `
+                                <a href="https://wa.me/${cleanPhone}" target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold flex items-center gap-1.5 transition shadow-lg shadow-emerald-950/50">
+                                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                                </a>
+                            ` : `<span class="text-[11px] text-slate-500 italic">WhatsApp Web</span>`}
                         </div>
                     </div>
                 `;
@@ -671,24 +676,29 @@
                     const isPodcast = item.category === 'Podcast Divórcio' || (item.sub_tag && item.sub_tag.includes('Podcast'));
                     const timeOnly = item.timestamp ? item.timestamp.split(" ")[1] || '' : '';
 
+                    const cleanPhone = (item.sender_number || "").replace(/\D/g, "");
+                    const phoneDisplay = item.sender_number && item.sender_number !== item.sender_name && item.sender_number !== 'Contato WhatsApp' && !item.sender_number.includes('WhatsApp ID') ? item.sender_number : '';
+
                     tableRows += `
                         <tr class="border-b border-slate-800/60 hover:bg-slate-900/50 transition">
                             <td class="px-4 py-3 text-xs text-slate-400 font-mono">${timeOnly}</td>
                             <td class="px-4 py-3 text-xs font-bold text-white">
-                                ${item.sender_name}<br/>
-                                <span class="text-[10px] text-slate-400 font-normal">${item.sender_number}</span>
+                                ${item.sender_name || 'Contato WhatsApp'}<br/>
+                                ${phoneDisplay ? `<span class="text-[10px] text-slate-400 font-normal">${phoneDisplay}</span>` : ''}
                             </td>
                             <td class="px-4 py-3">
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold border ${badgeClass}">
-                                    ${isPodcast ? '🎙️ Podcast Divórcio' : (item.category === 'Saúde' ? '🏥 Saúde & Cura' : '🙏 Pedidos de Oração')}
+                                    ${isPodcast ? '🎙️ Podcast Divórcio' : (item.category === 'Saúde' ? '🏥 Saúde & Cura' : (item.category === 'Espiritual' ? '🕊️ Espiritual' : (item.category === 'Financeiro' ? '💼 Financeiro' : (item.category === 'Agradecimento' ? '✨ Agradecimento' : '🙏 Pedidos de Oração'))))}
                                 </span>
                             </td>
                             <td class="px-4 py-3 text-xs font-semibold text-amber-400">${item.names_found}</td>
                             <td class="px-4 py-3 text-xs text-slate-300 max-w-xs truncate" title="${item.text}">"${item.text}"</td>
                             <td class="px-4 py-3 text-right">
-                                <a href="https://wa.me/${item.sender_number}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-[11px] font-bold transition">
-                                    <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
-                                </a>
+                                ${cleanPhone ? `
+                                    <a href="https://wa.me/${cleanPhone}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-[11px] font-bold transition">
+                                        <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp
+                                    </a>
+                                ` : `<span class="text-[10px] text-slate-500 italic">WhatsApp</span>`}
                             </td>
                         </tr>
                     `;

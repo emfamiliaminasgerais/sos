@@ -95,10 +95,49 @@ def ai_background_classifier(sender_name, text_content):
         print(f"⚠️ Erro ao consultar IA Gemini em background: {e}")
         return None
 
-# --- REGRAS DE HEURÍSTICA (FALLBACK) ---
+def is_valid_request(text):
+    if not text or len(text.strip()) < 3:
+        return False
+
+    text_lower = text.lower().strip()
+    
+    # 1. Ignorar saudações curtas ou mensagens soltas de cortesia
+    greetings = [
+        "boa noite", "bom dia", "boa tarde", "paz do senhor", "paz de deus",
+        "graça e paz", "amém", "amen", "obrigado", "obrigada", "valeu", "olá", "ola",
+        "tudo bem", "como vai", "oi", "oie"
+    ]
+    cleaned = text_lower
+    for g in greetings:
+        cleaned = cleaned.replace(g, "")
+    cleaned = cleaned.strip()
+
+    if len(cleaned) < 5:
+        return False
+        
+    # 2. Ignorar links ou versículos bíblicos soltos sem pedido pessoal
+    if "bible.com" in text_lower or text_lower.startswith("salmos ") or text_lower.startswith("provérbios "):
+        if not any(w in text_lower for w in ["peço", "peco", "oração", "oracao", "orem", "ajuda", "preciso"]):
+            return False
+
+    # 3. Ignorar solicitações comerciais/vagas de emprego que não sejam pedidos de oração
+    if any(w in text_lower for w in ["vagas de emprego", "tem vaga", "enviar currículo", "vaga de trabalho"]):
+        if not any(w in text_lower for w in ["oração", "oracao", "orar", "deus"]):
+            return False
+
+    # 4. Exigir intenção relevante para o sistema
+    has_podcast = any(w in text_lower for w in ["podcast", "vencendo o divórcio", "vencendo o divorcio", "divórcio", "divorcio", "casamento", "separação", "separacao", "marido", "esposa", "restauração", "restauracao", "problemas no casamento"])
+    has_prayer = any(w in text_lower for w in ["oração", "oracao", "orar", "orem", "peço", "peco", "pedir", "interceda", "colocar na lista", "reza", "rezar"])
+    has_health = any(w in text_lower for w in ["hospital", "cirurgia", "câncer", "cancer", "internado", "internada", "doente", "doença", "doenca", "exame", "leito", "uti", "saúde", "saude", "cura", "médico", "medico"])
+    has_spiritual = any(w in text_lower for w in ["depressão", "depressao", "ansiedade", "libertação", "libertacao", "suicídio", "suicidio", "vício", "vicio", "angústia", "angustia"])
+    has_testimony = any(w in text_lower for w in ["testemunho", "vitória", "vitoria", "abençoou", "abencoou", "graça alcançada", "graca alcancada"])
+
+    return has_podcast or has_prayer or has_health or has_spiritual or has_testimony
+
+# --- REGRAS DE HEURÍSTICA (FALLBACK DE ALTA PRECISÃO) ---
 def classify_category(text):
     text_lower = text.lower()
-    if any(w in text_lower for w in ["podcast", "vencendo o divórcio", "vencendo o divorcio"]):
+    if any(w in text_lower for w in ["podcast", "vencendo o divórcio", "vencendo o divorcio", "divórcio", "divorcio", "casamento", "separação", "separacao", "marido", "esposa"]):
         return "Podcast Divórcio"
     if any(w in text_lower for w in ["saúde", "saude", "doença", "doenca", "hospital", "cirurgia", "cura", "médico", "medico", "câncer", "cancer", "dor", "exame", "remédio", "internado", "leito"]):
         return "Saúde"
@@ -110,20 +149,64 @@ def classify_category(text):
         return "Agradecimento"
     return "Pedidos de Oração"
 
-def extract_names(text):
+COMMON_NON_NAMES = {
+    'deus', 'senhor', 'jesus', 'cristo', 'bispo', 'pastor', 'pastot', 'irmão', 'irmã', 'irmao', 'irma',
+    'salmos', 'bíblia', 'biblia', 'escrituras', 'sagradas', 'podcast', 'divórcio', 'divorcio', 'casamento',
+    'boa tarde', 'bom dia', 'boa noite', 'peço oração', 'por favor', 'obrigado', 'amém', 'amen', 'família',
+    'familia', 'saúde', 'saude', 'vida', 'financeiro', 'financeira', 'cirurgia', 'hospital', 'cura',
+    'libertação', 'libertacao', 'trabalho', 'vitoria', 'vitória', 'testemunho', 'graça', 'graca', 'casa',
+    'culto', 'igreja', 'adoração', 'adoracao', 'minha', 'meu', 'minhas', 'meus', 'nossa', 'nosso', 'todos',
+    'tudo', 'conta', 'direção', 'direcao', 'força', 'forca', 'mim', 'você', 'voce', 'eles', 'elas', 'ela',
+    'ele', 'agora', 'contato', 'mensagens', 'mensagem', 'áudio', 'audio', 'imagem', 'vídeo', 'video',
+    'grupo', 'semana', 'hoje', 'ontem', 'amanhã', 'amanha', 'mesmo', 'mesma', 'também', 'tambem', 'ainda',
+    'mãe', 'mae', 'pai', 'filho', 'filha', 'marido', 'esposa', 'mulher', 'homem', 'pessoa', 'pessoas',
+    'resposta', 'dúvida', 'duvida', 'pergunta', 'ajuda', 'retorno', 'atendimento', 'contato', 'peço', 'peco',
+    'leopoldina', 'ibirité', 'ibiritê', 'confins', 'bocaiúva', 'bocaiuva', 'oliveira', 'santa clara',
+    'belo horizonte', 'uberlândia', 'uberlandia', 'juiz de fora', 'contagem', 'betim', 'montes claros',
+    'ipatinga', 'governador valadares', 'sabará', 'sabara', 'ribeirão das neves', 'neves', 'sete lagoas'
+}
+
+def is_real_name(word_str):
+    cleaned = word_str.strip()
+    words = cleaned.split()
+    if not words or len(cleaned) < 3:
+        return False
+    for w in words:
+        w_clean = w.lower().strip('.,!?:;"\'()[]{}')
+        if w_clean in COMMON_NON_NAMES or len(w_clean) < 2 or w_clean.isdigit():
+            return False
+        if not w[0].isupper():
+            return False
+    return True
+
+def extract_names(text, push_name=''):
     names = set()
-    matches = re.findall(
-        r'(?:por|pelo|pela|para|irmã|irmão|nome[s]?[:]?)\s+([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)',
-        text
-    )
+    
+    # 1. Meu nome é / e [Nome]
+    m_name = re.search(r'\bmeu\s+nome\s+[eé:]?\s*([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', text, re.IGNORECASE)
+    if m_name:
+        cand = m_name.group(1).strip()
+        if is_real_name(cand):
+            names.add(cand)
+
+    # 2. Preposições de indicação de nome
+    matches = re.findall(r'(?:por|pelo|pela|para|p/|de|irmã|irmão|nome[s]?[:]?)\s+([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', text)
     for m in matches:
-        if len(m.strip()) > 2:
-            names.add(m.strip())
-            
-    cap_sequences = re.findall(r'\b([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)+)\b', text)
+        cand = m.strip()
+        if is_real_name(cand):
+            names.add(cand)
+
+    # 3. Nomes próprios compostos no texto
+    cap_sequences = re.findall(r'\b([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)\b', text)
     for seq in cap_sequences:
-        if seq.lower() not in ["boa tarde", "bom dia", "boa noite", "peço oração", "por favor"]:
-            names.add(seq.strip())
+        cand = seq.strip()
+        if is_real_name(cand):
+            names.add(cand)
+
+    # 4. Fallback: se a mensagem é um pedido pessoal e push_name for um nome real válido
+    if not names and push_name and is_real_name(push_name):
+        if any(w in text.lower() for w in ['mim', 'minha', 'meu', 'peço', 'peco', 'oracao', 'oração']):
+            names.add(push_name)
 
     return list(names)
 
@@ -162,27 +245,88 @@ def git_auto_push():
     def push_thread():
         try:
             if os.path.exists(".git"):
-                subprocess.run(["git", "add", "dashboard/data.json", "data.json", "pedidos_oracao.json"], check=False)
-                subprocess.run(["git", "commit", "-m", "Auto-update Hub da Central de Atendimento MG"], check=False)
-                subprocess.run(["git", "push"], check=False)
-        except Exception as e:
+                files_to_add = [f for f in ["dashboard/data.json", "data.json", "pedidos_oracao.json"] if os.path.exists(f)]
+                if files_to_add:
+                    subprocess.run(["git", "add"] + files_to_add, check=False)
+                    subprocess.run(["git", "commit", "-m", "Auto-update Hub da Central de Atendimento MG"], check=False)
+                    subprocess.run(["git", "push"], check=False)
+        except Exception:
             pass
     threading.Thread(target=push_thread, daemon=True).start()
+def format_phone_number(raw_num):
+    if not raw_num or not isinstance(raw_num, str):
+        return ""
+    digits = "".join(filter(str.isdigit, raw_num))
+    if len(digits) > 13: # LID ID do WhatsApp
+        return ""
+    if digits.startswith("55") and len(digits) in (12, 13):
+        ddd = digits[2:4]
+        num = digits[4:]
+        if len(num) == 9:
+            return f"+55 ({ddd}) {num[:5]}-{num[5:]}"
+        elif len(num) == 8:
+            return f"+55 ({ddd}) {num[:4]}-{num[4:]}"
+    elif len(digits) in (10, 11):
+        ddd = digits[:2]
+        num = digits[2:]
+        if len(num) == 9:
+            return f"({ddd}) {num[:5]}-{num[5:]}"
+        elif len(num) == 8:
+            return f"({ddd}) {num[:4]}-{num[4:]}"
+    return raw_num if digits else ""
+
+def clean_sender_info(remote_jid, push_name, contact_map=None):
+    clean_id = remote_jid.split("@")[0] if "@" in remote_jid else remote_jid
+    mapped_name = ""
+    mapped_phone = ""
+
+    if contact_map:
+        cinfo = contact_map.get(remote_jid) or contact_map.get(clean_id)
+        if cinfo:
+            mapped_name = cinfo.get("name", "")
+            mapped_phone = cinfo.get("phone", "")
+
+    best_name = push_name if (push_name and push_name != "Contato" and not push_name.isdigit() and len(push_name) < 35) else mapped_name
+    if not best_name or best_name.isdigit() or (len(best_name) > 13 and best_name.isdigit()):
+        best_name = "Contato WhatsApp"
+
+    phone_src = mapped_phone or clean_id
+    formatted_phone = format_phone_number(phone_src)
+    
+    if not formatted_phone:
+        formatted_phone = formatted_phone if formatted_phone else "Contato WhatsApp"
+
+    return best_name, formatted_phone
+
+def sanitize_str(s):
+    if not s or not isinstance(s, str):
+        return str(s) if s is not None else ""
+    return s.replace("\x00", "").replace("\r", "").strip()
 
 def add_record(sender_number, sender_name, text, category, names_found, summary=""):
     db = load_db()
     sub_tag = "Podcast Vencendo o Divórcio" if category == "Podcast Divórcio" else category
 
+    clean_text = sanitize_str(text)
+    clean_sender_name = sanitize_str(sender_name) or "Contato WhatsApp"
+    clean_sender_number = sanitize_str(sender_number)
+    clean_summary = sanitize_str(summary)
+
+    if isinstance(names_found, list):
+        clean_names = ", ".join([sanitize_str(n) for n in names_found if sanitize_str(n)])
+    else:
+        clean_names = sanitize_str(names_found)
+
     record = {
         "id": len(db) + 1,
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "sender_number": sender_number,
-        "sender_name": sender_name or "Desconhecido",
-        "text": text,
-        "names_found": ", ".join(names_found) if names_found else "Nenhum nome extraído",
+        "sender_number": clean_sender_number,
+        "sender_name": clean_sender_name,
+        "text": clean_text,
+        "names_found": clean_names if clean_names else "Nenhum nome extraído",
         "category": category,
         "sub_tag": sub_tag,
-        "summary": summary,
+        "summary": clean_summary,
         "status": "Em Atendimento"
     }
     db.append(record)
@@ -308,6 +452,9 @@ def webhook():
                     names = ai_result.get("nomes_para_oracao", extract_names(text_content))
                     summary = ai_result.get("resumo", "")
                 else:
+                    if not is_valid_request(text_content):
+                        print(f"⏭️ Mensagem desconsiderada (saudação ou irrelevante): {text_content}")
+                        return
                     category = classify_category(text_content)
                     names = extract_names(text_content)
                     summary = ""
