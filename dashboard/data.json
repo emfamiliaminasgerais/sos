@@ -262,5 +262,53 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 23,
+        "timestamp": "2026-09-14 13:10:00",
+        "sender_number": "160782570508360",
+        "sender_name": "160782570508360",
+        "text": "A iurd é casa de oração e acolhimento ao povo para adoração,  peço suas orações",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 24,
+        "timestamp": "2026-09-14 13:10:00",
+        "sender_number": "160782570508360",
+        "sender_name": "160782570508360",
+        "text": "Bispo André,  oração,  ataques de cunho religioso, furto do dízimo separado para obra do Senhor Jesus,  estão invadindo a minha busca em professar a fé no Deus vivo através da iurd",
+        "names_found": "Bispo André, Senhor Jesus",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 25,
+        "timestamp": "2026-09-14 13:10:00",
+        "sender_number": "91242939580424",
+        "sender_name": "91242939580424",
+        "text": "Estamos precisando de oração",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 26,
+        "timestamp": "2026-09-14 13:10:00",
+        "sender_number": "49878193414396",
+        "sender_name": "49878193414396",
+        "text": "Será vai demorar",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
