@@ -48718,5 +48718,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4061,
+        "timestamp": "2026-09-14 16:19:52",
+        "sender_number": "553299654505",
+        "sender_name": "Joel Araujo",
+        "text": "Olha diz a médica que não é satisfatória",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
