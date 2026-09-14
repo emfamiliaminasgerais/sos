@@ -7606,5 +7606,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 635,
+        "timestamp": "2026-09-14 13:49:42",
+        "sender_number": "553196397118",
+        "sender_name": "Haroldo Jose Barbosa",
+        "text": "Vai demorar muito",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
