@@ -8518,5 +8518,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 711,
+        "timestamp": "2026-09-14 14:42:56",
+        "sender_number": "553186857564",
+        "sender_name": "Elinete 💚",
+        "text": "Esse véu de cruz está sendo dado em todas as igrejas universal?",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
