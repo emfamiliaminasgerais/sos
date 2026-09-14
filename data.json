@@ -48742,5 +48742,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4063,
+        "timestamp": "2026-09-14 16:25:32",
+        "sender_number": "553799460309",
+        "sender_name": "💞Sanni 🌸",
+        "text": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
