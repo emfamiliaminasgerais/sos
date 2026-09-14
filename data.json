@@ -8362,5 +8362,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 698,
+        "timestamp": "2026-09-14 14:37:46",
+        "sender_number": "5521975468063",
+        "sender_name": "Nilzete Rodrigues 🦋🦋",
+        "text": "Só vou a terapia de vez em quando",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
