@@ -150,20 +150,88 @@ def classify_category(text):
     return "Pedidos de Oração"
 
 FIRST_NAMES = {
-    'ana', 'maria', 'joão', 'joao', 'carlos', 'roberto', 'juliana', 'marilze', 'ivete', 'dafne',
-    'altair', 'alexandre', 'marcos', 'lucas', 'felipe', 'philipe', 'filipe', 'guilherme', 'gabriel',
-    'antônio', 'antonio', 'josé', 'jose', 'francisca', 'francisco', 'paulo', 'pedro', 'luiz', 'luis',
-    'manoel', 'manuel', 'raimundo', 'sebastião', 'sebastiao', 'adriana', 'sandra', 'márcia', 'marcia',
-    'luciana', 'patrícia', 'patricia', 'aline', 'camila', 'fernanda', 'vanessa', 'beatriz', 'jessica',
-    'jéssica', 'bruna', 'amanda', 'renata', 'larissa', 'débora', 'debora', 'priscila', 'sabrina',
-    'tatiana', 'viviane', 'natália', 'natalia', 'elaine', 'marilda', 'fatima', 'fátima', 'sara',
-    'sueli', 'creuza', 'joana', 'isabel', 'isabele', 'lazaro', 'lázaro', 'daniel', 'wesley', 'simone',
-    'rosimere', 'gutemberg', 'vanderlei', 'janaina', 'lourdes', 'nicolas', 'walter', 'alice', 'marcio',
-    'márcio', 'janice', 'thereza', 'zaira', 'jessé', 'jesse', 'haroldo', 'deivisson', 'ivonete', 'paôla',
-    'paola', 'rosângela', 'rosangela', 'cláudio', 'claudio', 'moraes', 'joaquim', 'eliana', 'waldemir',
-    'silva', 'ferreira', 'gutemberg', 'barbosa', 'roberto', 'creuza', 'dyvaneia', 'leandro', 'alberta',
-    'ricardo', 'eduardo', 'rodrigo', 'gustavo', 'bruno', 'tiago', 'thiago', 'diego', 'rafael', 'vitor',
-    'víctor', 'matheus', 'mateus', 'leonardo', 'marcelo', 'andré', 'andre', 'fábio', 'fabio', 'caio'
+    'afonso', 'airton', 'alan', 'alberto', 'alcides', 'aldo', 'alessandro', 'alex', 'alexandre',
+    'alexandro', 'alfredo', 'alisson', 'allan', 'altair', 'álvaro', 'alvaro', 'amaro', 'amauri', 'amaury',
+    'américo', 'americo', 'andré', 'andre', 'anderson', 'angelo', 'ângelo', 'anibal', 'aníbal', 'anselmo',
+    'anthony', 'antonio', 'antônio', 'aparecido', 'aroldo', 'arthur', 'artur', 'augusto', 'ayrton', 'baltazar',
+    'benedito', 'benjamim', 'benjamin', 'bento', 'bernardo', 'breno', 'bruno', 'caio', 'caique', 'caíque',
+    'carlos', 'cássio', 'cassio', 'celso', 'césar', 'cesar', 'cicero', 'cícero', 'claudio', 'cláudio',
+    'cleber', 'cléber', 'cleiton', 'clovis', 'clóvis', 'cristian', 'cristiano', 'dagoberto', 'daniel', 'danilo',
+    'dario', 'dário', 'davi', 'david', 'deivisson', 'denis', 'dênis', 'diego', 'diogo', 'dionísio', 'dionisio',
+    'dirceu', 'douglas', 'eder', 'éder', 'edgard', 'edgar', 'edílson', 'edilson', 'edmar', 'edmilson', 'edmundo',
+    'edson', 'eduardo', 'edvaldo', 'elias', 'eliel', 'eliseu', 'emerson', 'emilio', 'emílyo',
+    'enoch', 'enzo', 'eric', 'érica', 'ériton', 'ernani', 'ernesto', 'estevão', 'estevao', 'eugênio',
+    'eugenio', 'euller', 'evandro', 'everton', 'ezequiel', 'fabiano', 'fábio', 'fabio', 'fabricio', 'fabrício',
+    'fausto', 'felipe', 'feliph', 'feliphe', 'felix', 'félix', 'fernando', 'filipe', 'flavio', 'flávio',
+    'francisco', 'gabriel', 'geovani', 'geovane', 'geraldo', 'gerson', 'gérson', 'gilberto', 'gilmar', 'gilson',
+    'giovani', 'giovanni', 'givanildo', 'glauber', 'guilherme', 'gustavo',
+    'haroldo', 'heitor', 'hélio', 'helio', 'henrique', 'hercules', 'hércules', 'hermes', 'hugo', 'iago',
+    'ian', 'igor', 'isaac', 'isaias', 'isaías', 'israel', 'itamar', 'ivaldo', 'ivan', 'ivanildo', 'izaias',
+    'jacó', 'jaco', 'jacob', 'jaime', 'jair', 'jairo', 'jamil', 'jandir', 'janio', 'jânio', 'jean', 'jeferson',
+    'jefferson', 'jesse', 'jessé', 'joab', 'joão', 'joao', 'joaquim', 'joel', 'joeliton', 'jonas',
+    'jonatan', 'jonathan', 'jorge', 'josé', 'jose', 'joseph', 'joshua', 'josias', 'josué', 'josue', 'juliano',
+    'julio', 'júlio', 'junior', 'júnior', 'jurandir', 'juvenal', 'laércio', 'laercio', 'lauro', 'lázaro', 'lazaro',
+    'leandro', 'leo', 'léo', 'leonardo', 'leonel', 'leônidas', 'leonidas', 'leopoldina', 'leopoldo', 'levi',
+    'luan', 'lucas', 'luciano', 'lúcio', 'lucio', 'luís', 'luis', 'luiz', 'luka', 'lukas', 'manuel',
+    'manoel', 'marcelo', 'márcio', 'marcio', 'marco', 'marcos', 'marcus', 'mário', 'mario', 'mateus', 'matheus',
+    'matias', 'maurício', 'mauricio', 'mauro', 'max', 'maxwell', 'miguel', 'moacir', 'moisés', 'moises',
+    'murilo', 'natan', 'natanael', 'nathan', 'nelson', 'neto', 'nicolas', 'olavo',
+    'orlando', 'oscar', 'osmar', 'osvaldo', 'oswaldo', 'otávio', 'otavio', 'otto', 'pablo', 'paschoal',
+    'patricio', 'patrício', 'patrick', 'paulo', 'pedro', 'plínio', 'plinio', 'rafael', 'raimundo',
+    'ramon', 'raoni', 'raul', 'reginaldo', 'reinaldo', 'renan', 'renato', 'ricardo', 'richard', 'rivaldo',
+    'roberto', 'robson', 'rodolfo', 'rodrigo', 'roger', 'rogério', 'rogerio', 'romário', 'romario', 'romeu',
+    'romildo', 'rômulo', 'romulo', 'ronald', 'ronaldo', 'ronan', 'ruberlei', 'rubens', 'rui', 'ruy',
+    'samuel', 'saulo', 'sérgio', 'sergio', 'severino', 'silvio', 'sílvio', 'tales', 'tasso', 'tatiana',
+    'taylor', 'téo', 'teo', 'teodoro', 'thiago', 'tiago', 'tomás', 'tomas', 'tomaz', 'ulisses', 'vagner',
+    'valdir', 'valdo', 'valdemar', 'valdemir', 'valter', 'vanderlei', 'vanderley', 'vicente', 'victor',
+    'vinicius', 'vinícius', 'vitor', 'vítor', 'vladimir', 'wagner', 'waldir', 'waldemir', 'walter',
+    'wanderley', 'washington', 'weliton', 'wellington', 'wesley', 'willian', 'william', 'wilson', 'yago', 'yuri',
+    'abigail', 'adélia', 'adelia', 'adriana', 'agatha', 'ágatha', 'agnes', 'aída', 'aida', 'alessandra',
+    'alice', 'alícia', 'alicia', 'aline', 'amalia', 'amália', 'amanda', 'amélia', 'amelia', 'ana', 'analu',
+    'andréa', 'andrea', 'andreia', 'andréia', 'andressa', 'angela', 'ângela', 'angelica', 'angélica',
+    'anita', 'antonia', 'antônia', 'antonieta', 'aparecida', 'ariane', 'ariel', 'arlete', 'astrid', 'áurea',
+    'aurea', 'barbara', 'bárbara', 'beatriz', 'berenice', 'betânia', 'betania', 'benta', 'bernadete', 'bianca',
+    'bruna', 'camila', 'carina', 'carla', 'carlota', 'carmen', 'carolina', 'caroline', 'cássia', 'cassia',
+    'catarina', 'cátia', 'catia', 'cecília', 'cecilia', 'célia', 'celia', 'celina', 'cibele', 'cila', 'cintia',
+    'cíntia', 'clara', 'clarice', 'clarissa', 'cláudia', 'claudia', 'claudete', 'cleide', 'cleo', 'cléo',
+    'conceição', 'conceicao', 'cristiana', 'cristiane', 'cristina', 'dagmar', 'daiana', 'daiane', 'dalva',
+    'daniela', 'daniele', 'daniella', 'danielle', 'dara', 'daria', 'dária', 'débora', 'debora', 'deise',
+    'denise', 'diana', 'diná', 'dina', 'dinalva', 'diva', 'dulce',
+    'edna', 'eduarda', 'elaine', 'elena', 'eleonora', 'eliana', 'eliane', 'elisa', 'elisabete', 'elisabeth',
+    'elisângela', 'elisangela', 'elza', 'emanuela', 'emanoela', 'emanuelle', 'emília', 'emilia', 'emilly',
+    'emily', 'erika', 'érika', 'ester', 'esther', 'eunice', 'eva', 'evangelina', 'evelyn', 'fabiana',
+    'fabíola', 'fabiola', 'fátima', 'fatima', 'fernanda', 'flávia', 'flavia', 'flora', 'francisca',
+    'gabriela', 'gabriele', 'gabriella', 'gabrielle', 'georgia', 'geórgia', 'geovana', 'geovanna', 'gilda',
+    'giovana', 'giovanna', 'gisela', 'gisele', 'gislaine', 'glória', 'gloria', 'graziela',
+    'graziele', 'helena', 'helenice', 'heloísa', 'heloisa', 'iara', 'ines', 'inês', 'ingrid',
+    'iolanda', 'iracema', 'isabel', 'isabela', 'isabell', 'isabella', 'isabelle', 'isadora', 'isaura',
+    'isolda', 'ivana', 'ivone', 'ivonete', 'ivete', 'izabel', 'izabela', 'izabele', 'jacqueline', 'jaqueline',
+    'jandira', 'jane', 'janaina', 'janaína', 'janice', 'jessica', 'jéssica', 'joana',
+    'josi', 'josiane', 'júlia', 'julia', 'juliana', 'juliane', 'julieta',
+    'jurema', 'jussara', 'katia', 'kátia', 'keli', 'kelly', 'laís', 'lais', 'lara', 'larissa', 'laura',
+    'lavínia', 'lavinia', 'léa', 'lea', 'leandra', 'leila', 'lelia', 'lélia', 'letícia',
+    'leticia', 'lia', 'liana', 'lícia', 'licia', 'lídia', 'lidia', 'lídice', 'lilian', 'lílian',
+    'liliana', 'liliane', 'lina', 'linda', 'livia', 'lívia', 'lorena', 'lourdes', 'luana', 'lucia', 'lúcia',
+    'luciana', 'luciane', 'luciene', 'lucila', 'lucília', 'lucilia', 'ludmila', 'luísa', 'luisa', 'luiza',
+    'luíza', 'luzia', 'madalena', 'magali', 'magda', 'maia', 'maira', 'maíra', 'maísa', 'maisa', 'manuela',
+    'manuella', 'mara', 'marcela', 'márcia', 'marcia', 'margarete', 'margarida', 'maria',
+    'mariana', 'marilena', 'marilene', 'marilia', 'marília', 'marilu', 'marilza', 'marilze', 'marina',
+    'marinez', 'marisa', 'marisete', 'marisol', 'maritza', 'marlene', 'marli', 'marluce', 'marta', 'martha',
+    'matilde', 'maura', 'maysa', 'melina', 'melissa', 'mercedes', 'michele', 'michelli', 'michelle', 'milena',
+    'mirela', 'mirella', 'miriam', 'míriam', 'mirian', 'mônica', 'monica', 'monique', 'nádia', 'nadia',
+    'nadir', 'naiara', 'nair', 'nanci', 'nancy', 'nara', 'natália', 'natalia', 'nathalia', 'nathália',
+    'nayara', 'neide', 'neusa', 'neuza', 'nicolli', 'nicolly', 'nilda', 'nilsa', 'nilza', 'noemi', 'noemia',
+    'noêmia', 'norma', 'olga', 'olívia', 'olivia', 'otília', 'otilia', 'paloma', 'pamela', 'pâmela',
+    'paola', 'paôla', 'patrícia', 'patricia', 'paula', 'paulina', 'priscila', 'priscilla', 'rafaela', 'rafaella',
+    'raimunda', 'raquel', 'rayssa', 'rebeca', 'regina', 'renata', 'rita', 'roberta', 'rosana', 'rosângela',
+    'rosangela', 'rosani', 'rosaria', 'rosária', 'roseli', 'rosemere', 'rosemary', 'rosemire',
+    'rosimere', 'rosimeire', 'rosina', 'ruth', 'sabrina', 'salete', 'samanta', 'samantha', 'samara', 'sandra',
+    'sara', 'sarah', 'selma', 'severina', 'shirley', 'silvana', 'sílvia', 'silvia', 'simone', 'socorro',
+    'solange', 'sônia', 'sonia', 'sueli', 'suely', 'suzana', 'taís', 'tais', 'taísa', 'taisa',
+    'talita', 'tânia', 'tania', 'tatiana', 'tatiane', 'teresa', 'teresinha', 'thereza', 'tereza', 'terezinha',
+    'thaís', 'thais', 'thalita', 'vânia', 'vania', 'vanessa', 'verônica', 'veronica', 'vicentina',
+    'vitoria', 'vitória', 'vivian', 'viviane', 'waleska', 'wanda', 'wanessa', 'wilma', 'yara', 'yasmin',
+    'yasmim', 'zenaide', 'zilá', 'zilda', 'zilma', 'zoraide', 'zulmira', 'dafne', 'gutemberg'
 }
 
 INVALID_WORDS = {
@@ -182,13 +250,20 @@ INVALID_WORDS = {
     'belo horizonte', 'uberlândia', 'uberlandia', 'juiz de fora', 'contagem', 'betim', 'montes claros',
     'ipatinga', 'governador valadares', 'sete lagoas', 'deus', 'senhor', 'jesus', 'cristo', 'bispo', 'pastor',
     'dr', 'doutor', 'prof', 'professor', 'professora', 'deputado', 'prefeito', 'vereador', 'bolsonaro', 'caiado', 'chagas',
-    'contato', 'whatsapp', 'peço', 'peco'
+    'contato', 'whatsapp', 'peço', 'peco', 'silva', 'angola', 'estadual', 'municipal', 'hospital', 'coronel',
+    'dra', 'dora', 'ubs', 'upa', 'clínica', 'clinica', 'araruama', 'itaboraí', 'itaborai', 'manilha',
+    'rj', 'mg', 'sp', 'chamo', 'nome', 'endocrinologia', 'posto',
+    'gostaria', 'pedido', 'pedir', 'horário', 'horario', 'igreja', 'disponível', 'disponivel', 'cura', 'saúde', 'saude',
+    'diarréia', 'diarreia', 'pneumonia', 'colonoscopia', 'calafrios', 'dor', 'idoso', 'diabética', 'diabetica', 'garganta', 'corpo', 'inflamada'
 }
 
 def is_valid_person_name(name_str):
     cleaned = name_str.strip()
+    # Strip list item prefixes like '108. Sandra', 'S2. João' (only numbers or letter+digits prefix)
+    cleaned = re.sub(r'^\s*\d+[\.\)]?\s*', '', cleaned)
+    cleaned = re.sub(r'^\s*[A-Za-z]\d+[\.\)]?\s*', '', cleaned)
     words = [w.lower().strip('.,!?:;"\'()[]{}') for w in cleaned.split()]
-    if not words or len(cleaned) < 3:
+    if not words or len(cleaned) < 2:
         return False
     
     for w in words:
@@ -198,38 +273,50 @@ def is_valid_person_name(name_str):
     first = words[0]
     if first in FIRST_NAMES:
         return True
-        
-    if len(words) >= 2:
-        if first[0].isupper() or first.isupper():
-            return True
 
     return False
 
 def extract_names(text, push_name=''):
     names = set()
     
+    # Pre-process lines to strip list prefixes (e.g., '108. Sandra Gonçalves', '20. Altair Lopes')
+    clean_lines = []
+    for line in text.splitlines():
+        sub_line = re.sub(r'^\s*\d+[\.\)]?\s*', '', line).strip()
+        sub_line = re.sub(r'^\s*[A-Za-z]\d+[\.\)]?\s*', '', sub_line).strip()
+        if sub_line:
+            clean_lines.append(sub_line)
+    
+    clean_text = "\n".join(clean_lines)
+
     # 1. Meu nome é / e [Nome]
-    m_name = re.search(r'\bmeu\s+nome\s+[eé:]?\s*([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', text, re.IGNORECASE)
+    m_name = re.search(r'\bmeu\s+nome\s+[eé:]?\s*([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', clean_text, re.IGNORECASE)
     if m_name:
         cand = m_name.group(1).strip()
         if is_valid_person_name(cand):
             names.add(cand)
 
     # 2. Preposições de indicação de nome
-    matches = re.findall(r'(?:por|pelo|pela|para|p/|de|irmã|irmão|nome[s]?[:]?)\s+([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', text)
+    matches = re.findall(r'(?:por|pelo|pela|para|p/|de|irmã|irmão|nome[s]?[:]?)\s+([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)*)', clean_text)
     for m in matches:
         cand = m.strip()
         if is_valid_person_name(cand):
             names.add(cand)
 
     # 3. Nomes próprios compostos no texto
-    cap_sequences = re.findall(r'\b([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)\b', text)
+    cap_sequences = re.findall(r'\b([A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+(?:\s+[A-ZÁÀÂÃÉÈÊÍÏÓÒÔÕÚÜÇ][a-záàâãéèêíïóòôõúüç]+)+)\b', clean_text)
     for seq in cap_sequences:
         cand = seq.strip()
         if is_valid_person_name(cand):
             names.add(cand)
 
-    # 4. Fallback: se a mensagem é um pedido pessoal e push_name for um nome real válido
+    # 4. Nomes simples em linhas únicas (ex: em listas de oração)
+    for line in clean_lines:
+        cand = line.strip()
+        if is_valid_person_name(cand):
+            names.add(cand)
+
+    # 5. Fallback: se a mensagem é um pedido pessoal e push_name for um nome real válido
     if not names and push_name and is_valid_person_name(push_name):
         if any(w in text.lower() for w in ['mim', 'minha', 'meu', 'peço', 'peco', 'oracao', 'oração']):
             names.add(push_name)
