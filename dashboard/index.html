@@ -224,7 +224,8 @@
                         </span>
                         
                         <select id="quick-period-select" onchange="onQuickPeriodChange(this.value)" class="bg-slate-950/90 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-semibold focus:outline-none focus:ring-1 focus:ring-red-600">
-                            <option value="all" selected>📅 Todas as Datas</option>
+                            <option value="since_friday" selected>🗓️ Desde Sexta-Feira até Hoje</option>
+                            <option value="all">📅 Todas as Datas</option>
                             <option value="today">📅 Hoje</option>
                             <option value="yesterday">📅 Ontem</option>
                             <option value="7days">🗓️ Últimos 7 Dias</option>
@@ -305,7 +306,8 @@
                     <div class="space-y-2">
                         <label class="block text-slate-400 font-semibold">Período Desejado:</label>
                         <select id="modal-period" onchange="generateNamesList()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white font-semibold focus:outline-none focus:ring-1 focus:ring-red-500">
-                            <option value="all" selected>📅 Todas as Datas (Histórico Completo)</option>
+                            <option value="since_friday" selected>🗓️ Desde Sexta-Feira até Hoje (Recomendado)</option>
+                            <option value="all">📅 Todas as Datas (Histórico Completo)</option>
                             <option value="today">📅 Hoje</option>
                             <option value="yesterday">📅 Ontem</option>
                             <option value="7days">🗓️ Últimos 7 Dias</option>
@@ -534,10 +536,17 @@
             renderContent();
         }
 
+        function formatDateLocal(d) {
+            const year = d.getFullYear();
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
         function getFilteredData() {
             const search = document.getElementById('search-input').value.toLowerCase();
             const now = new Date();
-            const todayStr = now.toISOString().split("T")[0];
+            const todayStr = formatDateLocal(now);
 
             return allData.filter(item => {
                 let matchesCategory = false;
@@ -556,12 +565,19 @@
                     const itemDateStr = item.timestamp.split(" ")[0];
                     const itemDate = new Date(itemDateStr);
 
-                    if (currentDateFilter === 'today') {
+                    if (currentDateFilter === 'since_friday') {
+                        const day = now.getDay();
+                        const diffToFriday = (day >= 5) ? (day - 5) : (day + 2);
+                        const fri = new Date(now);
+                        fri.setDate(now.getDate() - diffToFriday);
+                        const friStr = formatDateLocal(fri);
+                        matchesDate = itemDateStr >= friStr && itemDateStr <= todayStr;
+                    } else if (currentDateFilter === 'today') {
                         matchesDate = itemDateStr === todayStr;
                     } else if (currentDateFilter === 'yesterday') {
                         const yest = new Date(now);
                         yest.setDate(yest.getDate() - 1);
-                        matchesDate = itemDateStr === yest.toISOString().split("T")[0];
+                        matchesDate = itemDateStr === formatDateLocal(yest);
                     } else if (currentDateFilter === '7days') {
                         const past7 = new Date(now);
                         past7.setDate(past7.getDate() - 7);
@@ -575,7 +591,7 @@
                         matchesDate = itemDateStr.startsWith(currentMonthStr);
                     } else if (currentDateFilter === 'last_month') {
                         const lm = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-                        const lmStr = lm.toISOString().split("T")[0].substring(0, 7);
+                        const lmStr = formatDateLocal(lm).substring(0, 7);
                         matchesDate = itemDateStr.startsWith(lmStr);
                     } else if (currentDateFilter === 'custom') {
                         if (customFromDate && itemDateStr < customFromDate) matchesDate = false;
@@ -796,7 +812,7 @@
             const period = document.getElementById('modal-period').value;
             const category = document.getElementById('modal-category').value;
             const now = new Date();
-            const todayStr = now.toISOString().split("T")[0];
+            const todayStr = formatDateLocal(now);
 
             const namesList = [];
 
@@ -806,12 +822,19 @@
                     const itemDateStr = item.timestamp.split(" ")[0];
                     const itemDate = new Date(itemDateStr);
 
-                    if (period === 'today') {
+                    if (period === 'since_friday') {
+                        const day = now.getDay();
+                        const diffToFriday = (day >= 5) ? (day - 5) : (day + 2);
+                        const fri = new Date(now);
+                        fri.setDate(now.getDate() - diffToFriday);
+                        const friStr = formatDateLocal(fri);
+                        matchesDate = itemDateStr >= friStr && itemDateStr <= todayStr;
+                    } else if (period === 'today') {
                         matchesDate = itemDateStr === todayStr;
                     } else if (period === 'yesterday') {
                         const yest = new Date(now);
                         yest.setDate(yest.getDate() - 1);
-                        matchesDate = itemDateStr === yest.toISOString().split("T")[0];
+                        matchesDate = itemDateStr === formatDateLocal(yest);
                     } else if (period === '7days') {
                         const past7 = new Date(now);
                         past7.setDate(past7.getDate() - 7);
@@ -825,7 +848,7 @@
                         matchesDate = itemDateStr.startsWith(currentMonthStr);
                     } else if (period === 'last_month') {
                         const lm = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-                        const lmStr = lm.toISOString().split("T")[0].substring(0, 7);
+                        const lmStr = formatDateLocal(lm).substring(0, 7);
                         matchesDate = itemDateStr.startsWith(lmStr);
                     }
                 }
