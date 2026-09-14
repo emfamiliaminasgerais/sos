@@ -442,5 +442,77 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 38,
+        "timestamp": "2026-09-14 13:22:42",
+        "sender_number": "46489145491602",
+        "sender_name": "46489145491602",
+        "text": "Precisamos de muita oração para o meu irmão",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 39,
+        "timestamp": "2026-09-14 13:22:42",
+        "sender_number": "211110544322747",
+        "sender_name": "211110544322747",
+        "text": "Pedido de oração \nPaciente internado nao esta bem por acidente de trânsito \nisaac de sa Esteves de Oliveira",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 40,
+        "timestamp": "2026-09-14 13:22:42",
+        "sender_number": "77236917039202",
+        "sender_name": "77236917039202",
+        "text": "Por esse motivo que eu entrei em contato com vocês pra me dar uma orientação a respeito disso e estou bem peço oração aí por nós pra Deus quebrar esse orgulho dela que até hoje ela nunca me pediu perdão como se eu fosse totalmente o errado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 41,
+        "timestamp": "2026-09-14 13:22:42",
+        "sender_number": "77236917039202",
+        "sender_name": "77236917039202",
+        "text": "Como ela não deu entrada no divórcio ainda eu estou lutando não perdi a esperança não",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 42,
+        "timestamp": "2026-09-14 13:22:42",
+        "sender_number": "49878193414396",
+        "sender_name": "49878193414396",
+        "text": "Estou  esperando seu retorno  que horas vai vir no salão e aqui em casa fazer oração",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 43,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "34179383296128",
+        "sender_name": "34179383296128",
+        "text": "Minha amiga participa com vcs teve o casamento restaurado eu gostaria de auxílio do que devo fazer para poder conseguir restaurar o meu 😭",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
