@@ -258,6 +258,14 @@
                 <!-- Dynamic cards rendered via JS -->
             </div>
 
+            <!-- Load More Button Bar -->
+            <div id="load-more-container" class="hidden text-center py-6">
+                <button onclick="loadMore()" class="px-6 py-3 bg-red-700 hover:bg-red-600 text-white font-bold rounded-2xl text-xs transition shadow-xl border border-red-500/30 flex items-center gap-2 mx-auto">
+                    <i data-lucide="chevron-down" class="w-4 h-4"></i> Carregar Mais Atendimentos
+                </button>
+                <p id="load-more-info" class="text-[11px] text-slate-400 mt-2 font-medium"></p>
+            </div>
+
             <!-- Requests List Table (Visão em Lista / Tabela por Dia) -->
             <div id="requests-list-container" class="hidden space-y-6">
                 <!-- Dynamic list grouped by day rendered via JS -->
@@ -621,18 +629,26 @@
             }
         }
 
+        let visibleCount = 24;
+
+        function loadMore() {
+            visibleCount += 24;
+            renderContent();
+        }
+
         function renderCardsView(filtered) {
             const container = document.getElementById('requests-container');
-            container.innerHTML = '';
+            const itemsToRender = filtered.slice(0, visibleCount);
+            const htmlArr = [];
 
-            filtered.forEach(item => {
+            itemsToRender.forEach(item => {
                 const badgeClass = getCategoryBadge(item.category, item.sub_tag);
                 const isPodcast = item.category === 'Podcast Divórcio' || (item.sub_tag && item.sub_tag.includes('Podcast'));
 
                 const cleanPhone = (item.sender_number || "").replace(/\D/g, "");
                 const phoneDisplay = item.sender_number && item.sender_number !== item.sender_name && item.sender_number !== 'Contato WhatsApp' && !item.sender_number.includes('WhatsApp ID') ? item.sender_number : '';
 
-                const cardHtml = `
+                htmlArr.push(`
                     <div class="glass-dark p-5 rounded-2xl shadow-xl border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
                         <div>
                             <div class="flex items-center justify-between mb-3">
@@ -664,9 +680,20 @@
                             ` : `<span class="text-[11px] text-slate-500 italic">WhatsApp Web</span>`}
                         </div>
                     </div>
-                `;
-                container.innerHTML += cardHtml;
+                `);
             });
+
+            container.innerHTML = htmlArr.join('');
+
+            const loadMoreContainer = document.getElementById('load-more-container');
+            if (loadMoreContainer) {
+                if (filtered.length > visibleCount) {
+                    loadMoreContainer.classList.remove('hidden');
+                    document.getElementById('load-more-info').innerText = `Exibindo ${itemsToRender.length} de ${filtered.length} atendimentos`;
+                } else {
+                    loadMoreContainer.classList.add('hidden');
+                }
+            }
 
             lucide.createIcons();
         }
