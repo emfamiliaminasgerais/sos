@@ -7846,5 +7846,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 655,
+        "timestamp": "2026-09-14 14:20:14",
+        "sender_number": "5521975468063",
+        "sender_name": "Nilzete Rodrigues 🦋🦋",
+        "text": "Estou vivendo um processo difícil atualmente. \nInfidelidade do meu esposo. \nNunca pensei em viver isso.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
