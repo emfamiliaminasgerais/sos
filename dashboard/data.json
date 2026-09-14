@@ -24994,5 +24994,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 2084,
+        "timestamp": "2026-09-14 15:53:58",
+        "sender_number": "556281556597",
+        "sender_name": "Marcelo BarbosaAlves",
+        "text": "Vou convidar o divorciado.Prá cabar a tristeza.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
