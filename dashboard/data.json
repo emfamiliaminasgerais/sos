@@ -8674,5 +8674,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 724,
+        "timestamp": "2026-09-14 14:48:01",
+        "sender_number": "553186857564",
+        "sender_name": "Elinete 💚",
+        "text": "Muito obrigado pela orientação",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
