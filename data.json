@@ -8338,5 +8338,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 696,
+        "timestamp": "2026-09-14 14:37:08",
+        "sender_number": "553299654505",
+        "sender_name": "Joel Araujo",
+        "text": "Sim , irmão",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
