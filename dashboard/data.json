@@ -8314,5 +8314,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 694,
+        "timestamp": "2026-09-14 14:36:40",
+        "sender_number": "553197749657",
+        "sender_name": "Alexandre",
+        "text": "O enterro vai ser 16 horas",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
