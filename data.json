@@ -526,5 +526,17 @@
         "sub_tag": "Podcast Vencendo o Divórcio",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 45,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "269161422926074",
+        "sender_name": "269161422926074",
+        "text": "O número de setor de casamentos pfv",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
