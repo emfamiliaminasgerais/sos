@@ -8278,5 +8278,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 691,
+        "timestamp": "2026-09-14 14:36:06",
+        "sender_number": "553197749657",
+        "sender_name": "Alexandre",
+        "text": "Se precisar busco o senhor",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
