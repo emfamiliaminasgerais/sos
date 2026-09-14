@@ -8266,5 +8266,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 690,
+        "timestamp": "2026-09-14 14:36:04",
+        "sender_number": "553299654505",
+        "sender_name": "Joel Araujo",
+        "text": "Sim,mas essa internação não estou sabendo,mas estou indo pra lá agora assim que eu souber te passo por aqui",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
