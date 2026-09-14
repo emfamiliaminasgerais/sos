@@ -190,5 +190,28 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
-    }
-]
+    },
+    {
+        "id": 17,
+        "timestamp": "2026-09-14 13:09:59",
+        "sender_number": "77236917039202",
+        "sender_name": "77236917039202",
+        "text": "Entrei em contato com vocês para me dar uma direção e peço oração pelo meu casamento",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 18,
+        "timestamp": "2026-09-14 13:09:59",
+        "sender_number": "145630328557603",
+        "sender_name": "145630328557603",
+        "text": "Poderia me encaminhar o contato do pastot de Leopoldina para de pedir oracao",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
