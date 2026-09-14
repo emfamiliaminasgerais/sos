@@ -8050,5 +8050,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 672,
+        "timestamp": "2026-09-14 14:26:41",
+        "sender_number": "553185270048",
+        "sender_name": "confi",
+        "text": "Não",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
