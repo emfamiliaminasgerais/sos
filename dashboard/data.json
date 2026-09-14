@@ -322,5 +322,29 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 28,
+        "timestamp": "2026-09-14 13:40:50",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Só tem um hospital",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 29,
+        "timestamp": "2026-09-14 13:40:50",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Tá hospital de Ibirité",
+        "names_found": "Nenhum nome extraído",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
