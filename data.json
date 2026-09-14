@@ -874,5 +874,41 @@
         "sub_tag": "Podcast Vencendo o Divórcio",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 74,
+        "timestamp": "2026-09-14 13:40:57",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Pensamento  em suicídio quero quê  Deus me  ajude a tirar estes pensamentos  dele pensar em coisas so positivo",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 75,
+        "timestamp": "2026-09-14 13:40:57",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Estou  precisando de  ajuda nas orações  para meu filho está  com depressão",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 76,
+        "timestamp": "2026-09-14 13:40:57",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Sou amigo do casal que participou do podcast com vocês",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
