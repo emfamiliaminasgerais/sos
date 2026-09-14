@@ -25078,5 +25078,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 2091,
+        "timestamp": "2026-09-14 16:05:18",
+        "sender_number": "557184342361",
+        "sender_name": "Junior",
+        "text": "Não entendi",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
