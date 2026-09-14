@@ -48730,5 +48730,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4062,
+        "timestamp": "2026-09-14 16:21:30",
+        "sender_number": "553299654505",
+        "sender_name": "Joel Araujo",
+        "text": "Obrigado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
