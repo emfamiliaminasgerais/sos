@@ -8698,5 +8698,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 726,
+        "timestamp": "2026-09-14 14:49:07",
+        "sender_number": "553171095707",
+        "sender_name": "Claudia",
+        "text": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
