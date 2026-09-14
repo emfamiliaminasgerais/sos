@@ -646,5 +646,29 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 55,
+        "timestamp": "2026-09-14 13:40:53",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "No período que eles estavam separados se o marido conversava com outras mulheres também no trabalho",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 56,
+        "timestamp": "2026-09-14 13:40:53",
+        "sender_number": "Contato WhatsApp",
+        "sender_name": "Contato WhatsApp",
+        "text": "Qual conselho pra quem nao consegue conversar sobre o problema na hora, so depois? Mas minha esposa gosta de resolver na hora",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
