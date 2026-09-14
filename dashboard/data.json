@@ -550,5 +550,65 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 47,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "34179383296128",
+        "sender_name": "34179383296128",
+        "text": "Eu peguei o telefone de vocês no podcast de casais",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 48,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "269161422926074",
+        "sender_name": "269161422926074",
+        "text": "Ou é aki mesmo que resolve sobre questão de casamentos",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 49,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "244143825670370",
+        "sender_name": "244143825670370",
+        "text": "Peço oração,pastor",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 50,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "65567004299413",
+        "sender_name": "65567004299413",
+        "text": "Peço oração pelo trabalho e na vida sentimental",
+        "names_found": "Nenhum nome extraído",
+        "category": "Financeiro",
+        "sub_tag": "Financeiro",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 51,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "77236917039202",
+        "sender_name": "77236917039202",
+        "text": "A minha esposa pediu divórcio eu não quero divórcio mas tive que assinar os papel ela não deu entrada ainda já tem umas vendas quatro meses separado ela foi pra casa da mãe e eu estou aqui só estou lutando e não aceito perder meu casamento o motivo foi ciúme possessivo",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
