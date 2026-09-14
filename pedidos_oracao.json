@@ -8326,5 +8326,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 695,
+        "timestamp": "2026-09-14 14:37:07",
+        "sender_number": "5521975468063",
+        "sender_name": "Nilzete Rodrigues 🦋🦋",
+        "text": "Já somos da igreja há muitos anos. \nEle mais do que eu. \nEu vim depois através dele",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
