@@ -431,3 +431,16 @@
         "summary": "",
         "status": "Em Atendimento"
     },
+    {
+        "id": 37,
+        "timestamp": "2026-09-14 13:10:01",
+        "sender_number": "129944621453420",
+        "sender_name": "129944621453420",
+        "text": "Entrega pra Deus  nao. Sei pq   vem.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
+    }
+]
