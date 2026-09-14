@@ -610,5 +610,29 @@
         "sub_tag": "Podcast Vencendo o Divórcio",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 52,
+        "timestamp": "2026-09-14 13:22:43",
+        "sender_number": "77236917039202",
+        "sender_name": "77236917039202",
+        "text": "Boa noite estou aqui assistindo o podcast Vencendo O Divórcio esse programa é muito bom tem assistido",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 53,
+        "timestamp": "2026-09-14 13:22:44",
+        "sender_number": "58897624772704",
+        "sender_name": "58897624772704",
+        "text": "Justamente o que eu falei na msg 🥺viúva de marido vivo",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
