@@ -226,5 +226,17 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 20,
+        "timestamp": "2026-09-14 13:18:24",
+        "sender_number": "129944621453420",
+        "sender_name": "129944621453420",
+        "text": "Verdade um dia eu ainda também vou dar testemunho quando bispo Wagner no mega help",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
