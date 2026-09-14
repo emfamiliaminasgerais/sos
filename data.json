@@ -502,5 +502,41 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 43,
+        "timestamp": "2026-09-14 13:18:27",
+        "sender_number": "34179383296128",
+        "sender_name": "34179383296128",
+        "text": "Minha amiga participa com vcs teve o casamento restaurado eu gostaria de auxílio do que devo fazer para poder conseguir restaurar o meu 😭",
+        "names_found": "poder conseguir restaurar",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 44,
+        "timestamp": "2026-09-14 13:18:27",
+        "sender_number": "34179383296128",
+        "sender_name": "34179383296128",
+        "text": "Então meu marido saiu de casa tem alguns meses, se envolveu com outra pessoa 😭, porém nós ainda estamos conversando ele vai até em casa, eu não desisti de nós, sou uma pessoa que busco a Deus e já tive alguns direcionamentos para não desistir, porém já não estou sabendo o que fazer mais 🥺😭",
+        "names_found": "não desistir",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 45,
+        "timestamp": "2026-09-14 13:18:27",
+        "sender_number": "269161422926074",
+        "sender_name": "269161422926074",
+        "text": "O número de setor de casamentos pfv",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
