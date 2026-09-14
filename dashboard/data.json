@@ -142,5 +142,29 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 13,
+        "timestamp": "2026-09-14 13:17:12",
+        "sender_number": "160782570508360",
+        "sender_name": "160782570508360",
+        "text": "A iurd é casa de oração e acolhimento ao povo para adoração,  peço suas orações",
+        "names_found": "adoração",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "",
+        "status": "Em Atendimento"
+    },
+    {
+        "id": 14,
+        "timestamp": "2026-09-14 13:17:12",
+        "sender_number": "160782570508360",
+        "sender_name": "160782570508360",
+        "text": "Bispo André,  oração,  ataques de cunho religioso, furto do dízimo separado para obra do Senhor Jesus,  estão invadindo a minha busca em professar a fé no Deus vivo através da iurd",
+        "names_found": "obra do Senhor Jesus, Bispo André",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
