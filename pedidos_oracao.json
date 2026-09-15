@@ -49918,5 +49918,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4161,
+        "timestamp": "2026-09-15 14:58:22",
+        "sender_number": "553384102870",
+        "sender_name": "representante da velmora",
+        "text": "Oi Tudo jóia o nome dela e Keren moro na vila do pequitito ela está aqui na minha casa",
+        "names_found": "Oi Tudo",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
