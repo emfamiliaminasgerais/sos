@@ -50386,5 +50386,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4200,
+        "timestamp": "2026-09-15 17:22:17",
+        "sender_number": "553384102870",
+        "sender_name": "representante da velmora",
+        "text": "Manhumirim",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
