@@ -49630,5 +49630,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4137,
+        "timestamp": "2026-09-15 14:20:11",
+        "sender_number": "553898391394",
+        "sender_name": "Dete",
+        "text": "Ok",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
