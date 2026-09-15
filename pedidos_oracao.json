@@ -49738,5 +49738,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4146,
+        "timestamp": "2026-09-15 14:27:16",
+        "sender_number": "553298580041",
+        "sender_name": "Ci Nogueira 😍",
+        "text": "De vcs",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
