@@ -49594,5 +49594,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4134,
+        "timestamp": "2026-09-15 14:19:06",
+        "sender_number": "553898391394",
+        "sender_name": "Dete",
+        "text": "Ainda tem essa igreja na Plínio ribeiro",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
