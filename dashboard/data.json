@@ -49642,5 +49642,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4138,
+        "timestamp": "2026-09-15 14:21:01",
+        "sender_number": "553187468587",
+        "sender_name": "Jander de Souza",
+        "text": "As 15:00 seria quanto tempo? Só para saber se consigo incluir dentro do meu horário de almoço",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
