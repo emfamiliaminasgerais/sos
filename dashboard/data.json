@@ -49006,5 +49006,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4085,
+        "timestamp": "2026-09-14 22:59:52",
+        "sender_number": "553190913532",
+        "sender_name": ".",
+        "text": "Foi bom conversar com o pastor",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
