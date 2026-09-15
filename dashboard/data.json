@@ -50398,5 +50398,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4201,
+        "timestamp": "2026-09-15 17:45:03",
+        "sender_number": "553791299244",
+        "sender_name": "🩷🩷🩷",
+        "text": "Bem e vc?",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
