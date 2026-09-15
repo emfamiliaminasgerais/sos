@@ -1457,10 +1457,10 @@
         "sender_number": "Contato WhatsApp",
         "sender_name": "Contato WhatsApp",
         "text": "✔️ *CIDADE : Ibirité\n\nENDEREÇO: Hospital de Ibirité\n \n📌 *Nome completo:* Altair Lopes de Moura\n\n📌 *ENFERMIDADE*: Diabetes\n\n📌 *SOLICITANTE*: Alexandre Dutra de Moura (irmão)\n\n📌 *NOME E CONTATO DO FAMILIAR*: 997749657\n\nDia de visita: Ele gostaria hoje, o mais rápido possível pois os médicos pediu pra reunir a família. Está em fase terminal.\n\n🚨🚨🚨",
-        "names_found": "ENFERMIDADE Diabetes",
+        "names_found": "Altair Lopes de Moura, Alexandre Dutra de Moura",
         "category": "Saúde",
         "sub_tag": "Saúde",
-        "summary": "",
+        "summary": "Alexandre Dutra de Moura solicita oração por seu irmão Altair Lopes de Moura, internado no Hospital de Ibirité com diabetes em fase terminal e pedido médico para reunião familiar urgente.",
         "status": "Em Atendimento"
     },
     {
@@ -8921,10 +8921,10 @@
         "sender_number": "Contato WhatsApp",
         "sender_name": "Contato WhatsApp",
         "text": "🆘*SOLICITAÇÃO DE VISITA  HOSPITALAR  !.*🏥\n\n ✔️ *CIDADE :  \n\n🏥*HOSPITAL :   \n\n📌 *Nome completo do paciente:*\n\n📌 *Quarto: \n\n\n\n📌 *ENFERMIDADE *  \n\n📌 *SOLICITANTE : \n\n📌 *NOME E CONTATO DO FAMILIAR  :  \n\n📌 *ESTADO DO PACIENTE :\n\n\n📌 *RELIGIÃO* : \n\n🥼👨🏻‍🎓👩🏻‍🎓 *O  CAPELÃO DEVE ESTAR DEVIDAMENTE.  UNIFORMIZADO , COM O  CRACHÁ. DE CHAPELÃO.*   \n\n📌 *Relatório da visita*\n 📸  *Por gentileza , quem for fazer a visita , relate  com ; Foto da placa do hospital. *\n🎤 *Relato no áudio .*\n*Para  ser enviado ao solicitante . **\n\n\nGrupo da Saúde Brasil🏥🇧🇷",
-        "names_found": "Relatório da visita, SOLICITANTE, ENFERMIDADE, RELIGIÃO, Quarto",
+        "names_found": "Nenhum nome extraído",
         "category": "Saúde",
         "sub_tag": "Saúde",
-        "summary": "",
+        "summary": "Modelo de solicitação para visita hospitalar a um paciente com enfermidade, com campos para preenchimento de detalhes e orientações para o capelão.",
         "status": "Em Atendimento"
     },
     {
@@ -24449,10 +24449,10 @@
         "sender_number": "Contato WhatsApp",
         "sender_name": "Contato WhatsApp",
         "text": "Não vou dobrar para deuses",
-        "names_found": "deuses",
-        "category": "Pedidos de Oração",
-        "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "O usuário expressa uma convicção espiritual de não se render a 'deuses'.",
         "status": "Em Atendimento"
     },
     {
@@ -48656,7 +48656,7 @@
         "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "Mensagem recebida contém uma palavra não identificada e não se enquadra em nenhuma categoria de relevância.",
         "status": "Em Atendimento"
     },
     {
@@ -48668,7 +48668,7 @@
         "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "O usuário enviou uma mensagem de saudação casual.",
         "status": "Em Atendimento"
     },
     {
@@ -48677,10 +48677,10 @@
         "sender_number": "Contato WhatsApp",
         "sender_name": "Gideão",
         "text": "Tô aqui",
-        "names_found": "Gideão",
+        "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "Saudação simples do usuário, sem solicitação específica.",
         "status": "Em Atendimento"
     },
     {
@@ -48689,10 +48689,10 @@
         "sender_number": "Contato WhatsApp",
         "sender_name": "Pr Carlos Barcelos",
         "text": "👆🏼Boa tarde Srs, este é o link a ser usado para a transmissão.",
-        "names_found": "a transmissão",
-        "category": "Pedidos de Oração",
-        "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "Mensagem de anúncio de link para transmissão.",
         "status": "Em Atendimento"
     },
     {
@@ -48701,10 +48701,10 @@
         "sender_number": "Contato WhatsApp",
         "sender_name": "Pr Carlos Barcelos",
         "text": "https://youtube.com/live/WOFfsAuCX_I?feature=share",
-        "names_found": "Pr Carlos Barcelos",
-        "category": "Espiritual",
-        "sub_tag": "Espiritual",
-        "summary": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "Compartilhou um link de um vídeo do YouTube.",
         "status": "Em Atendimento"
     },
     {
@@ -48726,9 +48726,9 @@
         "sender_name": "Joel Araujo",
         "text": "Olha diz a médica que não é satisfatória",
         "names_found": "Nenhum nome extraído",
-        "category": "Pedidos de Oração",
-        "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "category": "Saúde",
+        "sub_tag": "Saúde",
+        "summary": "A médica informou que a situação não é satisfatória.",
         "status": "Em Atendimento"
     },
     {
@@ -48740,7 +48740,7 @@
         "names_found": "Nenhum nome extraído",
         "category": "Agradecimento",
         "sub_tag": "Agradecimento",
-        "summary": "",
+        "summary": "O usuário expressou agradecimento.",
         "status": "Em Atendimento"
     },
     {
@@ -48761,10 +48761,10 @@
         "sender_number": "553186703387",
         "sender_name": "José Ferreira",
         "text": "Foi errado",
-        "names_found": "José Ferreira",
-        "category": "Pedidos de Oração",
-        "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "O usuário relata que algo deu errado.",
         "status": "Em Atendimento"
     },
     {
@@ -48773,10 +48773,10 @@
         "sender_number": "553186703387",
         "sender_name": "José Ferreira",
         "text": "Desculpa",
-        "names_found": "José Ferreira",
+        "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "Mensagem simples de desculpas sem contexto ou pedido.",
         "status": "Em Atendimento"
     },
     {
@@ -48836,7 +48836,7 @@
         "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "Usuário enviou uma saudação inicial.",
         "status": "Em Atendimento"
     },
     {
@@ -48846,9 +48846,9 @@
         "sender_name": "🙏",
         "text": "Hoje teria culto",
         "names_found": "Nenhum nome extraído",
-        "category": "Pedidos de Oração",
-        "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "Consulta sobre a realização do culto de hoje.",
         "status": "Em Atendimento"
     },
     {
@@ -48869,10 +48869,10 @@
         "sender_number": "553197749657",
         "sender_name": "Alexandre",
         "text": "Muito obrigado mesmo pela atenção,que o senhor Jesus Cristo te abençoe grandemente",
-        "names_found": "Jesus Cristo",
+        "names_found": "Nenhum nome extraído",
         "category": "Agradecimento",
         "sub_tag": "Agradecimento",
-        "summary": "",
+        "summary": "Alexandre agradeceu pela atenção recebida e enviou uma benção.",
         "status": "Em Atendimento"
     },
     {
@@ -48882,9 +48882,9 @@
         "sender_name": "Gustavo@damasceno",
         "text": "O contato da universal de santa Rita do Sapucaí mudou?",
         "names_found": "Nenhum nome extraído",
-        "category": "Pedidos de Oração",
-        "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "Usuário pergunta sobre a atualização do contato da Igreja Universal em Santa Rita do Sapucaí.",
         "status": "Em Atendimento"
     },
     {
@@ -48941,10 +48941,10 @@
         "sender_number": "553384102870",
         "sender_name": "representante da velmora",
         "text": "Oi Boa noite estou com uma amiga está passando por uns processos muito difícil está muito de precisando de oração 😭",
-        "names_found": "Oi Boa",
+        "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "A representante pede oração para uma amiga que está enfrentando processos muito difíceis.",
         "status": "Em Atendimento"
     },
     {
@@ -48992,7 +48992,7 @@
         "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "Mensagem de saudação.",
         "status": "Em Atendimento"
     },
     {
@@ -49004,7 +49004,7 @@
         "names_found": "Nenhum nome extraído",
         "category": "Pedidos de Oração",
         "sub_tag": "Pedidos de Oração",
-        "summary": "",
+        "summary": "Usuário confirma ter conversado, sem detalhes adicionais para classificação.",
         "status": "Em Atendimento"
     },
     {
