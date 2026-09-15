@@ -50110,5 +50110,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4177,
+        "timestamp": "2026-09-15 15:23:13",
+        "sender_number": "553187947389",
+        "sender_name": "Denerson Gomes",
+        "text": "Eu tinha uma companheira mais nois não demos serto depois que nois separamos nunca mais eu consegui ninguém tá mim intendeno.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
