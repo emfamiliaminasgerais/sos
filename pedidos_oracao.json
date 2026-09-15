@@ -49486,5 +49486,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4125,
+        "timestamp": "2026-09-15 13:15:00",
+        "sender_number": "553187468587",
+        "sender_name": "Jander de Souza",
+        "text": "Tudo bem?",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
