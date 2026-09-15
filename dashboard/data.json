@@ -50326,5 +50326,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4195,
+        "timestamp": "2026-09-15 16:54:11",
+        "sender_number": "553191843923",
+        "sender_name": "🙏",
+        "text": "Alguma que seja próximo",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
