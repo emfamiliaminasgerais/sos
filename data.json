@@ -49402,5 +49402,17 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4118,
+        "timestamp": "2026-09-15 10:54:20",
+        "sender_number": "553196397118",
+        "sender_name": "Haroldo Jose Barbosa",
+        "text": "Nossa tá demorando",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
