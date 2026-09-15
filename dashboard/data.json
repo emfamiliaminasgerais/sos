@@ -49294,5 +49294,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4109,
+        "timestamp": "2026-09-15 09:47:28",
+        "sender_number": "553197327987",
+        "sender_name": "Dara",
+        "text": "bom dia",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
