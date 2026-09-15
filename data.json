@@ -50206,5 +50206,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4185,
+        "timestamp": "2026-09-15 15:34:45",
+        "sender_number": "553187947389",
+        "sender_name": "Denerson Gomes",
+        "text": "Eu vou na igreja agui do bairro mais eu não falei sobre isso com o pastor sobre isso não",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
