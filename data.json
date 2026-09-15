@@ -50290,5 +50290,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4192,
+        "timestamp": "2026-09-15 16:37:14",
+        "sender_number": "553195626314",
+        "sender_name": "rafael",
+        "text": "O dela",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
