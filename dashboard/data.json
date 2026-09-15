@@ -49810,5 +49810,17 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4152,
+        "timestamp": "2026-09-15 14:33:46",
+        "sender_number": "553298580041",
+        "sender_name": "Ci Nogueira 😍",
+        "text": "Ai queria saber se qlq horario q eu for ai tem um pastor pra me atender",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
