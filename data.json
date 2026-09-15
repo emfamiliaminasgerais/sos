@@ -50254,5 +50254,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4189,
+        "timestamp": "2026-09-15 16:28:28",
+        "sender_number": "553195626314",
+        "sender_name": "rafael",
+        "text": "Pela minha esposa que foi embora de casa",
+        "names_found": "Nenhum nome extraído",
+        "category": "Podcast Divórcio",
+        "sub_tag": "Podcast Vencendo o Divórcio",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
