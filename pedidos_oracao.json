@@ -49678,5 +49678,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4141,
+        "timestamp": "2026-09-15 14:24:56",
+        "sender_number": "553187468587",
+        "sender_name": "Jander de Souza",
+        "text": "Perfeito! Graças a Deus",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
