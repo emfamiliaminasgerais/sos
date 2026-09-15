@@ -49558,5 +49558,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4131,
+        "timestamp": "2026-09-15 14:15:21",
+        "sender_number": "553187468587",
+        "sender_name": "Jander de Souza",
+        "text": "Pq saio para fazer meu horário de almoço esse horário no trabalho e eu iria",
+        "names_found": "Nenhum nome extraído",
+        "category": "Financeiro",
+        "sub_tag": "Financeiro",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
