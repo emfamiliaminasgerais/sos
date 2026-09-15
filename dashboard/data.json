@@ -49714,5 +49714,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4144,
+        "timestamp": "2026-09-15 14:25:07",
+        "sender_number": "553187468587",
+        "sender_name": "Jander de Souza",
+        "text": "Obrigado",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
