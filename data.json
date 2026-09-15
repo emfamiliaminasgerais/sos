@@ -49054,5 +49054,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4089,
+        "timestamp": "2026-09-14 23:40:01",
+        "sender_number": "553173437173",
+        "sender_name": "flavialancas7",
+        "text": "Ester de Souza Teixeira",
+        "names_found": "Souza Teixeira",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
