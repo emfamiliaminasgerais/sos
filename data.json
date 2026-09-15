@@ -49246,5 +49246,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4105,
+        "timestamp": "2026-09-15 09:35:58",
+        "sender_number": "553299654505",
+        "sender_name": "Joel Araujo",
+        "text": "Estou muito feliz,vcs estiveram ontem lá no meu irmão e deu tudo certo 🙏🏻",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
