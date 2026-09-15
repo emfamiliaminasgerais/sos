@@ -49774,5 +49774,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4149,
+        "timestamp": "2026-09-15 14:30:18",
+        "sender_number": "553187468587",
+        "sender_name": "Jander de Souza",
+        "text": "Amém",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
