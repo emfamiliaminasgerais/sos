@@ -49210,5 +49210,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4102,
+        "timestamp": "2026-09-15 09:27:29",
+        "sender_number": "553799210239",
+        "sender_name": "JOÃO CLÁUDiO",
+        "text": "Bom dia ☕🍕 🍕 🍕",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
