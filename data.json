@@ -48982,5 +48982,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "Lista de nomes enviada para inclusão nos pedidos de oração.",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4083,
+        "timestamp": "2026-09-14 22:59:23",
+        "sender_number": "553190913532",
+        "sender_name": ".",
+        "text": "Boa noite",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
