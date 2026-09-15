@@ -50062,5 +50062,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4173,
+        "timestamp": "2026-09-15 15:18:17",
+        "sender_number": "553187947389",
+        "sender_name": "Denerson Gomes",
+        "text": "Eu tô tão depressivo que prá mim nenhuma mulher si aproxima de mim amém",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
