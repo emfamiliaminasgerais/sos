@@ -49090,5 +49090,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4092,
+        "timestamp": "2026-09-14 23:40:19",
+        "sender_number": "553173437173",
+        "sender_name": "flavialancas7",
+        "text": "Flávia Lanças de Souza",
+        "names_found": "Flávia Lanças",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
