@@ -873,7 +873,11 @@
                     item.names_found.split(",").forEach(n => {
                         const cleanName = n.trim();
                         if (cleanName && !namesMap.has(cleanName)) {
-                            namesMap.set(cleanName, item.timestamp || '');
+                            namesMap.set(cleanName, {
+                                timestamp: item.timestamp || '',
+                                sender_name: item.sender_name || '',
+                                sender_number: item.sender_number || ''
+                            });
                         }
                     });
                 }
@@ -891,10 +895,10 @@
                 let formattedText = `LISTA DE NOMES PARA ORAÇÃO (${periodLabel.toUpperCase()})\n--------------------------------------------------\n\n`;
                 
                 let idx = 1;
-                namesMap.forEach((ts, name) => {
+                namesMap.forEach((info, name) => {
                     let tsFormatted = "";
-                    if (ts) {
-                        const parts = ts.split(" ");
+                    if (info.timestamp) {
+                        const parts = info.timestamp.split(" ");
                         if (parts[0] && parts[0].includes("-")) {
                             const dp = parts[0].split("-");
                             const dStr = `${dp[2]}/${dp[1]}/${dp[0]}`;
@@ -902,7 +906,20 @@
                             tsFormatted = ` (${dStr}${tStr ? ' às ' + tStr : ''})`;
                         }
                     }
-                    formattedText += `${idx}. ${name}${tsFormatted}\n`;
+
+                    let senderDisplay = "";
+                    const phone = info.sender_number && info.sender_number !== 'Contato WhatsApp' ? info.sender_number : "";
+                    const nameStr = info.sender_name && info.sender_name !== 'Contato WhatsApp' && info.sender_name !== phone ? info.sender_name : "";
+
+                    if (phone && nameStr) {
+                        senderDisplay = ` [Tel: ${phone} - ${nameStr}]`;
+                    } else if (phone) {
+                        senderDisplay = ` [Tel: ${phone}]`;
+                    } else if (nameStr) {
+                        senderDisplay = ` [Remetente: ${nameStr}]`;
+                    }
+
+                    formattedText += `${idx}. ${name}${tsFormatted}${senderDisplay}\n`;
                     idx++;
                 });
                 contentDiv.innerText = formattedText;
