@@ -49930,5 +49930,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4162,
+        "timestamp": "2026-09-15 15:01:29",
+        "sender_number": "553298580041",
+        "sender_name": "Ci Nogueira 😍",
+        "text": "Sta terezinha,  mas hoje nao estou nada bem nao consigo ir",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
