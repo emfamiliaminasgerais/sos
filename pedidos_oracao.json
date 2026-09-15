@@ -50026,5 +50026,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4170,
+        "timestamp": "2026-09-15 15:14:44",
+        "sender_number": "553298580041",
+        "sender_name": "Ci Nogueira 😍",
+        "text": "Eu sou de Juiz de fora",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
