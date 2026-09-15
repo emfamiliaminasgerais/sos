@@ -49126,5 +49126,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4095,
+        "timestamp": "2026-09-15 05:05:38",
+        "sender_number": "553173342271",
+        "sender_name": "luiscachorrao73",
+        "text": "Perto de  nova contagem",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
