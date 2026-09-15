@@ -50338,5 +50338,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4196,
+        "timestamp": "2026-09-15 16:57:05",
+        "sender_number": "553195626314",
+        "sender_name": "rafael",
+        "text": "Eu quero saber se tem um dia aí que é de libertação pra mim poder levar uma foto dela",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
