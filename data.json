@@ -49906,5 +49906,17 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4160,
+        "timestamp": "2026-09-15 14:55:51",
+        "sender_number": "553186444327",
+        "sender_name": "Dorjao",
+        "text": "Muito obrigado pela atenção",
+        "names_found": "Nenhum nome extraído",
+        "category": "Agradecimento",
+        "sub_tag": "Agradecimento",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
