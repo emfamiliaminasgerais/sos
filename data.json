@@ -50146,5 +50146,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4180,
+        "timestamp": "2026-09-15 15:27:08",
+        "sender_number": "553187947389",
+        "sender_name": "Denerson Gomes",
+        "text": "Si vocês puderem amém.eu creio que vocês aí devem conhecer alguém na mesma situação que eu amém.",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
