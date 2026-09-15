@@ -49990,5 +49990,17 @@
         "sub_tag": "Espiritual",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4167,
+        "timestamp": "2026-09-15 15:09:57",
+        "sender_number": "553188185292",
+        "sender_name": "Ingrid Silva",
+        "text": "Meu esposo*",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
