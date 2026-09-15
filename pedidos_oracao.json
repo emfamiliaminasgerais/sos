@@ -50230,5 +50230,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4187,
+        "timestamp": "2026-09-15 15:38:26",
+        "sender_number": "553187947389",
+        "sender_name": "Denerson Gomes",
+        "text": "Vocês aí não conseguem alguém gui está na mesma situação que eu não amém.ai vica mais fácil prá mim amém",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
