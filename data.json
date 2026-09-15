@@ -49018,5 +49018,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4086,
+        "timestamp": "2026-09-14 23:39:28",
+        "sender_number": "553173437173",
+        "sender_name": "flavialancas7",
+        "text": "Sim",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
