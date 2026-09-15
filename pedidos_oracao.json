@@ -49066,5 +49066,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4090,
+        "timestamp": "2026-09-14 23:40:07",
+        "sender_number": "553173437173",
+        "sender_name": "flavialancas7",
+        "text": "Vânia Suely Lanças de Souza",
+        "names_found": "Vânia Suely Lanças",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
