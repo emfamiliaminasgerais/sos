@@ -49798,5 +49798,17 @@
         "sub_tag": "Agradecimento",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4151,
+        "timestamp": "2026-09-15 14:33:02",
+        "sender_number": "553298580041",
+        "sender_name": "Ci Nogueira 😍",
+        "text": "Mental ansiedade e depressão q nao passa cm tratamento.  Q já estou achando q é espiritual",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
