@@ -49330,5 +49330,17 @@
         "sub_tag": "Saúde",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4112,
+        "timestamp": "2026-09-15 10:16:24",
+        "sender_number": "553190607583",
+        "sender_name": "Lara Borges",
+        "text": "Ei, bom dia!",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
