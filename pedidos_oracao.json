@@ -50242,5 +50242,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4188,
+        "timestamp": "2026-09-15 16:28:00",
+        "sender_number": "553195626314",
+        "sender_name": "rafael",
+        "text": "Estou precisando de oração",
+        "names_found": "Nenhum nome extraído",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
