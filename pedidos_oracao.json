@@ -48970,5 +48970,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4082,
+        "timestamp": "2026-09-14 21:37:51",
+        "sender_number": "Central MG",
+        "sender_name": "Envio Direto",
+        "text": "Viviane Melo\nClaudia\nSoraia\nRoberto Eduardo\nViviane\nNilzete Rodrigues\nJunior\nLuana\nElinete\nAlexandre\nPriscila\nMax\nSanni\nPatrícia\nHaroldo Jose Barbosa\n\nFrancisco\nMarcelo Barbosa Alves\nNathy\nValéria Ferreira\nJosé Ferreir",
+        "names_found": "Nilzete Rodrigues, Francisco, Viviane, Max, Luana, Elinete, Haroldo Jose Barbosa, Viviane Melo, Marcelo Barbosa Alves, José Ferreir, Sanni, Alexandre, Priscila, Soraia, Junior, Patrícia, Claudia, Roberto Eduardo, Nathy, Valéria Ferreira",
+        "category": "Pedidos de Oração",
+        "sub_tag": "Pedidos de Oração",
+        "summary": "Lista de nomes enviada para inclusão nos pedidos de oração.",
+        "status": "Em Atendimento"
     }
 ]
