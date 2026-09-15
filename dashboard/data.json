@@ -49150,5 +49150,17 @@
         "sub_tag": "Pedidos de Oração",
         "summary": "",
         "status": "Em Atendimento"
+    },
+    {
+        "id": 4097,
+        "timestamp": "2026-09-15 05:47:55",
+        "sender_number": "258845683355",
+        "sender_name": "Francisco",
+        "text": "Paz",
+        "names_found": "Nenhum nome extraído",
+        "category": "Espiritual",
+        "sub_tag": "Espiritual",
+        "summary": "",
+        "status": "Em Atendimento"
     }
 ]
